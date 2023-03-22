@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using CommandLine;
 using DynStack.DataModel.Common;
 using NetMQ;
+using ProtoBuf;
+using DynStack.DataModel.HS;
+using System.Reflection;
 
 namespace DynStack.SimulationRunner {
   public class Options {
@@ -86,6 +89,32 @@ Any other input is treated as a filename.")]
     }
 
     private static async Task<int> Main(Options o) {
+      /*
+      Settings settings;
+
+      // print settings values
+      using (var fileStream = File.OpenRead(o.SettingsPath))
+      {
+        settings = Serializer.Deserialize<Settings>(fileStream);
+        
+        foreach (PropertyInfo prop in settings.GetType().GetProperties())
+        {
+          var type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+          Console.WriteLine(prop.GetValue(settings, null).ToString());
+        }
+      }
+
+      
+      settings.CheckInterval = new TimeSpan(0, 0, 0, 0, 500);
+      Console.WriteLine("Modified checkinterval.");
+      
+      // print settings to file
+      using (var fileStream = File.Create("settings2-checkinterval.buf"))
+      {
+          Serializer.Serialize(fileStream, settings);
+      }
+      */
+
       if (o.SimulateAsync && !o.RunSync && !o.PolicyRun)
         throw new ArgumentException($"The option to simulate asynchronism is only valid in synchronous mode or in a policy run.");
       var cts = new CancellationTokenSource();

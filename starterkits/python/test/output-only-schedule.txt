@@ -1,0 +1,419 @@
+rule based stacking
+Connected socket
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 36
+  TargetId: 1
+}
+
+send
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+rule based stacking
+Connected socket
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+None
+recv
+None
+recv
+None
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+None
+recv
+None
+rule based stacking
+Connected socket
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+rule based stacking
+Connected socket
+recv
+Moves {
+  BlockId: 35
+  TargetId: 1
+}
+
+send
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None
+recv
+None

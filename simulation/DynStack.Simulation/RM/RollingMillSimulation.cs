@@ -243,6 +243,7 @@ namespace DynStack.Simulation.RM {
       sim.SetVirtualtime();
       sim.Run(settings.InitialPhase);
       _policy = oldPolicy;
+      // here I can setRealtime for the simulation!
       if (_policy == null) sim.SetRealtime();
 
       sim.Process(WorldUpdates());

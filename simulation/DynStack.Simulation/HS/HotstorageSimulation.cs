@@ -108,8 +108,13 @@ namespace DynStack.Simulation.HS {
     }
 
     public HotstorageSimulation(Settings set) {
+      Console.WriteLine("Constructor 1");
+
       settings = set;
       sim = new PseudoRealtimeSimulation(DateTime.UtcNow, settings.Seed);
+      // here I can setRealtime for the simulation!
+      sim.SetRealtime(60);
+
       ServiceLevel = new SampleMonitor("SerivceLevel");
       LeadTimes = new SampleMonitor("LeadTimes");
       Tardiness = new SampleMonitor("Tardiness");
@@ -133,6 +138,7 @@ namespace DynStack.Simulation.HS {
       upstream = new Resource(sim, capacity: 1) { Utilization = UpstreamUtilization };
       InitializeWorldState();
     }
+
     /// <summary>
     /// In this mode the simulation uses an integrated policy that is called directly via C# method invocation
     /// and does not need to interact asynchronously via network. This is not a realistic case, as the simulation
@@ -141,8 +147,11 @@ namespace DynStack.Simulation.HS {
     /// <param name="set">The settings that the simulation should run with.</param>
     /// <param name="policy">The policy that handles the crane orders.</param>
     public HotstorageSimulation(Settings set, IPolicy policy) : this(set) {
+      Console.WriteLine("Constructor 2");
+
       this.policy = policy;
       sim.SetVirtualtime();
+      // sim.SetRealtime(6);
     }
 
     private void InitializeWorldState() {

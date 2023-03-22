@@ -14,7 +14,7 @@ namespace DynStack.DataModel.HS {
     [ProtoMember(8)] public TimeSpan MinClearTime { get; set; }
     [ProtoMember(9)] public TimeSpan MaxClearTime { get; set; }
     [ProtoMember(10)] public TimeSpan CraneMoveTimeMean { get; set; }
-    [ProtoMember(11)] public TimeSpan CraneMoveTimeStd { get; set; }
+    [ProtoMember(11)] public TimeSpan CraneMoveTimeStd { get; set; } 
     [ProtoMember(12)] public TimeSpan HoistMoveTimeMean { get; set; }
     [ProtoMember(13)] public TimeSpan HoistMoveTimeStd { get; set; }
     [ProtoMember(14)] public TimeSpan DueTimeMean { get; set; }

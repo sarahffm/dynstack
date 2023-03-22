@@ -1,0 +1,32 @@
+syntax = "proto3";
+package test;
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Google.Protobuf.Examples.Test";
+
+message Settings {
+    int ProductionMaxHeight = 1;
+    int BufferMaxHeight = 2;
+    int BufferCount = 3;
+
+    TimeSpan SimulationDuration = 6;
+    TimeSpan CheckInterval = 7;
+    TimeSpan MinClearTime = 8;
+    TimeSpan MaxClearTime = 9;
+    TimeSpan CraneMoveTimeMean = 10;
+    TimeSpan CraneMoveTimeStd = 11;
+    TimeSpan HoistMoveTimeMean = 12;
+    TimeSpan HoistMoveTimeStd = 13;
+    TimeSpan DueTimeMean = 14;
+    TimeSpan DueTimeStd = 15;
+    TimeSpan DueTimeMin = 16;
+    int Seed = 17;
+    double ReadyFactorMin = 18;
+    double ReadyFactorMax = 19;
+    TimeSpan ArrivalTimeMean = 20;
+    TimeSpan ArrivalTimeStd = 21;
+    TimeSpan HandoverTimeMean = 22;
+    TimeSpan HandoverTimeStd = 23;
+    int InitialNumberOfBlocks = 24;
+}
