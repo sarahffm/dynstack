@@ -109,7 +109,7 @@ def printState(worldState):
 
 
 def create_schedule(world):
-    print("\n\n\n")
+    print("\n")
     # print(world)
 
 def create_schedule2(world):

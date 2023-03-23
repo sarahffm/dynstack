@@ -26,10 +26,14 @@ if __name__ == "__main__":
     socket.connect(addr)
     print("Connected socket")
 
-    # create a new data .csv file to track this run
+    # prepare KPIs
+    # TODO get info from message
+    HS_KPIs = ['BlockedArrivalTime', 'BufferUtilizationMean', 'CraneManipulations', 'CraneUtilizationMean', 'DeliveredBlocks', 'HandoverUtilizationMean', 'LeadTimeMean', 'ServiceLevelMean', 'TardinessMean', 'TotalBlocksOnTime', 'UpstreamUtilizationMean']
+
+    # create a new data .csv file to track KPIs
     print("Creating csv ...")
-    file = 'data.csv'
-    CsvEditor.initialize_csv(file, ['TBT', 'BAT'])
+    file_name = 'data.csv'
+    CsvEditor.initialize_csv(file_name, HS_KPIs)
 
     # listen to simulation's messages
     while True:
@@ -39,7 +43,7 @@ if __name__ == "__main__":
 
         # for now just hotstorage
         if not is_rollingmill:
-            plan = solver_rule.plan_moves(msg[2])
+            plan = solver_rule.plan_moves(msg[2], file_name)
 
         if plan:
             print("send")

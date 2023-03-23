@@ -4,20 +4,14 @@ import CsvEditor
 import re
 
 
-def plan_moves(world_data, file_name):
+def plan_moves(world_data):
     world = World()
     world.ParseFromString(world_data)
 
-    # prepare KPIs
-    kpis = dict((kpi, getattr(world.KPIs, kpi)) for kpi in dir(world.KPIs) if re.fullmatch(".*(Time|Mean|Manipulations|Blocks)", kpi)) 
-    print("KPIS:", kpis)
-    kpi_values = list(kpis.values())
-    print("KPI values only:", kpi_values)
-
-    # store current KPIs in csv file
-    CsvEditor.addRow(file_name, [str_to_ms(str(world.Now)), *kpi_values])
+    file_name = './data/data.csv'   # temporary file name
+    track_kpis(world, file_name)
     
-    print("call search.create_schedule(world)")
+    print("Call search.create_schedule(world)")
     crane_schedule = search.create_schedule(world)
 
     # print(world, crane_schedule)
@@ -29,9 +23,27 @@ def plan_moves(world_data, file_name):
     return crane_schedule
 
 
+def track_kpis(world, file_name):
+    kpis = dict((kpi, getattr(world.KPIs, kpi)) for kpi in dir(world.KPIs) if re.fullmatch(".*(Time|Mean|Manipulations|Blocks)", kpi)) 
+    
+    # if start of run: create a new data .csv file
+    if str_to_ms(str(world.Now)) == 0:
+        print("Creating csv ...")
+        kpi_names = list(kpis.keys())
+        CsvEditor.initialize_csv(file_name, kpi_names)
+
+    # store current KPIs in csv file
+    kpi_values = list(kpis.values())
+    CsvEditor.addRow(file_name, [str_to_ms(str(world.Now)), *kpi_values])
+
+
 def str_to_ms(s: str) -> int:
+    if s == '': 
+        return 0
     i = s.find(": ")
     return int(s[i+2:])
+       
+
 
 
 

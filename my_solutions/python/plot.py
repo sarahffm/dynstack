@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read CSV file
-dataframe = pd.read_csv('data.csv')
+dataframe = pd.read_csv('./data/data.csv')
 
 # Get x values from first column of CSV
 x = dataframe.iloc[:, 0]
@@ -21,11 +21,17 @@ plt.ylabel('KPI values')
 plt.legend()
 
 # save plot
-name = 'figure.pdf'
+name = './data/plots/figure.pdf'
 plt.savefig(name, bbox_inches='tight')
 
 # Show plot
 plt.show()
+
+
+
+
+
+
 
 """
 # generate some example data
