@@ -8,7 +8,7 @@ def plan_moves(world_data):
     world = World()
     world.ParseFromString(world_data)
 
-    file_name = './data/data.csv'   # temporary file name
+    file_name = './data/data_HS_test.csv'   # temporary file name
     track_kpis(world, file_name)
     
     print("Call search.create_schedule(world)")
@@ -34,7 +34,7 @@ def track_kpis(world, file_name):
 
     # store current KPIs in csv file
     kpi_values = list(kpis.values())
-    CsvEditor.addRow(file_name, [str_to_ms(str(world.Now)), *kpi_values])
+    CsvEditor.addRow(file_name, [world.Now.MilliSeconds, *kpi_values])
 
 
 def str_to_ms(s: str) -> int:

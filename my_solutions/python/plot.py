@@ -1,19 +1,41 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 # Read CSV file
-dataframe = pd.read_csv('./data/data.csv')
+dataframe = pd.read_csv('./data/HS_rulebased_easy1.csv')
+
+simulation = "HS_rulebased_easy1"
+
+path = "/Users/admin/Projects/DynStack/dynstack/my_solutions/data/plots/{}/".format(simulation)
+os.mkdir(path)
 
 # Get x values from first column of CSV
 x = dataframe.iloc[:, 0]
 
 # Get y values from remaining columns of CSV
-y = dataframe.iloc[:, 1:]
+ys = dataframe.iloc[:, 1:]
 
+for col in ys.columns:
+    # Create plot
+    plt.figure()
+    plt.plot(x, ys[col], label=col)
+
+    # Add labels and legend
+    plt.xlabel('Time (ms)')
+    plt.ylabel('KPI values')
+    plt.legend()
+
+    # save plot
+    name = path + col
+    plt.savefig(name, bbox_inches='tight')
+
+
+"""
 # Create plot
 plt.figure()
-for col in y.columns:
-    plt.plot(x, y[col], label=col)
+for col in ys.columns:
+    plt.plot(x, ys[col], label=col)
 
 # Add labels and legend
 plt.xlabel('Time (ms)')
@@ -21,11 +43,14 @@ plt.ylabel('KPI values')
 plt.legend()
 
 # save plot
+path = "/Users/admin/Projects/DynStack/dynstack/my_solutions/data/plots/{}/".format(simulation)
+os.mkdir(path)
 name = './data/plots/figure.pdf'
 plt.savefig(name, bbox_inches='tight')
 
 # Show plot
 plt.show()
+"""
 
 
 
