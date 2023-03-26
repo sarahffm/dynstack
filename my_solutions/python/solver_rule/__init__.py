@@ -11,7 +11,7 @@ def plan_moves(world_data):
     file_name = './data/data_HS_test.csv'   # temporary file name
     track_kpis(world, file_name)
     
-    print("Call search.create_schedule(world)")
+    # print("Call search.create_schedule(world)")
     crane_schedule = search.create_schedule(world)
 
     # print(world, crane_schedule)

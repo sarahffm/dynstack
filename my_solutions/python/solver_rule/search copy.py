@@ -48,7 +48,7 @@ class Stack:
             return self.deposition_score
         
         num_ready = sum(block.is_ready and not block.is_overdue for block in self.blocks)
-        # overdue blocks should not be added to the average due value
+        # overdue blocks currently should not be added to the average due value
         average_due = sum(block.due for block in self.blocks if block.due > 0) / height
 
         ready_score = 1 / (num_ready + 1)
@@ -252,6 +252,7 @@ def create_schedule(world):
 
     # STEP 4:
     # buffer sorting
+    # this case never happens for the HS-Training-A-Easy setting
 
     return None
 
