@@ -190,6 +190,7 @@ def create_schedule(world):
         for buffer in buffers_sorted:
             if not buffer.top().is_ready:
                 destination_stack = buffer
+                break
         
         if destination_stack:
             move = CraneMove()

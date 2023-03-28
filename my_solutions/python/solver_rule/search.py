@@ -85,6 +85,9 @@ class Stack:
         self.ready_score = num_ready / average_depth
         return self.ready_score
 
+    def set_deposition_score(self, val):
+        self.deposition_score = val
+
     def top(self):
         return self.blocks[-1]
 
@@ -107,6 +110,8 @@ def create_schedule(world):
     # - use a State object instead to store relevant information
     # - prioritize available ready block with small due date over arrival clearing
     # - buffer shuffling: reimplement overdue blocks to handover
+
+    print("\nNow:", world.Now.MilliSeconds)
 
     # initialize schedule
     schedule = CraneSchedule()
@@ -136,11 +141,10 @@ def create_schedule(world):
                     [Block(id=block.Id, is_ready=block.Ready, due=block.Due.MilliSeconds, now=world.Now.MilliSeconds) for block in buffer.BottomToTop]))
 
     
-
-    # print_if_invalid(world, buffers)
+    print_if_invalid(world, buffers)
 
     for buffer in buffers:
-        if len(buffer.blocks) > 0 and buffer.top().is_ready and world.Handover.Ready:
+        if len(buffer.blocks) > 0 and buffer.top().is_ready and not buffer.top().is_overdue and world.Handover.Ready:
             move = CraneMove()
             move.BlockId = buffer.top().id
             move.SourceId = buffer.id
@@ -195,11 +199,13 @@ def create_schedule(world):
     # STEP 3:
     # buffer shuffling
 
-    # IDEA: maybe for harder settings, incorporate overdue --> if locked, move overdue
+    # IDEA: maybe for harder settings, incorporate overdue 
+    #      - if locked, move overdue
+    #      - or if overdue on top, move to handover (if there are no more important moves)
     exists_ready_block = False
     for buffer in buffers:
         for block in buffer.blocks:
-            if block.is_ready:
+            if block.is_ready and not block.is_overdue:
                 exists_ready_block = True
                 break
     
@@ -209,23 +215,28 @@ def create_schedule(world):
             buffer.calculate_ready_score()
             buffer.calculate_deposition_score(max_due, min_due)
 
-        # TODO: if block is overdue -> move to handover
-
         source_stack = max(buffers, key=attrgetter('ready_score'))
-        destination_stack = max(buffers, key=attrgetter('deposition_score'))
+
+        if source_stack.top().is_overdue:
+            # destination: handover if block is overdue and handover is ready
+            if world.Handover.Ready:
+                print("Overdue block to handover ...")
+                destination_stack = Stack(world.Handover.Id, 1, [])
+                destination_stack.set_deposition_score(1)
+        else:
+            # destination: stack with best deposition score if block is not overdue
+            destination_stack = max(buffers, key=attrgetter('deposition_score'))
 
         # case: source & destination are same stack
         if source_stack.id == destination_stack.id:
             print("Buffer shuffling case source == destination")
-            # ready score more important than deposition score
-            # => choose "second best" destination
+            # ready score more important than deposition score => choose "second best" destination
             buffers_sorted = sorted(buffers, key=lambda buffer: buffer.deposition_score, reverse=True)
             destination_stack = buffers_sorted[1]
             print("New destination id:", destination_stack.id)
 
-
+        # create move if chosen destination is not full
         if destination_stack.deposition_score != 0:
-            # print("Buffer shuffling: creating new move ...")
             move = CraneMove()
             move.BlockId = source_stack.top().id
             move.SourceId = source_stack.id
@@ -246,13 +257,13 @@ def create_schedule(world):
 # for debugging
 def print_if_invalid(world, buffers):
     if world.InvalidMoves:
-        print("INVALID MOVE\ninvalid:", world.InvalidMoves, "\n")
-        print("STATE NOW:")
+        print("INVALID MOVE\n", world.InvalidMoves, "\n")
+        """print("STATE NOW:")
         for stack in buffers:
             for block in stack.blocks:
                 print("[",block.id, "/" ,end="] ")
             print("stack", stack.id)
-        print("\n\n")
+        print("\n\n")"""
 
 
 

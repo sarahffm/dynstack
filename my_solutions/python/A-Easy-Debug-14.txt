@@ -1,0 +1,12833 @@
+My constum stacking will be started.
+Connected socket
+recv
+
+Now: 0
+Buffer shuffling new schedule:  [BlockId: 4
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 1000
+recv
+
+Now: 2000
+recv
+
+Now: 3000
+recv
+
+Now: 4000
+recv
+
+Now: 5000
+recv
+
+Now: 6000
+recv
+
+Now: 7000
+Buffer shuffling new schedule:  [BlockId: 11
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 8000
+recv
+
+Now: 9000
+recv
+
+Now: 10000
+recv
+
+Now: 11000
+recv
+
+Now: 12000
+Buffer shuffling new schedule:  [BlockId: 19
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 13000
+recv
+
+Now: 14000
+recv
+
+Now: 15000
+recv
+
+Now: 16000
+recv
+
+Now: 17000
+recv
+
+Now: 18000
+recv
+
+Now: 19000
+Buffer shuffling new schedule:  [BlockId: 21
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 20000
+recv
+
+Now: 21000
+recv
+
+Now: 22000
+recv
+
+Now: 23000
+recv
+
+Now: 24000
+recv
+
+Now: 25000
+recv
+
+Now: 26000
+recv
+
+Now: 27000
+Easy handover new schedule:  [BlockId: 25
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 28000
+recv
+
+Now: 29000
+recv
+
+Now: 30000
+recv
+
+Now: 31000
+recv
+
+Now: 32000
+recv
+
+Now: 33000
+recv
+
+Now: 34000
+recv
+
+Now: 35000
+recv
+
+Now: 36000
+recv
+
+Now: 37000
+Buffer shuffling new schedule:  [BlockId: 26
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 38000
+recv
+
+Now: 39000
+recv
+
+Now: 40000
+recv
+
+Now: 41000
+recv
+
+Now: 42000
+recv
+
+Now: 43000
+recv
+
+Now: 44000
+recv
+
+Now: 45000
+recv
+
+Now: 46000
+recv
+
+Now: 47000
+recv
+
+Now: 48000
+Arrival clearing new schedule:  [BlockId: 35
+TargetId: 3
+]
+send
+recv
+
+Now: 49000
+recv
+
+Now: 50000
+recv
+
+Now: 51000
+recv
+
+Now: 52000
+recv
+
+Now: 53000
+recv
+
+Now: 54000
+recv
+
+Now: 55000
+recv
+
+Now: 56000
+Buffer shuffling new schedule:  [BlockId: 29
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 57000
+recv
+
+Now: 58000
+recv
+
+Now: 59000
+recv
+
+Now: 60000
+recv
+
+Now: 61000
+recv
+
+Now: 62000
+recv
+
+Now: 63000
+recv
+
+Now: 64000
+Easy handover new schedule:  [BlockId: 33
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 65000
+recv
+
+Now: 66000
+recv
+
+Now: 67000
+recv
+
+Now: 68000
+recv
+
+Now: 69000
+recv
+
+Now: 70000
+recv
+
+Now: 71000
+recv
+
+Now: 72000
+recv
+
+Now: 73000
+recv
+
+Now: 74000
+recv
+
+Now: 75000
+Arrival clearing new schedule:  [BlockId: 36
+TargetId: 4
+]
+send
+recv
+
+Now: 76000
+recv
+
+Now: 77000
+recv
+
+Now: 78000
+recv
+
+Now: 79000
+recv
+
+Now: 80000
+recv
+
+Now: 81000
+recv
+
+Now: 82000
+recv
+
+Now: 83000
+recv
+
+Now: 84000
+recv
+
+Now: 85000
+recv
+
+Now: 86000
+recv
+
+Now: 87000
+recv
+
+Now: 88000
+recv
+
+Now: 89000
+Buffer shuffling new schedule:  [BlockId: 6
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 90000
+recv
+
+Now: 91000
+recv
+
+Now: 92000
+recv
+
+Now: 93000
+recv
+
+Now: 94000
+recv
+
+Now: 95000
+recv
+
+Now: 96000
+recv
+
+Now: 97000
+Buffer shuffling new schedule:  [BlockId: 15
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 98000
+recv
+
+Now: 99000
+recv
+
+Now: 100000
+recv
+
+Now: 101000
+recv
+
+Now: 102000
+recv
+
+Now: 103000
+recv
+
+Now: 104000
+Buffer shuffling new schedule:  [BlockId: 20
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 105000
+recv
+
+Now: 106000
+recv
+
+Now: 107000
+recv
+
+Now: 108000
+recv
+
+Now: 109000
+recv
+
+Now: 110000
+recv
+
+Now: 111000
+recv
+
+Now: 112000
+Arrival clearing new schedule:  [BlockId: 37
+TargetId: 4
+]
+send
+recv
+
+Now: 113000
+recv
+
+Now: 114000
+recv
+
+Now: 115000
+recv
+
+Now: 116000
+recv
+
+Now: 117000
+recv
+
+Now: 118000
+recv
+
+Now: 119000
+recv
+
+Now: 120000
+recv
+
+Now: 121000
+recv
+
+Now: 122000
+recv
+
+Now: 123000
+recv
+
+Now: 124000
+Buffer shuffling new schedule:  [BlockId: 24
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 125000
+recv
+
+Now: 126000
+recv
+
+Now: 127000
+recv
+
+Now: 128000
+recv
+
+Now: 129000
+recv
+
+Now: 130000
+recv
+
+Now: 131000
+Easy handover new schedule:  [BlockId: 34
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 132000
+recv
+
+Now: 133000
+recv
+
+Now: 134000
+recv
+
+Now: 135000
+recv
+
+Now: 136000
+recv
+
+Now: 137000
+recv
+
+Now: 138000
+recv
+
+Now: 139000
+recv
+
+Now: 140000
+recv
+
+Now: 141000
+recv
+
+Now: 142000
+Buffer shuffling new schedule:  [BlockId: 2
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 143000
+recv
+
+Now: 144000
+recv
+
+Now: 145000
+recv
+
+Now: 146000
+recv
+
+Now: 147000
+recv
+
+Now: 148000
+recv
+
+Now: 149000
+recv
+
+Now: 150000
+recv
+
+Now: 151000
+recv
+
+Now: 152000
+recv
+
+Now: 153000
+Arrival clearing new schedule:  [BlockId: 38
+TargetId: 5
+]
+send
+recv
+
+Now: 154000
+recv
+
+Now: 155000
+recv
+
+Now: 156000
+recv
+
+Now: 157000
+recv
+
+Now: 158000
+recv
+
+Now: 159000
+recv
+
+Now: 160000
+recv
+
+Now: 161000
+recv
+
+Now: 162000
+recv
+
+Now: 163000
+recv
+
+Now: 164000
+recv
+
+Now: 165000
+recv
+
+Now: 166000
+recv
+
+Now: 167000
+recv
+
+Now: 168000
+Buffer shuffling new schedule:  [BlockId: 9
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 169000
+recv
+
+Now: 170000
+recv
+
+Now: 171000
+recv
+
+Now: 172000
+recv
+
+Now: 173000
+recv
+
+Now: 174000
+recv
+
+Now: 175000
+recv
+
+Now: 176000
+recv
+
+Now: 177000
+Buffer shuffling new schedule:  [BlockId: 14
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 178000
+recv
+
+Now: 179000
+recv
+
+Now: 180000
+recv
+
+Now: 181000
+recv
+
+Now: 182000
+recv
+
+Now: 183000
+recv
+
+Now: 184000
+recv
+
+Now: 185000
+recv
+
+Now: 186000
+Arrival clearing new schedule:  [BlockId: 39
+TargetId: 5
+]
+send
+recv
+
+Now: 187000
+recv
+
+Now: 188000
+recv
+
+Now: 189000
+recv
+
+Now: 190000
+recv
+
+Now: 191000
+recv
+
+Now: 192000
+recv
+
+Now: 193000
+recv
+
+Now: 194000
+recv
+
+Now: 195000
+recv
+
+Now: 196000
+recv
+
+Now: 197000
+recv
+
+Now: 198000
+Buffer shuffling new schedule:  [BlockId: 17
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 199000
+recv
+
+Now: 200000
+recv
+
+Now: 201000
+recv
+
+Now: 202000
+recv
+
+Now: 203000
+recv
+
+Now: 204000
+recv
+
+Now: 205000
+recv
+
+Now: 206000
+Easy handover new schedule:  [BlockId: 18
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 207000
+recv
+
+Now: 208000
+recv
+
+Now: 209000
+recv
+
+Now: 210000
+recv
+
+Now: 211000
+recv
+
+Now: 212000
+recv
+
+Now: 213000
+recv
+
+Now: 214000
+recv
+
+Now: 215000
+recv
+
+Now: 216000
+recv
+
+Now: 217000
+recv
+
+Now: 218000
+recv
+
+Now: 219000
+Buffer shuffling new schedule:  [BlockId: 28
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 220000
+recv
+
+Now: 221000
+recv
+
+Now: 222000
+recv
+
+Now: 223000
+recv
+
+Now: 224000
+recv
+
+Now: 225000
+Edge case has schedule new schedule:  [BlockId: 28
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 226000
+Edge case has schedule new schedule:  [BlockId: 28
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 227000
+Edge case has schedule new schedule:  [BlockId: 28
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 228000
+Edge case has schedule new schedule:  [BlockId: 28
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 229000
+recv
+
+Now: 230000
+recv
+
+Now: 231000
+recv
+
+Now: 232000
+recv
+
+Now: 233000
+recv
+
+Now: 234000
+recv
+
+Now: 235000
+recv
+
+Now: 236000
+INVALID MOVE
+ [BlockId: 28
+SourceId: 5
+TargetId: 7
+, BlockId: 28
+SourceId: 5
+TargetId: 7
+, BlockId: 28
+SourceId: 5
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 40
+TargetId: 5
+]
+send
+recv
+
+Now: 237000
+recv
+
+Now: 238000
+recv
+
+Now: 239000
+recv
+
+Now: 240000
+recv
+
+Now: 241000
+recv
+
+Now: 242000
+recv
+
+Now: 243000
+recv
+
+Now: 244000
+recv
+
+Now: 245000
+recv
+
+Now: 246000
+recv
+
+Now: 247000
+recv
+
+Now: 248000
+recv
+
+Now: 249000
+Easy handover new schedule:  [BlockId: 30
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 250000
+recv
+
+Now: 251000
+recv
+
+Now: 252000
+recv
+
+Now: 253000
+recv
+
+Now: 254000
+recv
+
+Now: 255000
+recv
+
+Now: 256000
+recv
+
+Now: 257000
+recv
+
+Now: 258000
+recv
+
+Now: 259000
+recv
+
+Now: 260000
+recv
+
+Now: 261000
+recv
+
+Now: 262000
+Buffer shuffling new schedule:  [BlockId: 24
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 263000
+recv
+
+Now: 264000
+recv
+
+Now: 265000
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 266000
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 267000
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 268000
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 269000
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 270000
+recv
+
+Now: 271000
+recv
+
+Now: 272000
+recv
+
+Now: 273000
+recv
+
+Now: 274000
+recv
+
+Now: 275000
+recv
+
+Now: 276000
+recv
+
+Now: 277000
+recv
+
+Now: 278000
+recv
+
+Now: 279000
+recv
+
+Now: 280000
+recv
+
+Now: 281000
+recv
+
+Now: 282000
+INVALID MOVE
+ [BlockId: 24
+SourceId: 2
+TargetId: 7
+, BlockId: 24
+SourceId: 2
+TargetId: 7
+, BlockId: 24
+SourceId: 2
+TargetId: 7
+, BlockId: 24
+SourceId: 2
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 41
+TargetId: 2
+]
+send
+recv
+
+Now: 283000
+recv
+
+Now: 284000
+recv
+
+Now: 285000
+recv
+
+Now: 286000
+recv
+
+Now: 287000
+recv
+
+Now: 288000
+recv
+
+Now: 289000
+recv
+
+Now: 290000
+recv
+
+Now: 291000
+recv
+
+Now: 292000
+recv
+
+Now: 293000
+recv
+
+Now: 294000
+recv
+
+Now: 295000
+recv
+
+Now: 296000
+Buffer shuffling new schedule:  [BlockId: 3
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 297000
+recv
+
+Now: 298000
+recv
+
+Now: 299000
+recv
+
+Now: 300000
+recv
+
+Now: 301000
+recv
+
+Now: 302000
+recv
+
+Now: 303000
+recv
+
+Now: 304000
+recv
+
+Now: 305000
+Buffer shuffling new schedule:  [BlockId: 29
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 306000
+recv
+
+Now: 307000
+recv
+
+Now: 308000
+recv
+
+Now: 309000
+recv
+
+Now: 310000
+recv
+
+Now: 311000
+recv
+
+Now: 312000
+Easy handover new schedule:  [BlockId: 26
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 313000
+recv
+
+Now: 314000
+recv
+
+Now: 315000
+recv
+
+Now: 316000
+recv
+
+Now: 317000
+recv
+
+Now: 318000
+recv
+
+Now: 319000
+recv
+
+Now: 320000
+recv
+
+Now: 321000
+recv
+
+Now: 322000
+Arrival clearing new schedule:  [BlockId: 42
+TargetId: 2
+]
+send
+recv
+
+Now: 323000
+recv
+
+Now: 324000
+recv
+
+Now: 325000
+recv
+
+Now: 326000
+recv
+
+Now: 327000
+recv
+
+Now: 328000
+recv
+
+Now: 329000
+recv
+
+Now: 330000
+recv
+
+Now: 331000
+recv
+
+Now: 332000
+recv
+
+Now: 333000
+recv
+
+Now: 334000
+recv
+
+Now: 335000
+Buffer shuffling new schedule:  [BlockId: 37
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 336000
+recv
+
+Now: 337000
+recv
+
+Now: 338000
+recv
+
+Now: 339000
+recv
+
+Now: 340000
+recv
+
+Now: 341000
+recv
+
+Now: 342000
+Easy handover new schedule:  [BlockId: 20
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 343000
+recv
+
+Now: 344000
+recv
+
+Now: 345000
+recv
+
+Now: 346000
+recv
+
+Now: 347000
+recv
+
+Now: 348000
+recv
+
+Now: 349000
+recv
+
+Now: 350000
+recv
+
+Now: 351000
+recv
+
+Now: 352000
+recv
+
+Now: 353000
+Arrival clearing new schedule:  [BlockId: 43
+TargetId: 4
+]
+send
+recv
+
+Now: 354000
+recv
+
+Now: 355000
+recv
+
+Now: 356000
+recv
+
+Now: 357000
+recv
+
+Now: 358000
+recv
+
+Now: 359000
+recv
+
+Now: 360000
+recv
+
+Now: 361000
+recv
+
+Now: 362000
+recv
+
+Now: 363000
+recv
+
+Now: 364000
+recv
+
+Now: 365000
+recv
+
+Now: 366000
+recv
+
+Now: 367000
+Buffer shuffling new schedule:  [BlockId: 7
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 368000
+recv
+
+Now: 369000
+recv
+
+Now: 370000
+recv
+
+Now: 371000
+recv
+
+Now: 372000
+recv
+
+Now: 373000
+recv
+
+Now: 374000
+Arrival clearing new schedule:  [BlockId: 44
+TargetId: 4
+]
+send
+recv
+
+Now: 375000
+recv
+
+Now: 376000
+recv
+
+Now: 377000
+recv
+
+Now: 378000
+recv
+
+Now: 379000
+recv
+
+Now: 380000
+recv
+
+Now: 381000
+recv
+
+Now: 382000
+recv
+
+Now: 383000
+recv
+
+Now: 384000
+Buffer shuffling new schedule:  [BlockId: 10
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 385000
+recv
+
+Now: 386000
+recv
+
+Now: 387000
+recv
+
+Now: 388000
+recv
+
+Now: 389000
+recv
+
+Now: 390000
+recv
+
+Now: 391000
+Buffer shuffling new schedule:  [BlockId: 13
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 392000
+recv
+
+Now: 393000
+recv
+
+Now: 394000
+recv
+
+Now: 395000
+recv
+
+Now: 396000
+recv
+
+Now: 397000
+recv
+
+Now: 398000
+recv
+
+Now: 399000
+recv
+
+Now: 400000
+Easy handover new schedule:  [BlockId: 22
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 401000
+recv
+
+Now: 402000
+recv
+
+Now: 403000
+recv
+
+Now: 404000
+recv
+
+Now: 405000
+recv
+
+Now: 406000
+recv
+
+Now: 407000
+recv
+
+Now: 408000
+recv
+
+Now: 409000
+recv
+
+Now: 410000
+Arrival clearing new schedule:  [BlockId: 45
+TargetId: 4
+]
+send
+recv
+
+Now: 411000
+recv
+
+Now: 412000
+recv
+
+Now: 413000
+recv
+
+Now: 414000
+recv
+
+Now: 415000
+recv
+
+Now: 416000
+recv
+
+Now: 417000
+recv
+
+Now: 418000
+recv
+
+Now: 419000
+recv
+
+Now: 420000
+recv
+
+Now: 421000
+recv
+
+Now: 422000
+Easy handover new schedule:  [BlockId: 27
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 423000
+recv
+
+Now: 424000
+recv
+
+Now: 425000
+recv
+
+Now: 426000
+recv
+
+Now: 427000
+recv
+
+Now: 428000
+recv
+
+Now: 429000
+recv
+
+Now: 430000
+recv
+
+Now: 431000
+Buffer shuffling new schedule:  [BlockId: 31
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 432000
+recv
+
+Now: 433000
+recv
+
+Now: 434000
+recv
+
+Now: 435000
+recv
+
+Now: 436000
+recv
+
+Now: 437000
+recv
+
+Now: 438000
+recv
+
+Now: 439000
+Easy handover new schedule:  [BlockId: 32
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 440000
+recv
+
+Now: 441000
+recv
+
+Now: 442000
+recv
+
+Now: 443000
+recv
+
+Now: 444000
+recv
+
+Now: 445000
+recv
+
+Now: 446000
+recv
+
+Now: 447000
+recv
+
+Now: 448000
+recv
+
+Now: 449000
+recv
+
+Now: 450000
+recv
+
+Now: 451000
+Arrival clearing new schedule:  [BlockId: 46
+TargetId: 6
+]
+send
+recv
+
+Now: 452000
+recv
+
+Now: 453000
+recv
+
+Now: 454000
+recv
+
+Now: 455000
+recv
+
+Now: 456000
+recv
+
+Now: 457000
+recv
+
+Now: 458000
+recv
+
+Now: 459000
+recv
+
+Now: 460000
+recv
+
+Now: 461000
+recv
+
+Now: 462000
+recv
+
+Now: 463000
+recv
+
+Now: 464000
+recv
+
+Now: 465000
+recv
+
+Now: 466000
+Buffer shuffling new schedule:  [BlockId: 35
+SourceId: 3
+TargetId: 6
+]
+send
+recv
+
+Now: 467000
+recv
+
+Now: 468000
+recv
+
+Now: 469000
+recv
+
+Now: 470000
+recv
+
+Now: 471000
+recv
+
+Now: 472000
+recv
+
+Now: 473000
+recv
+
+Now: 474000
+recv
+
+Now: 475000
+Buffer shuffling new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 6
+]
+send
+recv
+
+Now: 476000
+recv
+
+Now: 477000
+recv
+
+Now: 478000
+recv
+
+Now: 479000
+recv
+
+Now: 480000
+recv
+
+Now: 481000
+recv
+
+Now: 482000
+recv
+
+Now: 483000
+Easy handover new schedule:  [BlockId: 11
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 484000
+recv
+
+Now: 485000
+recv
+
+Now: 486000
+recv
+
+Now: 487000
+recv
+
+Now: 488000
+recv
+
+Now: 489000
+recv
+
+Now: 490000
+recv
+
+Now: 491000
+recv
+
+Now: 492000
+recv
+
+Now: 493000
+recv
+
+Now: 494000
+recv
+
+Now: 495000
+Arrival clearing new schedule:  [BlockId: 47
+TargetId: 5
+]
+send
+recv
+
+Now: 496000
+recv
+
+Now: 497000
+recv
+
+Now: 498000
+recv
+
+Now: 499000
+recv
+
+Now: 500000
+recv
+
+Now: 501000
+recv
+
+Now: 502000
+recv
+
+Now: 503000
+recv
+
+Now: 504000
+recv
+
+Now: 505000
+recv
+
+Now: 506000
+recv
+
+Now: 507000
+recv
+
+Now: 508000
+Easy handover new schedule:  [BlockId: 19
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 509000
+recv
+
+Now: 510000
+recv
+
+Now: 511000
+recv
+
+Now: 512000
+recv
+
+Now: 513000
+recv
+
+Now: 514000
+recv
+
+Now: 515000
+recv
+
+Now: 516000
+recv
+
+Now: 517000
+recv
+
+Now: 518000
+recv
+
+Now: 519000
+recv
+
+Now: 520000
+recv
+
+Now: 521000
+recv
+
+Now: 522000
+Buffer shuffling case source == destination
+New destination id: 3
+Buffer shuffling new schedule:  [BlockId: 21
+SourceId: 6
+TargetId: 3
+]
+send
+recv
+
+Now: 523000
+recv
+
+Now: 524000
+recv
+
+Now: 525000
+Edge case has schedule new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 526000
+Edge case has schedule new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 527000
+Edge case has schedule new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 528000
+Edge case has schedule new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 529000
+recv
+
+Now: 530000
+recv
+
+Now: 531000
+recv
+
+Now: 532000
+recv
+
+Now: 533000
+recv
+
+Now: 534000
+recv
+
+Now: 535000
+recv
+
+Now: 536000
+recv
+
+Now: 537000
+recv
+
+Now: 538000
+recv
+
+Now: 539000
+INVALID MOVE
+ [BlockId: 21
+SourceId: 3
+TargetId: 7
+, BlockId: 21
+SourceId: 3
+TargetId: 7
+, BlockId: 21
+SourceId: 3
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 48
+TargetId: 6
+]
+send
+recv
+
+Now: 540000
+recv
+
+Now: 541000
+recv
+
+Now: 542000
+recv
+
+Now: 543000
+recv
+
+Now: 544000
+recv
+
+Now: 545000
+recv
+
+Now: 546000
+recv
+
+Now: 547000
+recv
+
+Now: 548000
+recv
+
+Now: 549000
+recv
+
+Now: 550000
+recv
+
+Now: 551000
+recv
+
+Now: 552000
+recv
+
+Now: 553000
+recv
+
+Now: 554000
+recv
+
+Now: 555000
+Buffer shuffling new schedule:  [BlockId: 47
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 556000
+recv
+
+Now: 557000
+recv
+
+Now: 558000
+recv
+
+Now: 559000
+recv
+
+Now: 560000
+Buffer shuffling new schedule:  [BlockId: 40
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 561000
+recv
+
+Now: 562000
+recv
+
+Now: 563000
+recv
+
+Now: 564000
+recv
+
+Now: 565000
+Easy handover new schedule:  [BlockId: 17
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 566000
+recv
+
+Now: 567000
+recv
+
+Now: 568000
+recv
+
+Now: 569000
+recv
+
+Now: 570000
+recv
+
+Now: 571000
+recv
+
+Now: 572000
+recv
+
+Now: 573000
+Arrival clearing new schedule:  [BlockId: 49
+TargetId: 6
+]
+send
+recv
+
+Now: 574000
+recv
+
+Now: 575000
+recv
+
+Now: 576000
+recv
+
+Now: 577000
+recv
+
+Now: 578000
+recv
+
+Now: 579000
+recv
+
+Now: 580000
+recv
+
+Now: 581000
+recv
+
+Now: 582000
+recv
+
+Now: 583000
+recv
+
+Now: 584000
+recv
+
+Now: 585000
+recv
+
+Now: 586000
+recv
+
+Now: 587000
+Buffer shuffling new schedule:  [BlockId: 39
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 588000
+recv
+
+Now: 589000
+recv
+
+Now: 590000
+recv
+
+Now: 591000
+recv
+
+Now: 592000
+recv
+
+Now: 593000
+Easy handover new schedule:  [BlockId: 31
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 594000
+recv
+
+Now: 595000
+recv
+
+Now: 596000
+recv
+
+Now: 597000
+recv
+
+Now: 598000
+recv
+
+Now: 599000
+recv
+
+Now: 600000
+recv
+
+Now: 601000
+recv
+
+Now: 602000
+recv
+
+Now: 603000
+recv
+
+Now: 604000
+Buffer shuffling new schedule:  [BlockId: 14
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 605000
+recv
+
+Now: 606000
+recv
+
+Now: 607000
+Edge case has schedule new schedule:  [BlockId: 14
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 608000
+Edge case has schedule new schedule:  [BlockId: 14
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 609000
+recv
+
+Now: 610000
+recv
+
+Now: 611000
+recv
+
+Now: 612000
+recv
+
+Now: 613000
+recv
+
+Now: 614000
+recv
+
+Now: 615000
+INVALID MOVE
+ [BlockId: 14
+SourceId: 6
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 50
+TargetId: 5
+]
+send
+recv
+
+Now: 616000
+recv
+
+Now: 617000
+recv
+
+Now: 618000
+recv
+
+Now: 619000
+recv
+
+Now: 620000
+recv
+
+Now: 621000
+recv
+
+Now: 622000
+recv
+
+Now: 623000
+recv
+
+Now: 624000
+recv
+
+Now: 625000
+recv
+
+Now: 626000
+recv
+
+Now: 627000
+recv
+
+Now: 628000
+recv
+
+Now: 629000
+Buffer shuffling new schedule:  [BlockId: 4
+SourceId: 3
+TargetId: 5
+]
+send
+recv
+
+Now: 630000
+recv
+
+Now: 631000
+recv
+
+Now: 632000
+recv
+
+Now: 633000
+recv
+
+Now: 634000
+recv
+
+Now: 635000
+recv
+
+Now: 636000
+recv
+
+Now: 637000
+Buffer shuffling new schedule:  [BlockId: 1
+SourceId: 3
+TargetId: 5
+]
+send
+recv
+
+Now: 638000
+recv
+
+Now: 639000
+recv
+
+Now: 640000
+recv
+
+Now: 641000
+recv
+
+Now: 642000
+recv
+
+Now: 643000
+recv
+
+Now: 644000
+recv
+
+Now: 645000
+Easy handover new schedule:  [BlockId: 16
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 646000
+recv
+
+Now: 647000
+recv
+
+Now: 648000
+recv
+
+Now: 649000
+recv
+
+Now: 650000
+recv
+
+Now: 651000
+recv
+
+Now: 652000
+recv
+
+Now: 653000
+recv
+
+Now: 654000
+recv
+
+Now: 655000
+recv
+
+Now: 656000
+recv
+
+Now: 657000
+Arrival clearing new schedule:  [BlockId: 51
+TargetId: 6
+]
+send
+recv
+
+Now: 658000
+recv
+
+Now: 659000
+recv
+
+Now: 660000
+recv
+
+Now: 661000
+recv
+
+Now: 662000
+recv
+
+Now: 663000
+recv
+
+Now: 664000
+recv
+
+Now: 665000
+recv
+
+Now: 666000
+recv
+
+Now: 667000
+recv
+
+Now: 668000
+recv
+
+Now: 669000
+Easy handover new schedule:  [BlockId: 23
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 670000
+recv
+
+Now: 671000
+recv
+
+Now: 672000
+recv
+
+Now: 673000
+recv
+
+Now: 674000
+recv
+
+Now: 675000
+recv
+
+Now: 676000
+recv
+
+Now: 677000
+recv
+
+Now: 678000
+recv
+
+Now: 679000
+recv
+
+Now: 680000
+recv
+
+Now: 681000
+Buffer shuffling new schedule:  [BlockId: 5
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 682000
+recv
+
+Now: 683000
+recv
+
+Now: 684000
+recv
+
+Now: 685000
+recv
+
+Now: 686000
+recv
+
+Now: 687000
+recv
+
+Now: 688000
+recv
+
+Now: 689000
+recv
+
+Now: 690000
+recv
+
+Now: 691000
+recv
+
+Now: 692000
+recv
+
+Now: 693000
+recv
+
+Now: 694000
+Easy handover new schedule:  [BlockId: 13
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 695000
+recv
+
+Now: 696000
+recv
+
+Now: 697000
+recv
+
+Now: 698000
+recv
+
+Now: 699000
+recv
+
+Now: 700000
+recv
+
+Now: 701000
+recv
+
+Now: 702000
+recv
+
+Now: 703000
+recv
+
+Now: 704000
+Arrival clearing new schedule:  [BlockId: 52
+TargetId: 3
+]
+send
+recv
+
+Now: 705000
+recv
+
+Now: 706000
+recv
+
+Now: 707000
+recv
+
+Now: 708000
+recv
+
+Now: 709000
+recv
+
+Now: 710000
+recv
+
+Now: 711000
+recv
+
+Now: 712000
+recv
+
+Now: 713000
+recv
+
+Now: 714000
+recv
+
+Now: 715000
+recv
+
+Now: 716000
+recv
+
+Now: 717000
+Buffer shuffling new schedule:  [BlockId: 8
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 718000
+recv
+
+Now: 719000
+recv
+
+Now: 720000
+recv
+
+Now: 721000
+recv
+
+Now: 722000
+recv
+
+Now: 723000
+recv
+
+Now: 724000
+recv
+
+Now: 725000
+recv
+
+Now: 726000
+Easy handover new schedule:  [BlockId: 12
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 727000
+recv
+
+Now: 728000
+recv
+
+Now: 729000
+recv
+
+Now: 730000
+recv
+
+Now: 731000
+recv
+
+Now: 732000
+recv
+
+Now: 733000
+recv
+
+Now: 734000
+recv
+
+Now: 735000
+recv
+
+Now: 736000
+recv
+
+Now: 737000
+recv
+
+Now: 738000
+recv
+
+Now: 739000
+recv
+
+Now: 740000
+Arrival clearing new schedule:  [BlockId: 53
+TargetId: 1
+]
+send
+recv
+
+Now: 741000
+recv
+
+Now: 742000
+recv
+
+Now: 743000
+recv
+
+Now: 744000
+recv
+
+Now: 745000
+recv
+
+Now: 746000
+recv
+
+Now: 747000
+recv
+
+Now: 748000
+recv
+
+Now: 749000
+recv
+
+Now: 750000
+recv
+
+Now: 751000
+recv
+
+Now: 752000
+recv
+
+Now: 753000
+Arrival clearing new schedule:  [BlockId: 54
+TargetId: 1
+]
+send
+recv
+
+Now: 754000
+recv
+
+Now: 755000
+recv
+
+Now: 756000
+recv
+
+Now: 757000
+recv
+
+Now: 758000
+recv
+
+Now: 759000
+recv
+
+Now: 760000
+recv
+
+Now: 761000
+recv
+
+Now: 762000
+Easy handover new schedule:  [BlockId: 8
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 763000
+recv
+
+Now: 764000
+recv
+
+Now: 765000
+recv
+
+Now: 766000
+recv
+
+Now: 767000
+recv
+
+Now: 768000
+recv
+
+Now: 769000
+recv
+
+Now: 770000
+recv
+
+Now: 771000
+recv
+
+Now: 772000
+recv
+
+Now: 773000
+recv
+
+Now: 774000
+Arrival clearing new schedule:  [BlockId: 55
+TargetId: 1
+]
+send
+recv
+
+Now: 775000
+recv
+
+Now: 776000
+recv
+
+Now: 777000
+recv
+
+Now: 778000
+recv
+
+Now: 779000
+recv
+
+Now: 780000
+recv
+
+Now: 781000
+recv
+
+Now: 782000
+recv
+
+Now: 783000
+recv
+
+Now: 784000
+recv
+
+Now: 785000
+recv
+
+Now: 786000
+Buffer shuffling new schedule:  [BlockId: 45
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 787000
+recv
+
+Now: 788000
+recv
+
+Now: 789000
+recv
+
+Now: 790000
+recv
+
+Now: 791000
+recv
+
+Now: 792000
+recv
+
+Now: 793000
+recv
+
+Now: 794000
+Easy handover new schedule:  [BlockId: 10
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 795000
+recv
+
+Now: 796000
+recv
+
+Now: 797000
+recv
+
+Now: 798000
+recv
+
+Now: 799000
+recv
+
+Now: 800000
+recv
+
+Now: 801000
+recv
+
+Now: 802000
+recv
+
+Now: 803000
+recv
+
+Now: 804000
+Arrival clearing new schedule:  [BlockId: 56
+TargetId: 3
+]
+send
+recv
+
+Now: 805000
+recv
+
+Now: 806000
+recv
+
+Now: 807000
+recv
+
+Now: 808000
+recv
+
+Now: 809000
+recv
+
+Now: 810000
+recv
+
+Now: 811000
+recv
+
+Now: 812000
+recv
+
+Now: 813000
+recv
+
+Now: 814000
+recv
+
+Now: 815000
+recv
+
+Now: 816000
+recv
+
+Now: 817000
+Buffer shuffling new schedule:  [BlockId: 44
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 818000
+recv
+
+Now: 819000
+recv
+
+Now: 820000
+recv
+
+Now: 821000
+recv
+
+Now: 822000
+recv
+
+Now: 823000
+recv
+
+Now: 824000
+Arrival clearing new schedule:  [BlockId: 57
+TargetId: 3
+]
+send
+recv
+
+Now: 825000
+recv
+
+Now: 826000
+recv
+
+Now: 827000
+recv
+
+Now: 828000
+recv
+
+Now: 829000
+recv
+
+Now: 830000
+recv
+
+Now: 831000
+recv
+
+Now: 832000
+recv
+
+Now: 833000
+Buffer shuffling new schedule:  [BlockId: 43
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 834000
+recv
+
+Now: 835000
+recv
+
+Now: 836000
+recv
+
+Now: 837000
+recv
+
+Now: 838000
+recv
+
+Now: 839000
+recv
+
+Now: 840000
+Easy handover new schedule:  [BlockId: 15
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 841000
+recv
+
+Now: 842000
+recv
+
+Now: 843000
+recv
+
+Now: 844000
+recv
+
+Now: 845000
+recv
+
+Now: 846000
+recv
+
+Now: 847000
+recv
+
+Now: 848000
+recv
+
+Now: 849000
+recv
+
+Now: 850000
+Arrival clearing new schedule:  [BlockId: 58
+TargetId: 1
+]
+send
+recv
+
+Now: 851000
+recv
+
+Now: 852000
+recv
+
+Now: 853000
+recv
+
+Now: 854000
+recv
+
+Now: 855000
+recv
+
+Now: 856000
+recv
+
+Now: 857000
+recv
+
+Now: 858000
+recv
+
+Now: 859000
+recv
+
+Now: 860000
+recv
+
+Now: 861000
+Buffer shuffling new schedule:  [BlockId: 7
+SourceId: 2
+TargetId: 1
+]
+send
+recv
+
+Now: 862000
+recv
+
+Now: 863000
+recv
+
+Now: 864000
+recv
+
+Now: 865000
+recv
+
+Now: 866000
+Buffer shuffling new schedule:  [BlockId: 37
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 867000
+recv
+
+Now: 868000
+recv
+
+Now: 869000
+recv
+
+Now: 870000
+recv
+
+Now: 871000
+recv
+
+Now: 872000
+recv
+
+Now: 873000
+recv
+
+Now: 874000
+Arrival clearing new schedule:  [BlockId: 59
+TargetId: 3
+]
+send
+recv
+
+Now: 875000
+recv
+
+Now: 876000
+recv
+
+Now: 877000
+recv
+
+Now: 878000
+recv
+
+Now: 879000
+recv
+
+Now: 880000
+recv
+
+Now: 881000
+recv
+
+Now: 882000
+recv
+
+Now: 883000
+recv
+
+Now: 884000
+Buffer shuffling new schedule:  [BlockId: 42
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 885000
+recv
+
+Now: 886000
+recv
+
+Now: 887000
+recv
+
+Now: 888000
+recv
+
+Now: 889000
+recv
+
+Now: 890000
+recv
+
+Now: 891000
+recv
+
+Now: 892000
+Easy handover new schedule:  [BlockId: 29
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 893000
+recv
+
+Now: 894000
+recv
+
+Now: 895000
+recv
+
+Now: 896000
+recv
+
+Now: 897000
+recv
+
+Now: 898000
+recv
+
+Now: 899000
+recv
+
+Now: 900000
+recv
+
+Now: 901000
+recv
+
+Now: 902000
+recv
+
+Now: 903000
+recv
+
+Now: 904000
+Buffer shuffling new schedule:  [BlockId: 1
+SourceId: 5
+TargetId: 2
+]
+send
+recv
+
+Now: 905000
+recv
+
+Now: 906000
+recv
+
+Now: 907000
+recv
+
+Now: 908000
+recv
+
+Now: 909000
+recv
+
+Now: 910000
+recv
+
+Now: 911000
+recv
+
+Now: 912000
+recv
+
+Now: 913000
+Buffer shuffling new schedule:  [BlockId: 4
+SourceId: 5
+TargetId: 2
+]
+send
+recv
+
+Now: 914000
+recv
+
+Now: 915000
+recv
+
+Now: 916000
+recv
+
+Now: 917000
+recv
+
+Now: 918000
+recv
+
+Now: 919000
+recv
+
+Now: 920000
+recv
+
+Now: 921000
+recv
+
+Now: 922000
+Arrival clearing new schedule:  [BlockId: 60
+TargetId: 2
+]
+send
+recv
+
+Now: 923000
+recv
+
+Now: 924000
+recv
+
+Now: 925000
+recv
+
+Now: 926000
+recv
+
+Now: 927000
+recv
+
+Now: 928000
+recv
+
+Now: 929000
+recv
+
+Now: 930000
+recv
+
+Now: 931000
+Buffer shuffling new schedule:  [BlockId: 50
+SourceId: 5
+TargetId: 2
+]
+send
+recv
+
+Now: 932000
+recv
+
+Now: 933000
+recv
+
+Now: 934000
+recv
+
+Now: 935000
+recv
+
+Now: 936000
+recv
+
+Now: 937000
+recv
+
+Now: 938000
+recv
+
+Now: 939000
+recv
+
+Now: 940000
+Easy handover new schedule:  [BlockId: 9
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 941000
+recv
+
+Now: 942000
+recv
+
+Now: 943000
+recv
+
+Now: 944000
+recv
+
+Now: 945000
+recv
+
+Now: 946000
+recv
+
+Now: 947000
+recv
+
+Now: 948000
+recv
+
+Now: 949000
+recv
+
+Now: 950000
+recv
+
+Now: 951000
+Arrival clearing new schedule:  [BlockId: 61
+TargetId: 3
+]
+send
+recv
+
+Now: 952000
+recv
+
+Now: 953000
+recv
+
+Now: 954000
+recv
+
+Now: 955000
+recv
+
+Now: 956000
+recv
+
+Now: 957000
+recv
+
+Now: 958000
+recv
+
+Now: 959000
+recv
+
+Now: 960000
+recv
+
+Now: 961000
+recv
+
+Now: 962000
+Buffer shuffling new schedule:  [BlockId: 38
+SourceId: 5
+TargetId: 1
+]
+send
+recv
+
+Now: 963000
+recv
+
+Now: 964000
+recv
+
+Now: 965000
+recv
+
+Now: 966000
+recv
+
+Now: 967000
+recv
+
+Now: 968000
+recv
+
+Now: 969000
+recv
+
+Now: 970000
+Easy handover new schedule:  [BlockId: 2
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 971000
+recv
+
+Now: 972000
+recv
+
+Now: 973000
+recv
+
+Now: 974000
+recv
+
+Now: 975000
+recv
+
+Now: 976000
+recv
+
+Now: 977000
+recv
+
+Now: 978000
+recv
+
+Now: 979000
+recv
+
+Now: 980000
+recv
+
+Now: 981000
+Arrival clearing new schedule:  [BlockId: 62
+TargetId: 5
+]
+send
+recv
+
+Now: 982000
+recv
+
+Now: 983000
+recv
+
+Now: 984000
+recv
+
+Now: 985000
+recv
+
+Now: 986000
+recv
+
+Now: 987000
+recv
+
+Now: 988000
+recv
+
+Now: 989000
+recv
+
+Now: 990000
+recv
+
+Now: 991000
+recv
+
+Now: 992000
+recv
+
+Now: 993000
+recv
+
+Now: 994000
+recv
+
+Now: 995000
+recv
+
+Now: 996000
+recv
+
+Now: 997000
+Buffer shuffling new schedule:  [BlockId: 42
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 998000
+recv
+
+Now: 999000
+recv
+
+Now: 1000000
+recv
+
+Now: 1001000
+recv
+
+Now: 1002000
+recv
+
+Now: 1003000
+recv
+
+Now: 1004000
+recv
+
+Now: 1005000
+Buffer shuffling new schedule:  [BlockId: 37
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 1006000
+recv
+
+Now: 1007000
+recv
+
+Now: 1008000
+recv
+
+Now: 1009000
+recv
+
+Now: 1010000
+recv
+
+Now: 1011000
+recv
+
+Now: 1012000
+recv
+
+Now: 1013000
+Easy handover new schedule:  [BlockId: 6
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 1014000
+recv
+
+Now: 1015000
+recv
+
+Now: 1016000
+recv
+
+Now: 1017000
+recv
+
+Now: 1018000
+recv
+
+Now: 1019000
+recv
+
+Now: 1020000
+recv
+
+Now: 1021000
+recv
+
+Now: 1022000
+recv
+
+Now: 1023000
+recv
+
+Now: 1024000
+Arrival clearing new schedule:  [BlockId: 63
+TargetId: 5
+]
+send
+recv
+
+Now: 1025000
+recv
+
+Now: 1026000
+recv
+
+Now: 1027000
+recv
+
+Now: 1028000
+recv
+
+Now: 1029000
+recv
+
+Now: 1030000
+recv
+
+Now: 1031000
+recv
+
+Now: 1032000
+recv
+
+Now: 1033000
+recv
+
+Now: 1034000
+recv
+
+Now: 1035000
+recv
+
+Now: 1036000
+recv
+
+Now: 1037000
+recv
+
+Now: 1038000
+TODO buffer sorting ...
+recv
+
+Now: 1039000
+TODO buffer sorting ...
+recv
+
+Now: 1040000
+TODO buffer sorting ...
+recv
+
+Now: 1041000
+TODO buffer sorting ...
+recv
+
+Now: 1042000
+TODO buffer sorting ...
+recv
+
+Now: 1043000
+TODO buffer sorting ...
+recv
+
+Now: 1044000
+Arrival clearing new schedule:  [BlockId: 64
+TargetId: 5
+]
+send
+recv
+
+Now: 1045000
+recv
+
+Now: 1046000
+recv
+
+Now: 1047000
+recv
+
+Now: 1048000
+recv
+
+Now: 1049000
+recv
+
+Now: 1050000
+recv
+
+Now: 1051000
+recv
+
+Now: 1052000
+recv
+
+Now: 1053000
+recv
+
+Now: 1054000
+recv
+
+Now: 1055000
+recv
+
+Now: 1056000
+recv
+
+Now: 1057000
+Buffer shuffling new schedule:  [BlockId: 64
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 1058000
+recv
+
+Now: 1059000
+recv
+
+Now: 1060000
+recv
+
+Now: 1061000
+recv
+
+Now: 1062000
+recv
+
+Now: 1063000
+recv
+
+Now: 1064000
+Buffer shuffling new schedule:  [BlockId: 63
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 1065000
+recv
+
+Now: 1066000
+recv
+
+Now: 1067000
+recv
+
+Now: 1068000
+recv
+
+Now: 1069000
+recv
+
+Now: 1070000
+recv
+
+Now: 1071000
+recv
+
+Now: 1072000
+Easy handover new schedule:  [BlockId: 37
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 1073000
+recv
+
+Now: 1074000
+recv
+
+Now: 1075000
+recv
+
+Now: 1076000
+recv
+
+Now: 1077000
+recv
+
+Now: 1078000
+recv
+
+Now: 1079000
+recv
+
+Now: 1080000
+recv
+
+Now: 1081000
+recv
+
+Now: 1082000
+Arrival clearing new schedule:  [BlockId: 65
+TargetId: 5
+]
+send
+recv
+
+Now: 1083000
+recv
+
+Now: 1084000
+recv
+
+Now: 1085000
+recv
+
+Now: 1086000
+recv
+
+Now: 1087000
+recv
+
+Now: 1088000
+recv
+
+Now: 1089000
+recv
+
+Now: 1090000
+recv
+
+Now: 1091000
+recv
+
+Now: 1092000
+recv
+
+Now: 1093000
+recv
+
+Now: 1094000
+recv
+
+Now: 1095000
+recv
+
+Now: 1096000
+recv
+
+Now: 1097000
+Buffer shuffling new schedule:  [BlockId: 50
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1098000
+recv
+
+Now: 1099000
+recv
+
+Now: 1100000
+recv
+
+Now: 1101000
+recv
+
+Now: 1102000
+recv
+
+Now: 1103000
+recv
+
+Now: 1104000
+recv
+
+Now: 1105000
+Buffer shuffling new schedule:  [BlockId: 60
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 1106000
+recv
+
+Now: 1107000
+recv
+
+Now: 1108000
+recv
+
+Now: 1109000
+recv
+
+Now: 1110000
+recv
+
+Now: 1111000
+recv
+
+Now: 1112000
+recv
+
+Now: 1113000
+recv
+
+Now: 1114000
+Arrival clearing new schedule:  [BlockId: 66
+TargetId: 5
+]
+send
+recv
+
+Now: 1115000
+recv
+
+Now: 1116000
+recv
+
+Now: 1117000
+recv
+
+Now: 1118000
+recv
+
+Now: 1119000
+recv
+
+Now: 1120000
+recv
+
+Now: 1121000
+recv
+
+Now: 1122000
+recv
+
+Now: 1123000
+recv
+
+Now: 1124000
+recv
+
+Now: 1125000
+recv
+
+Now: 1126000
+Buffer shuffling new schedule:  [BlockId: 4
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 1127000
+recv
+
+Now: 1128000
+recv
+
+Now: 1129000
+recv
+
+Now: 1130000
+recv
+
+Now: 1131000
+recv
+
+Now: 1132000
+recv
+
+Now: 1133000
+recv
+
+Now: 1134000
+recv
+
+Now: 1135000
+Buffer shuffling new schedule:  [BlockId: 1
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1136000
+recv
+
+Now: 1137000
+recv
+
+Now: 1138000
+recv
+
+Now: 1139000
+recv
+
+Now: 1140000
+recv
+
+Now: 1141000
+recv
+
+Now: 1142000
+recv
+
+Now: 1143000
+recv
+
+Now: 1144000
+Easy handover new schedule:  [BlockId: 3
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1145000
+recv
+
+Now: 1146000
+recv
+
+Now: 1147000
+recv
+
+Now: 1148000
+recv
+
+Now: 1149000
+recv
+
+Now: 1150000
+recv
+
+Now: 1151000
+recv
+
+Now: 1152000
+recv
+
+Now: 1153000
+recv
+
+Now: 1154000
+recv
+
+Now: 1155000
+recv
+
+Now: 1156000
+recv
+
+Now: 1157000
+Arrival clearing new schedule:  [BlockId: 67
+TargetId: 2
+]
+send
+recv
+
+Now: 1158000
+recv
+
+Now: 1159000
+recv
+
+Now: 1160000
+recv
+
+Now: 1161000
+recv
+
+Now: 1162000
+recv
+
+Now: 1163000
+recv
+
+Now: 1164000
+recv
+
+Now: 1165000
+recv
+
+Now: 1166000
+recv
+
+Now: 1167000
+recv
+
+Now: 1168000
+recv
+
+Now: 1169000
+recv
+
+Now: 1170000
+Easy handover new schedule:  [BlockId: 38
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1171000
+recv
+
+Now: 1172000
+recv
+
+Now: 1173000
+recv
+
+Now: 1174000
+recv
+
+Now: 1175000
+recv
+
+Now: 1176000
+recv
+
+Now: 1177000
+recv
+
+Now: 1178000
+recv
+
+Now: 1179000
+Buffer shuffling new schedule:  [BlockId: 7
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 1180000
+recv
+
+Now: 1181000
+recv
+
+Now: 1182000
+recv
+
+Now: 1183000
+Edge case has schedule new schedule:  [BlockId: 7
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1184000
+Edge case has schedule new schedule:  [BlockId: 7
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1185000
+Edge case has schedule new schedule:  [BlockId: 7
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1186000
+recv
+
+Now: 1187000
+recv
+
+Now: 1188000
+recv
+
+Now: 1189000
+recv
+
+Now: 1190000
+recv
+
+Now: 1191000
+recv
+
+Now: 1192000
+recv
+
+Now: 1193000
+recv
+
+Now: 1194000
+recv
+
+Now: 1195000
+recv
+
+Now: 1196000
+recv
+
+Now: 1197000
+INVALID MOVE
+ [BlockId: 7
+SourceId: 2
+TargetId: 7
+, BlockId: 7
+SourceId: 2
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 68
+TargetId: 2
+]
+send
+recv
+
+Now: 1198000
+recv
+
+Now: 1199000
+recv
+
+Now: 1200000
+recv
+
+Now: 1201000
+recv
+
+Now: 1202000
+recv
+
+Now: 1203000
+recv
+
+Now: 1204000
+recv
+
+Now: 1205000
+recv
+
+Now: 1206000
+recv
+
+Now: 1207000
+recv
+
+Now: 1208000
+recv
+
+Now: 1209000
+recv
+
+Now: 1210000
+Buffer shuffling new schedule:  [BlockId: 51
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 1211000
+recv
+
+Now: 1212000
+recv
+
+Now: 1213000
+recv
+
+Now: 1214000
+recv
+
+Now: 1215000
+recv
+
+Now: 1216000
+recv
+
+Now: 1217000
+recv
+
+Now: 1218000
+recv
+
+Now: 1219000
+Buffer shuffling new schedule:  [BlockId: 39
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 1220000
+recv
+
+Now: 1221000
+recv
+
+Now: 1222000
+recv
+
+Now: 1223000
+recv
+
+Now: 1224000
+recv
+
+Now: 1225000
+recv
+
+Now: 1226000
+recv
+
+Now: 1227000
+recv
+
+Now: 1228000
+recv
+
+Now: 1229000
+Arrival clearing new schedule:  [BlockId: 69
+TargetId: 2
+]
+send
+recv
+
+Now: 1230000
+recv
+
+Now: 1231000
+recv
+
+Now: 1232000
+recv
+
+Now: 1233000
+recv
+
+Now: 1234000
+recv
+
+Now: 1235000
+recv
+
+Now: 1236000
+recv
+
+Now: 1237000
+recv
+
+Now: 1238000
+Buffer shuffling new schedule:  [BlockId: 49
+SourceId: 6
+TargetId: 5
+]
+send
+recv
+
+Now: 1239000
+recv
+
+Now: 1240000
+recv
+
+Now: 1241000
+recv
+
+Now: 1242000
+recv
+
+Now: 1243000
+recv
+
+Now: 1244000
+recv
+
+Now: 1245000
+Easy handover new schedule:  [BlockId: 40
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 1246000
+recv
+
+Now: 1247000
+recv
+
+Now: 1248000
+recv
+
+Now: 1249000
+recv
+
+Now: 1250000
+recv
+
+Now: 1251000
+recv
+
+Now: 1252000
+recv
+
+Now: 1253000
+Buffer shuffling new schedule:  [BlockId: 1
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 1254000
+recv
+
+Now: 1255000
+recv
+
+Now: 1256000
+Edge case has schedule new schedule:  [BlockId: 1
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1257000
+Edge case has schedule new schedule:  [BlockId: 1
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1258000
+Edge case has schedule new schedule:  [BlockId: 1
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1259000
+Edge case has schedule new schedule:  [BlockId: 1
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1260000
+recv
+
+Now: 1261000
+recv
+
+Now: 1262000
+recv
+
+Now: 1263000
+recv
+
+Now: 1264000
+recv
+
+Now: 1265000
+recv
+
+Now: 1266000
+recv
+
+Now: 1267000
+recv
+
+Now: 1268000
+recv
+
+Now: 1269000
+INVALID MOVE
+ [BlockId: 1
+SourceId: 1
+TargetId: 7
+, BlockId: 1
+SourceId: 1
+TargetId: 7
+, BlockId: 1
+SourceId: 1
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 70
+TargetId: 1
+]
+send
+recv
+
+Now: 1270000
+recv
+
+Now: 1271000
+recv
+
+Now: 1272000
+recv
+
+Now: 1273000
+recv
+
+Now: 1274000
+recv
+
+Now: 1275000
+recv
+
+Now: 1276000
+recv
+
+Now: 1277000
+recv
+
+Now: 1278000
+Buffer shuffling new schedule:  [BlockId: 47
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 1279000
+recv
+
+Now: 1280000
+recv
+
+Now: 1281000
+recv
+
+Now: 1282000
+recv
+
+Now: 1283000
+recv
+
+Now: 1284000
+recv
+
+Now: 1285000
+recv
+
+Now: 1286000
+recv
+
+Now: 1287000
+recv
+
+Now: 1288000
+recv
+
+Now: 1289000
+Buffer shuffling new schedule:  [BlockId: 48
+SourceId: 6
+TargetId: 5
+]
+send
+recv
+
+Now: 1290000
+recv
+
+Now: 1291000
+recv
+
+Now: 1292000
+recv
+
+Now: 1293000
+recv
+
+Now: 1294000
+recv
+
+Now: 1295000
+recv
+
+Now: 1296000
+recv
+
+Now: 1297000
+recv
+
+Now: 1298000
+Easy handover new schedule:  [BlockId: 35
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 1299000
+recv
+
+Now: 1300000
+recv
+
+Now: 1301000
+recv
+
+Now: 1302000
+recv
+
+Now: 1303000
+recv
+
+Now: 1304000
+recv
+
+Now: 1305000
+recv
+
+Now: 1306000
+recv
+
+Now: 1307000
+Buffer shuffling new schedule:  [BlockId: 48
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 1308000
+recv
+
+Now: 1309000
+recv
+
+Now: 1310000
+recv
+
+Now: 1311000
+recv
+
+Now: 1312000
+recv
+
+Now: 1313000
+recv
+
+Now: 1314000
+Buffer shuffling new schedule:  [BlockId: 49
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 1315000
+recv
+
+Now: 1316000
+recv
+
+Now: 1317000
+recv
+
+Now: 1318000
+recv
+
+Now: 1319000
+recv
+
+Now: 1320000
+Easy handover new schedule:  [BlockId: 4
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 1321000
+recv
+
+Now: 1322000
+recv
+
+Now: 1323000
+recv
+
+Now: 1324000
+recv
+
+Now: 1325000
+recv
+
+Now: 1326000
+recv
+
+Now: 1327000
+recv
+
+Now: 1328000
+Arrival clearing new schedule:  [BlockId: 71
+TargetId: 6
+]
+send
+recv
+
+Now: 1329000
+recv
+
+Now: 1330000
+recv
+
+Now: 1331000
+recv
+
+Now: 1332000
+recv
+
+Now: 1333000
+recv
+
+Now: 1334000
+recv
+
+Now: 1335000
+recv
+
+Now: 1336000
+recv
+
+Now: 1337000
+recv
+
+Now: 1338000
+recv
+
+Now: 1339000
+recv
+
+Now: 1340000
+recv
+
+Now: 1341000
+recv
+
+Now: 1342000
+Buffer shuffling new schedule:  [BlockId: 50
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 1343000
+recv
+
+Now: 1344000
+recv
+
+Now: 1345000
+recv
+
+Now: 1346000
+recv
+
+Now: 1347000
+recv
+
+Now: 1348000
+recv
+
+Now: 1349000
+recv
+
+Now: 1350000
+Buffer shuffling new schedule:  [BlockId: 63
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 1351000
+recv
+
+Now: 1352000
+recv
+
+Now: 1353000
+recv
+
+Now: 1354000
+recv
+
+Now: 1355000
+recv
+
+Now: 1356000
+recv
+
+Now: 1357000
+Arrival clearing new schedule:  [BlockId: 72
+TargetId: 5
+]
+send
+recv
+
+Now: 1358000
+recv
+
+Now: 1359000
+recv
+
+Now: 1360000
+recv
+
+Now: 1361000
+recv
+
+Now: 1362000
+recv
+
+Now: 1363000
+recv
+
+Now: 1364000
+recv
+
+Now: 1365000
+recv
+
+Now: 1366000
+recv
+
+Now: 1367000
+recv
+
+Now: 1368000
+Buffer shuffling new schedule:  [BlockId: 64
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 1369000
+recv
+
+Now: 1370000
+recv
+
+Now: 1371000
+recv
+
+Now: 1372000
+recv
+
+Now: 1373000
+recv
+
+Now: 1374000
+recv
+
+Now: 1375000
+recv
+
+Now: 1376000
+Easy handover new schedule:  [BlockId: 36
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 1377000
+recv
+
+Now: 1378000
+recv
+
+Now: 1379000
+recv
+
+Now: 1380000
+recv
+
+Now: 1381000
+recv
+
+Now: 1382000
+recv
+
+Now: 1383000
+recv
+
+Now: 1384000
+recv
+
+Now: 1385000
+recv
+
+Now: 1386000
+recv
+
+Now: 1387000
+recv
+
+Now: 1388000
+recv
+
+Now: 1389000
+Buffer shuffling new schedule:  [BlockId: 69
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1390000
+recv
+
+Now: 1391000
+recv
+
+Now: 1392000
+recv
+
+Now: 1393000
+recv
+
+Now: 1394000
+recv
+
+Now: 1395000
+recv
+
+Now: 1396000
+recv
+
+Now: 1397000
+recv
+
+Now: 1398000
+recv
+
+Now: 1399000
+Easy handover new schedule:  [BlockId: 39
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1400000
+recv
+
+Now: 1401000
+recv
+
+Now: 1402000
+recv
+
+Now: 1403000
+recv
+
+Now: 1404000
+recv
+
+Now: 1405000
+recv
+
+Now: 1406000
+recv
+
+Now: 1407000
+recv
+
+Now: 1408000
+recv
+
+Now: 1409000
+recv
+
+Now: 1410000
+Arrival clearing new schedule:  [BlockId: 73
+TargetId: 4
+]
+send
+recv
+
+Now: 1411000
+recv
+
+Now: 1412000
+recv
+
+Now: 1413000
+recv
+
+Now: 1414000
+recv
+
+Now: 1415000
+recv
+
+Now: 1416000
+recv
+
+Now: 1417000
+recv
+
+Now: 1418000
+recv
+
+Now: 1419000
+recv
+
+Now: 1420000
+recv
+
+Now: 1421000
+recv
+
+Now: 1422000
+recv
+
+Now: 1423000
+recv
+
+Now: 1424000
+recv
+
+Now: 1425000
+Buffer shuffling new schedule:  [BlockId: 51
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1426000
+recv
+
+Now: 1427000
+recv
+
+Now: 1428000
+recv
+
+Now: 1429000
+recv
+
+Now: 1430000
+recv
+
+Now: 1431000
+recv
+
+Now: 1432000
+recv
+
+Now: 1433000
+recv
+
+Now: 1434000
+recv
+
+Now: 1435000
+Arrival clearing new schedule:  [BlockId: 74
+TargetId: 4
+]
+send
+recv
+
+Now: 1436000
+recv
+
+Now: 1437000
+recv
+
+Now: 1438000
+recv
+
+Now: 1439000
+recv
+
+Now: 1440000
+recv
+
+Now: 1441000
+recv
+
+Now: 1442000
+recv
+
+Now: 1443000
+recv
+
+Now: 1444000
+recv
+
+Now: 1445000
+recv
+
+Now: 1446000
+Buffer shuffling new schedule:  [BlockId: 68
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1447000
+recv
+
+Now: 1448000
+recv
+
+Now: 1449000
+recv
+
+Now: 1450000
+recv
+
+Now: 1451000
+recv
+
+Now: 1452000
+recv
+
+Now: 1453000
+recv
+
+Now: 1454000
+Buffer shuffling new schedule:  [BlockId: 67
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 1455000
+recv
+
+Now: 1456000
+recv
+
+Now: 1457000
+recv
+
+Now: 1458000
+recv
+
+Now: 1459000
+recv
+
+Now: 1460000
+recv
+
+Now: 1461000
+recv
+
+Now: 1462000
+Easy handover new schedule:  [BlockId: 41
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1463000
+recv
+
+Now: 1464000
+recv
+
+Now: 1465000
+recv
+
+Now: 1466000
+recv
+
+Now: 1467000
+recv
+
+Now: 1468000
+recv
+
+Now: 1469000
+recv
+
+Now: 1470000
+recv
+
+Now: 1471000
+recv
+
+Now: 1472000
+recv
+
+Now: 1473000
+recv
+
+Now: 1474000
+recv
+
+Now: 1475000
+Arrival clearing new schedule:  [BlockId: 75
+TargetId: 2
+]
+send
+recv
+
+Now: 1476000
+recv
+
+Now: 1477000
+recv
+
+Now: 1478000
+recv
+
+Now: 1479000
+recv
+
+Now: 1480000
+recv
+
+Now: 1481000
+recv
+
+Now: 1482000
+recv
+
+Now: 1483000
+recv
+
+Now: 1484000
+recv
+
+Now: 1485000
+recv
+
+Now: 1486000
+recv
+
+Now: 1487000
+recv
+
+Now: 1488000
+Buffer shuffling new schedule:  [BlockId: 64
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 1489000
+recv
+
+Now: 1490000
+recv
+
+Now: 1491000
+recv
+
+Now: 1492000
+recv
+
+Now: 1493000
+recv
+
+Now: 1494000
+recv
+
+Now: 1495000
+recv
+
+Now: 1496000
+recv
+
+Now: 1497000
+recv
+
+Now: 1498000
+Easy handover new schedule:  [BlockId: 50
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 1499000
+recv
+
+Now: 1500000
+recv
+
+Now: 1501000
+recv
+
+Now: 1502000
+recv
+
+Now: 1503000
+recv
+
+Now: 1504000
+recv
+
+Now: 1505000
+recv
+
+Now: 1506000
+recv
+
+Now: 1507000
+Buffer shuffling new schedule:  [BlockId: 61
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 1508000
+recv
+
+Now: 1509000
+recv
+
+Now: 1510000
+recv
+
+Now: 1511000
+recv
+
+Now: 1512000
+recv
+
+Now: 1513000
+recv
+
+Now: 1514000
+recv
+
+Now: 1515000
+Arrival clearing new schedule:  [BlockId: 76
+TargetId: 2
+]
+send
+recv
+
+Now: 1516000
+recv
+
+Now: 1517000
+recv
+
+Now: 1518000
+recv
+
+Now: 1519000
+recv
+
+Now: 1520000
+recv
+
+Now: 1521000
+recv
+
+Now: 1522000
+recv
+
+Now: 1523000
+recv
+
+Now: 1524000
+recv
+
+Now: 1525000
+Buffer shuffling new schedule:  [BlockId: 59
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 1526000
+recv
+
+Now: 1527000
+recv
+
+Now: 1528000
+recv
+
+Now: 1529000
+recv
+
+Now: 1530000
+recv
+
+Now: 1531000
+Easy handover new schedule:  [BlockId: 43
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 1532000
+recv
+
+Now: 1533000
+recv
+
+Now: 1534000
+recv
+
+Now: 1535000
+recv
+
+Now: 1536000
+recv
+
+Now: 1537000
+recv
+
+Now: 1538000
+recv
+
+Now: 1539000
+recv
+
+Now: 1540000
+recv
+
+Now: 1541000
+Buffer shuffling new schedule:  [BlockId: 47
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 1542000
+recv
+
+Now: 1543000
+recv
+
+Now: 1544000
+recv
+
+Now: 1545000
+recv
+
+Now: 1546000
+Edge case has schedule new schedule:  [BlockId: 47
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 1547000
+recv
+
+Now: 1548000
+recv
+
+Now: 1549000
+recv
+
+Now: 1550000
+recv
+
+Now: 1551000
+recv
+
+Now: 1552000
+recv
+
+Now: 1553000
+recv
+
+Now: 1554000
+recv
+
+Now: 1555000
+recv
+
+Now: 1556000
+recv
+
+Now: 1557000
+Arrival clearing new schedule:  [BlockId: 77
+TargetId: 2
+]
+send
+recv
+
+Now: 1558000
+recv
+
+Now: 1559000
+recv
+
+Now: 1560000
+recv
+
+Now: 1561000
+recv
+
+Now: 1562000
+recv
+
+Now: 1563000
+recv
+
+Now: 1564000
+recv
+
+Now: 1565000
+recv
+
+Now: 1566000
+recv
+
+Now: 1567000
+recv
+
+Now: 1568000
+Buffer shuffling new schedule:  [BlockId: 70
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 1569000
+recv
+
+Now: 1570000
+recv
+
+Now: 1571000
+recv
+
+Now: 1572000
+recv
+
+Now: 1573000
+Buffer shuffling new schedule:  [BlockId: 58
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 1574000
+recv
+
+Now: 1575000
+recv
+
+Now: 1576000
+recv
+
+Now: 1577000
+recv
+
+Now: 1578000
+recv
+
+Now: 1579000
+recv
+
+Now: 1580000
+Easy handover new schedule:  [BlockId: 44
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1581000
+recv
+
+Now: 1582000
+recv
+
+Now: 1583000
+recv
+
+Now: 1584000
+recv
+
+Now: 1585000
+recv
+
+Now: 1586000
+recv
+
+Now: 1587000
+recv
+
+Now: 1588000
+recv
+
+Now: 1589000
+recv
+
+Now: 1590000
+recv
+
+Now: 1591000
+recv
+
+Now: 1592000
+Arrival clearing new schedule:  [BlockId: 78
+TargetId: 3
+]
+send
+recv
+
+Now: 1593000
+recv
+
+Now: 1594000
+recv
+
+Now: 1595000
+recv
+
+Now: 1596000
+recv
+
+Now: 1597000
+recv
+
+Now: 1598000
+recv
+
+Now: 1599000
+recv
+
+Now: 1600000
+recv
+
+Now: 1601000
+recv
+
+Now: 1602000
+recv
+
+Now: 1603000
+recv
+
+Now: 1604000
+Easy handover new schedule:  [BlockId: 45
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1605000
+recv
+
+Now: 1606000
+recv
+
+Now: 1607000
+recv
+
+Now: 1608000
+recv
+
+Now: 1609000
+recv
+
+Now: 1610000
+recv
+
+Now: 1611000
+recv
+
+Now: 1612000
+recv
+
+Now: 1613000
+recv
+
+Now: 1614000
+recv
+
+Now: 1615000
+recv
+
+Now: 1616000
+Buffer shuffling new schedule:  [BlockId: 71
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 1617000
+recv
+
+Now: 1618000
+recv
+
+Now: 1619000
+recv
+
+Now: 1620000
+recv
+
+Now: 1621000
+recv
+
+Now: 1622000
+recv
+
+Now: 1623000
+recv
+
+Now: 1624000
+recv
+
+Now: 1625000
+Buffer shuffling new schedule:  [BlockId: 49
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 1626000
+recv
+
+Now: 1627000
+recv
+
+Now: 1628000
+recv
+
+Now: 1629000
+recv
+
+Now: 1630000
+recv
+
+Now: 1631000
+recv
+
+Now: 1632000
+recv
+
+Now: 1633000
+recv
+
+Now: 1634000
+recv
+
+Now: 1635000
+recv
+
+Now: 1636000
+recv
+
+Now: 1637000
+Easy handover new schedule:  [BlockId: 48
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 1638000
+recv
+
+Now: 1639000
+recv
+
+Now: 1640000
+recv
+
+Now: 1641000
+recv
+
+Now: 1642000
+recv
+
+Now: 1643000
+recv
+
+Now: 1644000
+recv
+
+Now: 1645000
+recv
+
+Now: 1646000
+recv
+
+Now: 1647000
+recv
+
+Now: 1648000
+recv
+
+Now: 1649000
+Arrival clearing new schedule:  [BlockId: 79
+TargetId: 6
+]
+send
+recv
+
+Now: 1650000
+recv
+
+Now: 1651000
+recv
+
+Now: 1652000
+recv
+
+Now: 1653000
+recv
+
+Now: 1654000
+recv
+
+Now: 1655000
+recv
+
+Now: 1656000
+recv
+
+Now: 1657000
+recv
+
+Now: 1658000
+recv
+
+Now: 1659000
+recv
+
+Now: 1660000
+recv
+
+Now: 1661000
+recv
+
+Now: 1662000
+recv
+
+Now: 1663000
+recv
+
+Now: 1664000
+recv
+
+Now: 1665000
+Arrival clearing new schedule:  [BlockId: 80
+TargetId: 6
+]
+send
+recv
+
+Now: 1666000
+recv
+
+Now: 1667000
+recv
+
+Now: 1668000
+recv
+
+Now: 1669000
+recv
+
+Now: 1670000
+recv
+
+Now: 1671000
+recv
+
+Now: 1672000
+recv
+
+Now: 1673000
+recv
+
+Now: 1674000
+recv
+
+Now: 1675000
+recv
+
+Now: 1676000
+recv
+
+Now: 1677000
+recv
+
+Now: 1678000
+recv
+
+Now: 1679000
+Buffer shuffling new schedule:  [BlockId: 67
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 1680000
+recv
+
+Now: 1681000
+recv
+
+Now: 1682000
+recv
+
+Now: 1683000
+recv
+
+Now: 1684000
+recv
+
+Now: 1685000
+recv
+
+Now: 1686000
+Arrival clearing new schedule:  [BlockId: 81
+TargetId: 6
+]
+send
+recv
+
+Now: 1687000
+recv
+
+Now: 1688000
+recv
+
+Now: 1689000
+recv
+
+Now: 1690000
+recv
+
+Now: 1691000
+recv
+
+Now: 1692000
+recv
+
+Now: 1693000
+recv
+
+Now: 1694000
+recv
+
+Now: 1695000
+recv
+
+Now: 1696000
+recv
+
+Now: 1697000
+recv
+
+Now: 1698000
+recv
+
+Now: 1699000
+recv
+
+Now: 1700000
+Buffer shuffling new schedule:  [BlockId: 68
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 1701000
+recv
+
+Now: 1702000
+recv
+
+Now: 1703000
+recv
+
+Now: 1704000
+recv
+
+Now: 1705000
+recv
+
+Now: 1706000
+recv
+
+Now: 1707000
+Buffer shuffling new schedule:  [BlockId: 74
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 1708000
+recv
+
+Now: 1709000
+recv
+
+Now: 1710000
+recv
+
+Now: 1711000
+recv
+
+Now: 1712000
+recv
+
+Now: 1713000
+recv
+
+Now: 1714000
+Easy handover new schedule:  [BlockId: 51
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 1715000
+recv
+
+Now: 1716000
+recv
+
+Now: 1717000
+recv
+
+Now: 1718000
+recv
+
+Now: 1719000
+recv
+
+Now: 1720000
+recv
+
+Now: 1721000
+recv
+
+Now: 1722000
+recv
+
+Now: 1723000
+recv
+
+Now: 1724000
+Buffer shuffling new schedule:  [BlockId: 49
+SourceId: 1
+TargetId: 4
+]
+send
+recv
+
+Now: 1725000
+recv
+
+Now: 1726000
+recv
+
+Now: 1727000
+recv
+
+Now: 1728000
+recv
+
+Now: 1729000
+recv
+
+Now: 1730000
+recv
+
+Now: 1731000
+recv
+
+Now: 1732000
+recv
+
+Now: 1733000
+recv
+
+Now: 1734000
+recv
+
+Now: 1735000
+Arrival clearing new schedule:  [BlockId: 82
+TargetId: 4
+]
+send
+recv
+
+Now: 1736000
+recv
+
+Now: 1737000
+recv
+
+Now: 1738000
+recv
+
+Now: 1739000
+recv
+
+Now: 1740000
+recv
+
+Now: 1741000
+recv
+
+Now: 1742000
+recv
+
+Now: 1743000
+recv
+
+Now: 1744000
+recv
+
+Now: 1745000
+recv
+
+Now: 1746000
+recv
+
+Now: 1747000
+Buffer shuffling new schedule:  [BlockId: 71
+SourceId: 1
+TargetId: 4
+]
+send
+recv
+
+Now: 1748000
+recv
+
+Now: 1749000
+recv
+
+Now: 1750000
+recv
+
+Now: 1751000
+recv
+
+Now: 1752000
+recv
+
+Now: 1753000
+recv
+
+Now: 1754000
+recv
+
+Now: 1755000
+recv
+
+Now: 1756000
+Easy handover new schedule:  [BlockId: 55
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1757000
+recv
+
+Now: 1758000
+recv
+
+Now: 1759000
+recv
+
+Now: 1760000
+recv
+
+Now: 1761000
+recv
+
+Now: 1762000
+recv
+
+Now: 1763000
+recv
+
+Now: 1764000
+recv
+
+Now: 1765000
+recv
+
+Now: 1766000
+recv
+
+Now: 1767000
+recv
+
+Now: 1768000
+recv
+
+Now: 1769000
+Arrival clearing new schedule:  [BlockId: 83
+TargetId: 1
+]
+send
+recv
+
+Now: 1770000
+recv
+
+Now: 1771000
+recv
+
+Now: 1772000
+recv
+
+Now: 1773000
+recv
+
+Now: 1774000
+recv
+
+Now: 1775000
+recv
+
+Now: 1776000
+recv
+
+Now: 1777000
+recv
+
+Now: 1778000
+recv
+
+Now: 1779000
+recv
+
+Now: 1780000
+recv
+
+Now: 1781000
+Buffer shuffling new schedule:  [BlockId: 78
+SourceId: 3
+TargetId: 1
+]
+send
+recv
+
+Now: 1782000
+recv
+
+Now: 1783000
+recv
+
+Now: 1784000
+recv
+
+Now: 1785000
+recv
+
+Now: 1786000
+recv
+
+Now: 1787000
+recv
+
+Now: 1788000
+Buffer shuffling new schedule:  [BlockId: 58
+SourceId: 3
+TargetId: 1
+]
+send
+recv
+
+Now: 1789000
+recv
+
+Now: 1790000
+recv
+
+Now: 1791000
+recv
+
+Now: 1792000
+recv
+
+Now: 1793000
+recv
+
+Now: 1794000
+recv
+
+Now: 1795000
+Arrival clearing new schedule:  [BlockId: 84
+TargetId: 1
+]
+send
+recv
+
+Now: 1796000
+recv
+
+Now: 1797000
+recv
+
+Now: 1798000
+recv
+
+Now: 1799000
+recv
+
+Now: 1800000
+recv
+
+Now: 1801000
+recv
+
+Now: 1802000
+Buffer shuffling new schedule:  [BlockId: 57
+SourceId: 3
+TargetId: 1
+]
+send
+recv
+
+Now: 1803000
+recv
+
+Now: 1804000
+recv
+
+Now: 1805000
+recv
+
+Now: 1806000
+recv
+
+Now: 1807000
+recv
+
+Now: 1808000
+recv
+
+Now: 1809000
+Easy handover new schedule:  [BlockId: 56
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 1810000
+recv
+
+Now: 1811000
+recv
+
+Now: 1812000
+recv
+
+Now: 1813000
+recv
+
+Now: 1814000
+recv
+
+Now: 1815000
+recv
+
+Now: 1816000
+recv
+
+Now: 1817000
+recv
+
+Now: 1818000
+recv
+
+Now: 1819000
+recv
+
+Now: 1820000
+Buffer shuffling new schedule:  [BlockId: 72
+SourceId: 5
+TargetId: 3
+]
+send
+recv
+
+Now: 1821000
+recv
+
+Now: 1822000
+recv
+
+Now: 1823000
+recv
+
+Now: 1824000
+recv
+
+Now: 1825000
+recv
+
+Now: 1826000
+recv
+
+Now: 1827000
+recv
+
+Now: 1828000
+Buffer shuffling new schedule:  [BlockId: 63
+SourceId: 5
+TargetId: 3
+]
+send
+recv
+
+Now: 1829000
+recv
+
+Now: 1830000
+recv
+
+Now: 1831000
+recv
+
+Now: 1832000
+recv
+
+Now: 1833000
+recv
+
+Now: 1834000
+recv
+
+Now: 1835000
+recv
+
+Now: 1836000
+Arrival clearing new schedule:  [BlockId: 85
+TargetId: 3
+]
+send
+recv
+
+Now: 1837000
+recv
+
+Now: 1838000
+recv
+
+Now: 1839000
+recv
+
+Now: 1840000
+recv
+
+Now: 1841000
+recv
+
+Now: 1842000
+recv
+
+Now: 1843000
+recv
+
+Now: 1844000
+recv
+
+Now: 1845000
+recv
+
+Now: 1846000
+Buffer shuffling new schedule:  [BlockId: 66
+SourceId: 5
+TargetId: 3
+]
+send
+recv
+
+Now: 1847000
+recv
+
+Now: 1848000
+recv
+
+Now: 1849000
+recv
+
+Now: 1850000
+recv
+
+Now: 1851000
+recv
+
+Now: 1852000
+recv
+
+Now: 1853000
+Buffer shuffling new schedule:  [BlockId: 60
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 1854000
+recv
+
+Now: 1855000
+recv
+
+Now: 1856000
+recv
+
+Now: 1857000
+recv
+
+Now: 1858000
+recv
+
+Now: 1859000
+recv
+
+Now: 1860000
+Buffer shuffling new schedule:  [BlockId: 65
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 1861000
+recv
+
+Now: 1862000
+recv
+
+Now: 1863000
+recv
+
+Now: 1864000
+recv
+
+Now: 1865000
+recv
+
+Now: 1866000
+Easy handover new schedule:  [BlockId: 42
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 1867000
+recv
+
+Now: 1868000
+recv
+
+Now: 1869000
+recv
+
+Now: 1870000
+recv
+
+Now: 1871000
+recv
+
+Now: 1872000
+recv
+
+Now: 1873000
+recv
+
+Now: 1874000
+recv
+
+Now: 1875000
+recv
+
+Now: 1876000
+Arrival clearing new schedule:  [BlockId: 86
+TargetId: 5
+]
+send
+recv
+
+Now: 1877000
+recv
+
+Now: 1878000
+recv
+
+Now: 1879000
+recv
+
+Now: 1880000
+recv
+
+Now: 1881000
+recv
+
+Now: 1882000
+recv
+
+Now: 1883000
+recv
+
+Now: 1884000
+recv
+
+Now: 1885000
+recv
+
+Now: 1886000
+recv
+
+Now: 1887000
+recv
+
+Now: 1888000
+recv
+
+Now: 1889000
+recv
+
+Now: 1890000
+Easy handover new schedule:  [BlockId: 57
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 1891000
+recv
+
+Now: 1892000
+recv
+
+Now: 1893000
+recv
+
+Now: 1894000
+recv
+
+Now: 1895000
+recv
+
+Now: 1896000
+recv
+
+Now: 1897000
+recv
+
+Now: 1898000
+recv
+
+Now: 1899000
+recv
+
+Now: 1900000
+recv
+
+Now: 1901000
+recv
+
+Now: 1902000
+TODO buffer sorting ...
+recv
+
+Now: 1903000
+TODO buffer sorting ...
+recv
+
+Now: 1904000
+TODO buffer sorting ...
+recv
+
+Now: 1905000
+TODO buffer sorting ...
+recv
+
+Now: 1906000
+TODO buffer sorting ...
+recv
+
+Now: 1907000
+TODO buffer sorting ...
+recv
+
+Now: 1908000
+TODO buffer sorting ...
+recv
+
+Now: 1909000
+TODO buffer sorting ...
+recv
+
+Now: 1910000
+TODO buffer sorting ...
+recv
+
+Now: 1911000
+TODO buffer sorting ...
+recv
+
+Now: 1912000
+TODO buffer sorting ...
+recv
+
+Now: 1913000
+TODO buffer sorting ...
+recv
+
+Now: 1914000
+TODO buffer sorting ...
+recv
+
+Now: 1915000
+TODO buffer sorting ...
+recv
+
+Now: 1916000
+TODO buffer sorting ...
+recv
+
+Now: 1917000
+TODO buffer sorting ...
+recv
+
+Now: 1918000
+TODO buffer sorting ...
+recv
+
+Now: 1919000
+Easy handover new schedule:  [BlockId: 65
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 1920000
+recv
+
+Now: 1921000
+recv
+
+Now: 1922000
+recv
+
+Now: 1923000
+recv
+
+Now: 1924000
+recv
+
+Now: 1925000
+recv
+
+Now: 1926000
+recv
+
+Now: 1927000
+recv
+
+Now: 1928000
+recv
+
+Now: 1929000
+Arrival clearing new schedule:  [BlockId: 87
+TargetId: 5
+]
+send
+recv
+
+Now: 1930000
+recv
+
+Now: 1931000
+recv
+
+Now: 1932000
+recv
+
+Now: 1933000
+recv
+
+Now: 1934000
+recv
+
+Now: 1935000
+recv
+
+Now: 1936000
+recv
+
+Now: 1937000
+recv
+
+Now: 1938000
+recv
+
+Now: 1939000
+recv
+
+Now: 1940000
+recv
+
+Now: 1941000
+recv
+
+Now: 1942000
+recv
+
+Now: 1943000
+TODO buffer sorting ...
+recv
+
+Now: 1944000
+TODO buffer sorting ...
+recv
+
+Now: 1945000
+TODO buffer sorting ...
+recv
+
+Now: 1946000
+TODO buffer sorting ...
+recv
+
+Now: 1947000
+TODO buffer sorting ...
+recv
+
+Now: 1948000
+TODO buffer sorting ...
+recv
+
+Now: 1949000
+TODO buffer sorting ...
+recv
+
+Now: 1950000
+TODO buffer sorting ...
+recv
+
+Now: 1951000
+TODO buffer sorting ...
+recv
+
+Now: 1952000
+TODO buffer sorting ...
+recv
+
+Now: 1953000
+TODO buffer sorting ...
+recv
+
+Now: 1954000
+TODO buffer sorting ...
+recv
+
+Now: 1955000
+TODO buffer sorting ...
+recv
+
+Now: 1956000
+TODO buffer sorting ...
+recv
+
+Now: 1957000
+TODO buffer sorting ...
+recv
+
+Now: 1958000
+TODO buffer sorting ...
+recv
+
+Now: 1959000
+TODO buffer sorting ...
+recv
+
+Now: 1960000
+Arrival clearing new schedule:  [BlockId: 88
+TargetId: 5
+]
+send
+recv
+
+Now: 1961000
+recv
+
+Now: 1962000
+recv
+
+Now: 1963000
+recv
+
+Now: 1964000
+recv
+
+Now: 1965000
+recv
+
+Now: 1966000
+recv
+
+Now: 1967000
+recv
+
+Now: 1968000
+recv
+
+Now: 1969000
+recv
+
+Now: 1970000
+recv
+
+Now: 1971000
+recv
+
+Now: 1972000
+TODO buffer sorting ...
+recv
+
+Now: 1973000
+TODO buffer sorting ...
+recv
+
+Now: 1974000
+TODO buffer sorting ...
+recv
+
+Now: 1975000
+TODO buffer sorting ...
+recv
+
+Now: 1976000
+TODO buffer sorting ...
+recv
+
+Now: 1977000
+TODO buffer sorting ...
+recv
+
+Now: 1978000
+TODO buffer sorting ...
+recv
+
+Now: 1979000
+TODO buffer sorting ...
+recv
+
+Now: 1980000
+TODO buffer sorting ...
+recv
+
+Now: 1981000
+TODO buffer sorting ...
+recv
+
+Now: 1982000
+TODO buffer sorting ...
+recv
+
+Now: 1983000
+TODO buffer sorting ...
+recv
+
+Now: 1984000
+TODO buffer sorting ...
+recv
+
+Now: 1985000
+TODO buffer sorting ...
+recv
+
+Now: 1986000
+TODO buffer sorting ...
+recv
+
+Now: 1987000
+Buffer shuffling new schedule:  [BlockId: 74
+SourceId: 6
+TargetId: 5
+]
+send
+recv
+
+Now: 1988000
+recv
+
+Now: 1989000
+recv
+
+Now: 1990000
+recv
+
+Now: 1991000
+recv
+
+Now: 1992000
+recv
+
+Now: 1993000
+Buffer shuffling new schedule:  [BlockId: 68
+SourceId: 6
+TargetId: 5
+]
+send
+recv
+
+Now: 1994000
+recv
+
+Now: 1995000
+recv
+
+Now: 1996000
+recv
+
+Now: 1997000
+recv
+
+Now: 1998000
+Arrival clearing new schedule:  [BlockId: 89
+TargetId: 1
+]
+send
+recv
+
+Now: 1999000
+recv
+
+Now: 2000000
+recv
+
+Now: 2001000
+recv
+
+Now: 2002000
+recv
+
+Now: 2003000
+recv
+
+Now: 2004000
+recv
+
+Now: 2005000
+recv
+
+Now: 2006000
+recv
+
+Now: 2007000
+Buffer shuffling new schedule:  [BlockId: 81
+SourceId: 6
+TargetId: 5
+]
+send
+recv
+
+Now: 2008000
+recv
+
+Now: 2009000
+recv
+
+Now: 2010000
+recv
+
+Now: 2011000
+recv
+
+Now: 2012000
+recv
+
+Now: 2013000
+recv
+
+Now: 2014000
+recv
+
+Now: 2015000
+Easy handover new schedule:  [BlockId: 67
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 2016000
+recv
+
+Now: 2017000
+recv
+
+Now: 2018000
+recv
+
+Now: 2019000
+recv
+
+Now: 2020000
+recv
+
+Now: 2021000
+recv
+
+Now: 2022000
+recv
+
+Now: 2023000
+recv
+
+Now: 2024000
+Buffer shuffling new schedule:  [BlockId: 70
+SourceId: 2
+TargetId: 6
+]
+send
+recv
+
+Now: 2025000
+recv
+
+Now: 2026000
+recv
+
+Now: 2027000
+recv
+
+Now: 2028000
+recv
+
+Now: 2029000
+recv
+
+Now: 2030000
+recv
+
+Now: 2031000
+recv
+
+Now: 2032000
+recv
+
+Now: 2033000
+Arrival clearing new schedule:  [BlockId: 90
+TargetId: 6
+]
+send
+recv
+
+Now: 2034000
+recv
+
+Now: 2035000
+recv
+
+Now: 2036000
+recv
+
+Now: 2037000
+recv
+
+Now: 2038000
+recv
+
+Now: 2039000
+recv
+
+Now: 2040000
+recv
+
+Now: 2041000
+recv
+
+Now: 2042000
+recv
+
+Now: 2043000
+recv
+
+Now: 2044000
+recv
+
+Now: 2045000
+recv
+
+Now: 2046000
+Buffer shuffling new schedule:  [BlockId: 77
+SourceId: 2
+TargetId: 6
+]
+send
+recv
+
+Now: 2047000
+recv
+
+Now: 2048000
+recv
+
+Now: 2049000
+recv
+
+Now: 2050000
+recv
+
+Now: 2051000
+recv
+
+Now: 2052000
+recv
+
+Now: 2053000
+recv
+
+Now: 2054000
+Easy handover new schedule:  [BlockId: 59
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 2055000
+recv
+
+Now: 2056000
+recv
+
+Now: 2057000
+recv
+
+Now: 2058000
+recv
+
+Now: 2059000
+recv
+
+Now: 2060000
+recv
+
+Now: 2061000
+recv
+
+Now: 2062000
+recv
+
+Now: 2063000
+recv
+
+Now: 2064000
+recv
+
+Now: 2065000
+recv
+
+Now: 2066000
+Buffer shuffling new schedule:  [BlockId: 60
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 2067000
+recv
+
+Now: 2068000
+recv
+
+Now: 2069000
+recv
+
+Now: 2070000
+recv
+
+Now: 2071000
+recv
+
+Now: 2072000
+recv
+
+Now: 2073000
+recv
+
+Now: 2074000
+Arrival clearing new schedule:  [BlockId: 91
+TargetId: 2
+]
+send
+recv
+
+Now: 2075000
+recv
+
+Now: 2076000
+recv
+
+Now: 2077000
+recv
+
+Now: 2078000
+recv
+
+Now: 2079000
+recv
+
+Now: 2080000
+recv
+
+Now: 2081000
+recv
+
+Now: 2082000
+recv
+
+Now: 2083000
+Buffer shuffling new schedule:  [BlockId: 71
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 2084000
+recv
+
+Now: 2085000
+recv
+
+Now: 2086000
+recv
+
+Now: 2087000
+recv
+
+Now: 2088000
+recv
+
+Now: 2089000
+recv
+
+Now: 2090000
+Buffer shuffling new schedule:  [BlockId: 82
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 2091000
+recv
+
+Now: 2092000
+recv
+
+Now: 2093000
+recv
+
+Now: 2094000
+recv
+
+Now: 2095000
+recv
+
+Now: 2096000
+recv
+
+Now: 2097000
+Easy handover new schedule:  [BlockId: 49
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2098000
+recv
+
+Now: 2099000
+recv
+
+Now: 2100000
+recv
+
+Now: 2101000
+recv
+
+Now: 2102000
+recv
+
+Now: 2103000
+recv
+
+Now: 2104000
+recv
+
+Now: 2105000
+recv
+
+Now: 2106000
+recv
+
+Now: 2107000
+recv
+
+Now: 2108000
+Arrival clearing new schedule:  [BlockId: 92
+TargetId: 4
+]
+send
+recv
+
+Now: 2109000
+recv
+
+Now: 2110000
+recv
+
+Now: 2111000
+recv
+
+Now: 2112000
+recv
+
+Now: 2113000
+recv
+
+Now: 2114000
+recv
+
+Now: 2115000
+recv
+
+Now: 2116000
+recv
+
+Now: 2117000
+recv
+
+Now: 2118000
+recv
+
+Now: 2119000
+recv
+
+Now: 2120000
+recv
+
+Now: 2121000
+recv
+
+Now: 2122000
+TODO buffer sorting ...
+recv
+
+Now: 2123000
+TODO buffer sorting ...
+recv
+
+Now: 2124000
+TODO buffer sorting ...
+recv
+
+Now: 2125000
+TODO buffer sorting ...
+recv
+
+Now: 2126000
+TODO buffer sorting ...
+recv
+
+Now: 2127000
+TODO buffer sorting ...
+recv
+
+Now: 2128000
+TODO buffer sorting ...
+recv
+
+Now: 2129000
+TODO buffer sorting ...
+recv
+
+Now: 2130000
+TODO buffer sorting ...
+recv
+
+Now: 2131000
+TODO buffer sorting ...
+recv
+
+Now: 2132000
+TODO buffer sorting ...
+recv
+
+Now: 2133000
+Buffer shuffling new schedule:  [BlockId: 81
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 2134000
+recv
+
+Now: 2135000
+recv
+
+Now: 2136000
+recv
+
+Now: 2137000
+recv
+
+Now: 2138000
+recv
+
+Now: 2139000
+Buffer shuffling new schedule:  [BlockId: 68
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+
+Now: 2140000
+recv
+
+Now: 2141000
+recv
+
+Now: 2142000
+recv
+
+Now: 2143000
+recv
+
+Now: 2144000
+recv
+
+Now: 2145000
+Easy handover new schedule:  [BlockId: 74
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 2146000
+recv
+
+Now: 2147000
+recv
+
+Now: 2148000
+recv
+
+Now: 2149000
+recv
+
+Now: 2150000
+recv
+
+Now: 2151000
+recv
+
+Now: 2152000
+recv
+
+Now: 2153000
+recv
+
+Now: 2154000
+Arrival clearing new schedule:  [BlockId: 93
+TargetId: 5
+]
+send
+recv
+
+Now: 2155000
+recv
+
+Now: 2156000
+recv
+
+Now: 2157000
+recv
+
+Now: 2158000
+recv
+
+Now: 2159000
+recv
+
+Now: 2160000
+recv
+
+Now: 2161000
+recv
+
+Now: 2162000
+recv
+
+Now: 2163000
+recv
+
+Now: 2164000
+recv
+
+Now: 2165000
+recv
+
+Now: 2166000
+recv
+
+Now: 2167000
+recv
+
+Now: 2168000
+Buffer shuffling new schedule:  [BlockId: 68
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 2169000
+recv
+
+Now: 2170000
+recv
+
+Now: 2171000
+recv
+
+Now: 2172000
+recv
+
+Now: 2173000
+recv
+
+Now: 2174000
+Buffer shuffling new schedule:  [BlockId: 81
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 2175000
+recv
+
+Now: 2176000
+recv
+
+Now: 2177000
+recv
+
+Now: 2178000
+recv
+
+Now: 2179000
+recv
+
+Now: 2180000
+Buffer shuffling new schedule:  [BlockId: 92
+SourceId: 4
+TargetId: 5
+]
+send
+recv
+
+Now: 2181000
+recv
+
+Now: 2182000
+recv
+
+Now: 2183000
+recv
+
+Now: 2184000
+recv
+
+Now: 2185000
+recv
+
+Now: 2186000
+Easy handover new schedule:  [BlockId: 66
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2187000
+recv
+
+Now: 2188000
+recv
+
+Now: 2189000
+recv
+
+Now: 2190000
+recv
+
+Now: 2191000
+recv
+
+Now: 2192000
+recv
+
+Now: 2193000
+recv
+
+Now: 2194000
+recv
+
+Now: 2195000
+recv
+
+Now: 2196000
+Arrival clearing new schedule:  [BlockId: 94
+TargetId: 3
+]
+send
+recv
+
+Now: 2197000
+recv
+
+Now: 2198000
+recv
+
+Now: 2199000
+recv
+
+Now: 2200000
+recv
+
+Now: 2201000
+recv
+
+Now: 2202000
+recv
+
+Now: 2203000
+recv
+
+Now: 2204000
+recv
+
+Now: 2205000
+recv
+
+Now: 2206000
+recv
+
+Now: 2207000
+recv
+
+Now: 2208000
+Buffer shuffling new schedule:  [BlockId: 73
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 2209000
+recv
+
+Now: 2210000
+recv
+
+Now: 2211000
+recv
+
+Now: 2212000
+recv
+
+Now: 2213000
+recv
+
+Now: 2214000
+recv
+
+Now: 2215000
+Easy handover new schedule:  [BlockId: 69
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2216000
+recv
+
+Now: 2217000
+recv
+
+Now: 2218000
+recv
+
+Now: 2219000
+recv
+
+Now: 2220000
+recv
+
+Now: 2221000
+recv
+
+Now: 2222000
+recv
+
+Now: 2223000
+recv
+
+Now: 2224000
+recv
+
+Now: 2225000
+recv
+
+Now: 2226000
+Arrival clearing new schedule:  [BlockId: 95
+TargetId: 4
+]
+send
+recv
+
+Now: 2227000
+recv
+
+Now: 2228000
+recv
+
+Now: 2229000
+recv
+
+Now: 2230000
+recv
+
+Now: 2231000
+recv
+
+Now: 2232000
+recv
+
+Now: 2233000
+recv
+
+Now: 2234000
+recv
+
+Now: 2235000
+recv
+
+Now: 2236000
+recv
+
+Now: 2237000
+recv
+
+Now: 2238000
+recv
+
+Now: 2239000
+recv
+
+Now: 2240000
+Buffer shuffling new schedule:  [BlockId: 82
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 2241000
+recv
+
+Now: 2242000
+recv
+
+Now: 2243000
+recv
+
+Now: 2244000
+recv
+
+Now: 2245000
+recv
+
+Now: 2246000
+recv
+
+Now: 2247000
+recv
+
+Now: 2248000
+Buffer shuffling new schedule:  [BlockId: 91
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 2249000
+recv
+
+Now: 2250000
+recv
+
+Now: 2251000
+recv
+
+Now: 2252000
+recv
+
+Now: 2253000
+recv
+
+Now: 2254000
+recv
+
+Now: 2255000
+recv
+
+Now: 2256000
+Arrival clearing new schedule:  [BlockId: 96
+TargetId: 4
+]
+send
+recv
+
+Now: 2257000
+recv
+
+Now: 2258000
+recv
+
+Now: 2259000
+recv
+
+Now: 2260000
+recv
+
+Now: 2261000
+recv
+
+Now: 2262000
+recv
+
+Now: 2263000
+recv
+
+Now: 2264000
+recv
+
+Now: 2265000
+recv
+
+Now: 2266000
+recv
+
+Now: 2267000
+Easy handover new schedule:  [BlockId: 73
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2268000
+recv
+
+Now: 2269000
+recv
+
+Now: 2270000
+recv
+
+Now: 2271000
+recv
+
+Now: 2272000
+recv
+
+Now: 2273000
+recv
+
+Now: 2274000
+recv
+
+Now: 2275000
+recv
+
+Now: 2276000
+recv
+
+Now: 2277000
+Buffer shuffling new schedule:  [BlockId: 60
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 2278000
+recv
+
+Now: 2279000
+recv
+
+Now: 2280000
+recv
+
+Now: 2281000
+recv
+
+Now: 2282000
+recv
+
+Now: 2283000
+recv
+
+Now: 2284000
+recv
+
+Now: 2285000
+recv
+
+Now: 2286000
+Buffer shuffling new schedule:  [BlockId: 76
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 2287000
+recv
+
+Now: 2288000
+recv
+
+Now: 2289000
+recv
+
+Now: 2290000
+recv
+
+Now: 2291000
+recv
+
+Now: 2292000
+recv
+
+Now: 2293000
+recv
+
+Now: 2294000
+Buffer shuffling new schedule:  [BlockId: 61
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 2295000
+recv
+
+Now: 2296000
+recv
+
+Now: 2297000
+recv
+
+Now: 2298000
+recv
+
+Now: 2299000
+recv
+
+Now: 2300000
+recv
+
+Now: 2301000
+Easy handover new schedule:  [BlockId: 64
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 2302000
+recv
+
+Now: 2303000
+recv
+
+Now: 2304000
+recv
+
+Now: 2305000
+recv
+
+Now: 2306000
+recv
+
+Now: 2307000
+recv
+
+Now: 2308000
+recv
+
+Now: 2309000
+recv
+
+Now: 2310000
+recv
+
+Now: 2311000
+recv
+
+Now: 2312000
+recv
+
+Now: 2313000
+recv
+
+Now: 2314000
+Arrival clearing new schedule:  [BlockId: 97
+TargetId: 2
+]
+send
+recv
+
+Now: 2315000
+recv
+
+Now: 2316000
+recv
+
+Now: 2317000
+recv
+
+Now: 2318000
+recv
+
+Now: 2319000
+recv
+
+Now: 2320000
+recv
+
+Now: 2321000
+recv
+
+Now: 2322000
+recv
+
+Now: 2323000
+recv
+
+Now: 2324000
+recv
+
+Now: 2325000
+recv
+
+Now: 2326000
+recv
+
+Now: 2327000
+Buffer shuffling new schedule:  [BlockId: 89
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 2328000
+recv
+
+Now: 2329000
+recv
+
+Now: 2330000
+recv
+
+Now: 2331000
+recv
+
+Now: 2332000
+recv
+
+Now: 2333000
+Buffer shuffling new schedule:  [BlockId: 84
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 2334000
+recv
+
+Now: 2335000
+recv
+
+Now: 2336000
+recv
+
+Now: 2337000
+recv
+
+Now: 2338000
+recv
+
+Now: 2339000
+recv
+
+Now: 2340000
+Easy handover new schedule:  [BlockId: 71
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 2341000
+recv
+
+Now: 2342000
+recv
+
+Now: 2343000
+recv
+
+Now: 2344000
+recv
+
+Now: 2345000
+recv
+
+Now: 2346000
+recv
+
+Now: 2347000
+recv
+
+Now: 2348000
+recv
+
+Now: 2349000
+recv
+
+Now: 2350000
+Arrival clearing new schedule:  [BlockId: 98
+TargetId: 2
+]
+send
+recv
+
+Now: 2351000
+recv
+
+Now: 2352000
+recv
+
+Now: 2353000
+recv
+
+Now: 2354000
+recv
+
+Now: 2355000
+recv
+
+Now: 2356000
+recv
+
+Now: 2357000
+recv
+
+Now: 2358000
+recv
+
+Now: 2359000
+recv
+
+Now: 2360000
+recv
+
+Now: 2361000
+Easy handover new schedule:  [BlockId: 61
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2362000
+recv
+
+Now: 2363000
+recv
+
+Now: 2364000
+recv
+
+Now: 2365000
+recv
+
+Now: 2366000
+recv
+
+Now: 2367000
+recv
+
+Now: 2368000
+recv
+
+Now: 2369000
+Buffer shuffling new schedule:  [BlockId: 58
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 2370000
+recv
+
+Now: 2371000
+recv
+
+Now: 2372000
+recv
+
+Now: 2373000
+recv
+
+Now: 2374000
+recv
+
+Now: 2375000
+recv
+
+Now: 2376000
+recv
+
+Now: 2377000
+recv
+
+Now: 2378000
+Easy handover new schedule:  [BlockId: 78
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 2379000
+recv
+
+Now: 2380000
+recv
+
+Now: 2381000
+recv
+
+Now: 2382000
+recv
+
+Now: 2383000
+recv
+
+Now: 2384000
+recv
+
+Now: 2385000
+recv
+
+Now: 2386000
+recv
+
+Now: 2387000
+recv
+
+Now: 2388000
+recv
+
+Now: 2389000
+Arrival clearing new schedule:  [BlockId: 99
+TargetId: 4
+]
+send
+recv
+
+Now: 2390000
+recv
+
+Now: 2391000
+recv
+
+Now: 2392000
+recv
+
+Now: 2393000
+recv
+
+Now: 2394000
+recv
+
+Now: 2395000
+recv
+
+Now: 2396000
+recv
+
+Now: 2397000
+recv
+
+Now: 2398000
+recv
+
+Now: 2399000
+recv
+
+Now: 2400000
+Buffer shuffling new schedule:  [BlockId: 83
+SourceId: 1
+TargetId: 2
+]
+send
+recv
+
+Now: 2401000
+recv
+
+Now: 2402000
+recv
+
+Now: 2403000
+recv
+
+Now: 2404000
+recv
+
+Now: 2405000
+recv
+
+Now: 2406000
+recv
+
+Now: 2407000
+Easy handover new schedule:  [BlockId: 54
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 2408000
+recv
+
+Now: 2409000
+recv
+
+Now: 2410000
+recv
+
+Now: 2411000
+recv
+
+Now: 2412000
+recv
+
+Now: 2413000
+recv
+
+Now: 2414000
+recv
+
+Now: 2415000
+recv
+
+Now: 2416000
+recv
+
+Now: 2417000
+recv
+
+Now: 2418000
+Arrival clearing new schedule:  [BlockId: 100
+TargetId: 1
+]
+send
+recv
+
+Now: 2419000
+recv
+
+Now: 2420000
+recv
+
+Now: 2421000
+recv
+
+Now: 2422000
+recv
+
+Now: 2423000
+recv
+
+Now: 2424000
+recv
+
+Now: 2425000
+recv
+
+Now: 2426000
+recv
+
+Now: 2427000
+recv
+
+Now: 2428000
+recv
+
+Now: 2429000
+recv
+
+Now: 2430000
+recv
+
+Now: 2431000
+Buffer shuffling new schedule:  [BlockId: 99
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 2432000
+recv
+
+Now: 2433000
+recv
+
+Now: 2434000
+recv
+
+Now: 2435000
+recv
+
+Now: 2436000
+recv
+
+Now: 2437000
+recv
+
+Now: 2438000
+recv
+
+Now: 2439000
+recv
+
+Now: 2440000
+Easy handover new schedule:  [BlockId: 76
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2441000
+recv
+
+Now: 2442000
+recv
+
+Now: 2443000
+recv
+
+Now: 2444000
+recv
+
+Now: 2445000
+recv
+
+Now: 2446000
+recv
+
+Now: 2447000
+recv
+
+Now: 2448000
+recv
+
+Now: 2449000
+recv
+
+Now: 2450000
+Arrival clearing new schedule:  [BlockId: 101
+TargetId: 4
+]
+send
+recv
+
+Now: 2451000
+recv
+
+Now: 2452000
+recv
+
+Now: 2453000
+recv
+
+Now: 2454000
+recv
+
+Now: 2455000
+recv
+
+Now: 2456000
+recv
+
+Now: 2457000
+recv
+
+Now: 2458000
+recv
+
+Now: 2459000
+recv
+
+Now: 2460000
+recv
+
+Now: 2461000
+recv
+
+Now: 2462000
+Buffer shuffling new schedule:  [BlockId: 77
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 2463000
+recv
+
+Now: 2464000
+recv
+
+Now: 2465000
+recv
+
+Now: 2466000
+recv
+
+Now: 2467000
+recv
+
+Now: 2468000
+Buffer shuffling new schedule:  [BlockId: 90
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 2469000
+recv
+
+Now: 2470000
+recv
+
+Now: 2471000
+recv
+
+Now: 2472000
+recv
+
+Now: 2473000
+recv
+
+Now: 2474000
+Easy handover new schedule:  [BlockId: 70
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 2475000
+recv
+
+Now: 2476000
+recv
+
+Now: 2477000
+recv
+
+Now: 2478000
+recv
+
+Now: 2479000
+recv
+
+Now: 2480000
+recv
+
+Now: 2481000
+recv
+
+Now: 2482000
+recv
+
+Now: 2483000
+Arrival clearing new schedule:  [BlockId: 102
+TargetId: 2
+]
+send
+recv
+
+Now: 2484000
+recv
+
+Now: 2485000
+recv
+
+Now: 2486000
+recv
+
+Now: 2487000
+recv
+
+Now: 2488000
+recv
+
+Now: 2489000
+recv
+
+Now: 2490000
+recv
+
+Now: 2491000
+recv
+
+Now: 2492000
+recv
+
+Now: 2493000
+Buffer shuffling case source == destination
+New destination id: 6
+Buffer shuffling new schedule:  [BlockId: 99
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+
+Now: 2494000
+recv
+
+Now: 2495000
+recv
+
+Now: 2496000
+recv
+
+Now: 2497000
+recv
+
+Now: 2498000
+recv
+
+Now: 2499000
+recv
+
+Now: 2500000
+recv
+
+Now: 2501000
+recv
+
+Now: 2502000
+recv
+
+Now: 2503000
+recv
+
+Now: 2504000
+Buffer shuffling case source == destination
+New destination id: 6
+Buffer shuffling new schedule:  [BlockId: 100
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+
+Now: 2505000
+recv
+
+Now: 2506000
+recv
+
+Now: 2507000
+recv
+
+Now: 2508000
+recv
+
+Now: 2509000
+recv
+
+Now: 2510000
+recv
+
+Now: 2511000
+recv
+
+Now: 2512000
+recv
+
+Now: 2513000
+recv
+
+Now: 2514000
+recv
+
+Now: 2515000
+recv
+
+Now: 2516000
+Easy handover new schedule:  [BlockId: 53
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 2517000
+recv
+
+Now: 2518000
+recv
+
+Now: 2519000
+recv
+
+Now: 2520000
+recv
+
+Now: 2521000
+recv
+
+Now: 2522000
+recv
+
+Now: 2523000
+recv
+
+Now: 2524000
+recv
+
+Now: 2525000
+recv
+
+Now: 2526000
+recv
+
+Now: 2527000
+recv
+
+Now: 2528000
+recv
+
+Now: 2529000
+recv
+
+Now: 2530000
+recv
+
+Now: 2531000
+Arrival clearing new schedule:  [BlockId: 103
+TargetId: 1
+]
+send
+recv
+
+Now: 2532000
+recv
+
+Now: 2533000
+recv
+
+Now: 2534000
+recv
+
+Now: 2535000
+recv
+
+Now: 2536000
+recv
+
+Now: 2537000
+recv
+
+Now: 2538000
+recv
+
+Now: 2539000
+recv
+
+Now: 2540000
+recv
+
+Now: 2541000
+recv
+
+Now: 2542000
+recv
+
+Now: 2543000
+recv
+
+Now: 2544000
+Arrival clearing new schedule:  [BlockId: 104
+TargetId: 1
+]
+send
+recv
+
+Now: 2545000
+recv
+
+Now: 2546000
+recv
+
+Now: 2547000
+recv
+
+Now: 2548000
+recv
+
+Now: 2549000
+recv
+
+Now: 2550000
+recv
+
+Now: 2551000
+recv
+
+Now: 2552000
+recv
+
+Now: 2553000
+Buffer shuffling new schedule:  [BlockId: 100
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 2554000
+recv
+
+Now: 2555000
+recv
+
+Now: 2556000
+recv
+
+Now: 2557000
+recv
+
+Now: 2558000
+recv
+
+Now: 2559000
+recv
+
+Now: 2560000
+recv
+
+Now: 2561000
+recv
+
+Now: 2562000
+recv
+
+Now: 2563000
+recv
+
+Now: 2564000
+recv
+
+Now: 2565000
+Buffer shuffling new schedule:  [BlockId: 99
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 2566000
+recv
+
+Now: 2567000
+recv
+
+Now: 2568000
+recv
+
+Now: 2569000
+recv
+
+Now: 2570000
+recv
+
+Now: 2571000
+recv
+
+Now: 2572000
+recv
+
+Now: 2573000
+recv
+
+Now: 2574000
+recv
+
+Now: 2575000
+recv
+
+Now: 2576000
+Easy handover new schedule:  [BlockId: 80
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 2577000
+recv
+
+Now: 2578000
+recv
+
+Now: 2579000
+recv
+
+Now: 2580000
+recv
+
+Now: 2581000
+recv
+
+Now: 2582000
+recv
+
+Now: 2583000
+recv
+
+Now: 2584000
+recv
+
+Now: 2585000
+recv
+
+Now: 2586000
+recv
+
+Now: 2587000
+Arrival clearing new schedule:  [BlockId: 105
+TargetId: 1
+]
+send
+recv
+
+Now: 2588000
+recv
+
+Now: 2589000
+recv
+
+Now: 2590000
+recv
+
+Now: 2591000
+recv
+
+Now: 2592000
+recv
+
+Now: 2593000
+recv
+
+Now: 2594000
+recv
+
+Now: 2595000
+recv
+
+Now: 2596000
+recv
+
+Now: 2597000
+recv
+
+Now: 2598000
+Buffer shuffling new schedule:  [BlockId: 79
+SourceId: 6
+TargetId: 1
+]
+send
+recv
+
+Now: 2599000
+recv
+
+Now: 2600000
+recv
+
+Now: 2601000
+recv
+
+Now: 2602000
+recv
+
+Now: 2603000
+recv
+
+Now: 2604000
+recv
+
+Now: 2605000
+recv
+
+Now: 2606000
+recv
+
+Now: 2607000
+recv
+
+Now: 2608000
+recv
+
+Now: 2609000
+recv
+
+Now: 2610000
+Easy handover new schedule:  [BlockId: 46
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 2611000
+recv
+
+Now: 2612000
+recv
+
+Now: 2613000
+recv
+
+Now: 2614000
+recv
+
+Now: 2615000
+recv
+
+Now: 2616000
+recv
+
+Now: 2617000
+recv
+
+Now: 2618000
+recv
+
+Now: 2619000
+recv
+
+Now: 2620000
+recv
+
+Now: 2621000
+recv
+
+Now: 2622000
+Arrival clearing new schedule:  [BlockId: 106
+TargetId: 6
+]
+send
+recv
+
+Now: 2623000
+recv
+
+Now: 2624000
+recv
+
+Now: 2625000
+recv
+
+Now: 2626000
+recv
+
+Now: 2627000
+recv
+
+Now: 2628000
+recv
+
+Now: 2629000
+recv
+
+Now: 2630000
+recv
+
+Now: 2631000
+recv
+
+Now: 2632000
+recv
+
+Now: 2633000
+recv
+
+Now: 2634000
+recv
+
+Now: 2635000
+recv
+
+Now: 2636000
+recv
+
+Now: 2637000
+Buffer shuffling new schedule:  [BlockId: 92
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 2638000
+recv
+
+Now: 2639000
+recv
+
+Now: 2640000
+recv
+
+Now: 2641000
+recv
+
+Now: 2642000
+recv
+
+Now: 2643000
+Buffer shuffling new schedule:  [BlockId: 81
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+
+Now: 2644000
+recv
+
+Now: 2645000
+recv
+
+Now: 2646000
+recv
+
+Now: 2647000
+recv
+
+Now: 2648000
+recv
+
+Now: 2649000
+Easy handover new schedule:  [BlockId: 68
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 2650000
+recv
+
+Now: 2651000
+recv
+
+Now: 2652000
+recv
+
+Now: 2653000
+recv
+
+Now: 2654000
+recv
+
+Now: 2655000
+recv
+
+Now: 2656000
+recv
+
+Now: 2657000
+recv
+
+Now: 2658000
+Arrival clearing new schedule:  [BlockId: 107
+TargetId: 6
+]
+send
+recv
+
+Now: 2659000
+recv
+
+Now: 2660000
+recv
+
+Now: 2661000
+recv
+
+Now: 2662000
+recv
+
+Now: 2663000
+recv
+
+Now: 2664000
+recv
+
+Now: 2665000
+recv
+
+Now: 2666000
+recv
+
+Now: 2667000
+recv
+
+Now: 2668000
+recv
+
+Now: 2669000
+recv
+
+Now: 2670000
+recv
+
+Now: 2671000
+recv
+
+Now: 2672000
+recv
+
+Now: 2673000
+Buffer shuffling new schedule:  [BlockId: 90
+SourceId: 4
+TargetId: 6
+]
+send
+recv
+
+Now: 2674000
+recv
+
+Now: 2675000
+recv
+
+Now: 2676000
+recv
+
+Now: 2677000
+recv
+
+Now: 2678000
+recv
+
+Now: 2679000
+Easy handover new schedule:  [BlockId: 77
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2680000
+recv
+
+Now: 2681000
+recv
+
+Now: 2682000
+recv
+
+Now: 2683000
+recv
+
+Now: 2684000
+recv
+
+Now: 2685000
+recv
+
+Now: 2686000
+recv
+
+Now: 2687000
+Arrival clearing new schedule:  [BlockId: 108
+TargetId: 6
+]
+send
+recv
+
+Now: 2688000
+recv
+
+Now: 2689000
+recv
+
+Now: 2690000
+recv
+
+Now: 2691000
+recv
+
+Now: 2692000
+recv
+
+Now: 2693000
+recv
+
+Now: 2694000
+recv
+
+Now: 2695000
+recv
+
+Now: 2696000
+recv
+
+Now: 2697000
+recv
+
+Now: 2698000
+recv
+
+Now: 2699000
+recv
+
+Now: 2700000
+recv
+
+Now: 2701000
+Buffer shuffling new schedule:  [BlockId: 94
+SourceId: 3
+TargetId: 6
+]
+send
+recv
+
+Now: 2702000
+recv
+
+Now: 2703000
+recv
+
+Now: 2704000
+recv
+
+Now: 2705000
+recv
+
+Now: 2706000
+recv
+
+Now: 2707000
+recv
+
+Now: 2708000
+Easy handover new schedule:  [BlockId: 85
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2709000
+recv
+
+Now: 2710000
+recv
+
+Now: 2711000
+recv
+
+Now: 2712000
+recv
+
+Now: 2713000
+recv
+
+Now: 2714000
+recv
+
+Now: 2715000
+recv
+
+Now: 2716000
+recv
+
+Now: 2717000
+recv
+
+Now: 2718000
+recv
+
+Now: 2719000
+Arrival clearing new schedule:  [BlockId: 109
+TargetId: 1
+]
+send
+recv
+
+Now: 2720000
+recv
+
+Now: 2721000
+recv
+
+Now: 2722000
+recv
+
+Now: 2723000
+recv
+
+Now: 2724000
+recv
+
+Now: 2725000
+recv
+
+Now: 2726000
+recv
+
+Now: 2727000
+recv
+
+Now: 2728000
+recv
+
+Now: 2729000
+recv
+
+Now: 2730000
+Easy handover new schedule:  [BlockId: 63
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2731000
+recv
+
+Now: 2732000
+recv
+
+Now: 2733000
+recv
+
+Now: 2734000
+recv
+
+Now: 2735000
+recv
+
+Now: 2736000
+recv
+
+Now: 2737000
+recv
+
+Now: 2738000
+recv
+
+Now: 2739000
+recv
+
+Now: 2740000
+recv
+
+Now: 2741000
+Buffer shuffling new schedule:  [BlockId: 72
+SourceId: 3
+TargetId: 5
+]
+send
+recv
+
+Now: 2742000
+recv
+
+Now: 2743000
+recv
+
+Now: 2744000
+recv
+
+Now: 2745000
+recv
+
+Now: 2746000
+recv
+
+Now: 2747000
+recv
+
+Now: 2748000
+recv
+
+Now: 2749000
+recv
+
+Now: 2750000
+Easy handover new schedule:  [BlockId: 52
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2751000
+recv
+
+Now: 2752000
+recv
+
+Now: 2753000
+recv
+
+Now: 2754000
+recv
+
+Now: 2755000
+recv
+
+Now: 2756000
+recv
+
+Now: 2757000
+recv
+
+Now: 2758000
+recv
+
+Now: 2759000
+recv
+
+Now: 2760000
+recv
+
+Now: 2761000
+recv
+
+Now: 2762000
+Arrival clearing new schedule:  [BlockId: 110
+TargetId: 6
+]
+send
+recv
+
+Now: 2763000
+recv
+
+Now: 2764000
+recv
+
+Now: 2765000
+recv
+
+Now: 2766000
+recv
+
+Now: 2767000
+recv
+
+Now: 2768000
+recv
+
+Now: 2769000
+recv
+
+Now: 2770000
+recv
+
+Now: 2771000
+recv
+
+Now: 2772000
+recv
+
+Now: 2773000
+recv
+
+Now: 2774000
+recv
+
+Now: 2775000
+Buffer shuffling new schedule:  [BlockId: 101
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+
+Now: 2776000
+recv
+
+Now: 2777000
+recv
+
+Now: 2778000
+recv
+
+Now: 2779000
+recv
+
+Now: 2780000
+recv
+
+Now: 2781000
+recv
+
+Now: 2782000
+recv
+
+Now: 2783000
+Easy handover new schedule:  [BlockId: 60
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 2784000
+recv
+
+Now: 2785000
+recv
+
+Now: 2786000
+recv
+
+Now: 2787000
+recv
+
+Now: 2788000
+recv
+
+Now: 2789000
+recv
+
+Now: 2790000
+recv
+
+Now: 2791000
+recv
+
+Now: 2792000
+Arrival clearing new schedule:  [BlockId: 111
+TargetId: 3
+]
+send
+recv
+
+Now: 2793000
+recv
+
+Now: 2794000
+recv
+
+Now: 2795000
+recv
+
+Now: 2796000
+recv
+
+Now: 2797000
+recv
+
+Now: 2798000
+recv
+
+Now: 2799000
+recv
+
+Now: 2800000
+recv
+
+Now: 2801000
+recv
+
+Now: 2802000
+recv
+
+Now: 2803000
+recv
+
+Now: 2804000
+recv
+
+Now: 2805000
+Buffer shuffling new schedule:  [BlockId: 109
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 2806000
+recv
+
+Now: 2807000
+recv
+
+Now: 2808000
+recv
+
+Now: 2809000
+recv
+
+Now: 2810000
+recv
+
+Now: 2811000
+recv
+
+Now: 2812000
+Easy handover new schedule:  [BlockId: 79
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 2813000
+recv
+
+Now: 2814000
+recv
+
+Now: 2815000
+recv
+
+Now: 2816000
+recv
+
+Now: 2817000
+recv
+
+Now: 2818000
+recv
+
+Now: 2819000
+recv
+
+Now: 2820000
+recv
+
+Now: 2821000
+recv
+
+Now: 2822000
+recv
+
+Now: 2823000
+Buffer shuffling new schedule:  [BlockId: 72
+SourceId: 5
+TargetId: 3
+]
+send
+recv
+
+Now: 2824000
+recv
+
+Now: 2825000
+recv
+
+Now: 2826000
+recv
+
+Now: 2827000
+recv
+
+Now: 2828000
+recv
+
+Now: 2829000
+recv
+
+Now: 2830000
+Arrival clearing new schedule:  [BlockId: 112
+TargetId: 1
+]
+send
+recv
+
+Now: 2831000
+recv
+
+Now: 2832000
+recv
+
+Now: 2833000
+recv
+
+Now: 2834000
+recv
+
+Now: 2835000
+recv
+
+Now: 2836000
+recv
+
+Now: 2837000
+recv
+
+Now: 2838000
+Buffer shuffling new schedule:  [BlockId: 93
+SourceId: 5
+TargetId: 1
+]
+send
+recv
+
+Now: 2839000
+recv
+
+Now: 2840000
+recv
+
+Now: 2841000
+recv
+
+Now: 2842000
+recv
+
+Now: 2843000
+recv
+
+Now: 2844000
+recv
+
+Now: 2845000
+recv
+
+Now: 2846000
+recv
+
+Now: 2847000
+Easy handover new schedule:  [BlockId: 88
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 2848000
+recv
+
+Now: 2849000
+recv
+
+Now: 2850000
+recv
+
+Now: 2851000
+recv
+
+Now: 2852000
+recv
+
+Now: 2853000
+recv
+
+Now: 2854000
+recv
+
+Now: 2855000
+recv
+
+Now: 2856000
+recv
+
+Now: 2857000
+recv
+
+Now: 2858000
+Buffer shuffling new schedule:  [BlockId: 87
+SourceId: 5
+TargetId: 3
+]
+send
+recv
+
+Now: 2859000
+recv
+
+Now: 2860000
+recv
+
+Now: 2861000
+recv
+
+Now: 2862000
+recv
+
+Now: 2863000
+Edge case has schedule new schedule:  [BlockId: 87
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2864000
+Edge case has schedule new schedule:  [BlockId: 87
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2865000
+recv
+
+Now: 2866000
+recv
+
+Now: 2867000
+recv
+
+Now: 2868000
+recv
+
+Now: 2869000
+recv
+
+Now: 2870000
+recv
+
+Now: 2871000
+recv
+
+Now: 2872000
+recv
+
+Now: 2873000
+recv
+
+Now: 2874000
+INVALID MOVE
+ [BlockId: 87
+SourceId: 3
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 113
+TargetId: 3
+]
+send
+recv
+
+Now: 2875000
+recv
+
+Now: 2876000
+recv
+
+Now: 2877000
+recv
+
+Now: 2878000
+recv
+
+Now: 2879000
+recv
+
+Now: 2880000
+recv
+
+Now: 2881000
+recv
+
+Now: 2882000
+recv
+
+Now: 2883000
+recv
+
+Now: 2884000
+recv
+
+Now: 2885000
+recv
+
+Now: 2886000
+Easy handover new schedule:  [BlockId: 86
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+
+Now: 2887000
+recv
+
+Now: 2888000
+recv
+
+Now: 2889000
+recv
+
+Now: 2890000
+recv
+
+Now: 2891000
+recv
+
+Now: 2892000
+recv
+
+Now: 2893000
+recv
+
+Now: 2894000
+recv
+
+Now: 2895000
+recv
+
+Now: 2896000
+recv
+
+Now: 2897000
+Arrival clearing new schedule:  [BlockId: 114
+TargetId: 5
+]
+send
+recv
+
+Now: 2898000
+recv
+
+Now: 2899000
+recv
+
+Now: 2900000
+recv
+
+Now: 2901000
+recv
+
+Now: 2902000
+recv
+
+Now: 2903000
+recv
+
+Now: 2904000
+recv
+
+Now: 2905000
+recv
+
+Now: 2906000
+recv
+
+Now: 2907000
+recv
+
+Now: 2908000
+recv
+
+Now: 2909000
+recv
+
+Now: 2910000
+recv
+
+Now: 2911000
+Buffer shuffling new schedule:  [BlockId: 102
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 2912000
+recv
+
+Now: 2913000
+recv
+
+Now: 2914000
+recv
+
+Now: 2915000
+recv
+
+Now: 2916000
+recv
+
+Now: 2917000
+recv
+
+Now: 2918000
+recv
+
+Now: 2919000
+Easy handover new schedule:  [BlockId: 83
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 2920000
+recv
+
+Now: 2921000
+recv
+
+Now: 2922000
+recv
+
+Now: 2923000
+recv
+
+Now: 2924000
+recv
+
+Now: 2925000
+recv
+
+Now: 2926000
+recv
+
+Now: 2927000
+recv
+
+Now: 2928000
+recv
+
+Now: 2929000
+Arrival clearing new schedule:  [BlockId: 115
+TargetId: 5
+]
+send
+recv
+
+Now: 2930000
+recv
+
+Now: 2931000
+recv
+
+Now: 2932000
+recv
+
+Now: 2933000
+recv
+
+Now: 2934000
+recv
+
+Now: 2935000
+recv
+
+Now: 2936000
+recv
+
+Now: 2937000
+recv
+
+Now: 2938000
+recv
+
+Now: 2939000
+recv
+
+Now: 2940000
+recv
+
+Now: 2941000
+recv
+
+Now: 2942000
+Easy handover new schedule:  [BlockId: 58
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 2943000
+recv
+
+Now: 2944000
+recv
+
+Now: 2945000
+recv
+
+Now: 2946000
+recv
+
+Now: 2947000
+recv
+
+Now: 2948000
+recv
+
+Now: 2949000
+recv
+
+Now: 2950000
+recv
+
+Now: 2951000
+recv
+
+Now: 2952000
+recv
+
+Now: 2953000
+Arrival clearing new schedule:  [BlockId: 116
+TargetId: 5
+]
+send
+recv
+
+Now: 2954000
+recv
+
+Now: 2955000
+recv
+
+Now: 2956000
+recv
+
+Now: 2957000
+recv
+
+Now: 2958000
+recv
+
+Now: 2959000
+recv
+
+Now: 2960000
+recv
+
+Now: 2961000
+recv
+
+Now: 2962000
+recv
+
+Now: 2963000
+recv
+
+Now: 2964000
+recv
+
+Now: 2965000
+recv
+
+Now: 2966000
+recv
+
+Now: 2967000
+Buffer shuffling new schedule:  [BlockId: 113
+SourceId: 3
+TargetId: 5
+]
+send
+recv
+
+Now: 2968000
+recv
+
+Now: 2969000
+recv
+
+Now: 2970000
+recv
+
+Now: 2971000
+recv
+
+Now: 2972000
+recv
+
+Now: 2973000
+recv
+
+Now: 2974000
+Easy handover new schedule:  [BlockId: 72
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 2975000
+recv
+
+Now: 2976000
+recv
+
+Now: 2977000
+recv
+
+Now: 2978000
+recv
+
+Now: 2979000
+recv
+
+Now: 2980000
+recv
+
+Now: 2981000
+recv
+
+Now: 2982000
+recv
+
+Now: 2983000
+recv
+
+Now: 2984000
+recv
+
+Now: 2985000
+Arrival clearing new schedule:  [BlockId: 117
+TargetId: 3
+]
+send
+recv
+
+Now: 2986000
+recv
+
+Now: 2987000
+recv
+
+Now: 2988000
+recv
+
+Now: 2989000
+recv
+
+Now: 2990000
+recv
+
+Now: 2991000
+recv
+
+Now: 2992000
+recv
+
+Now: 2993000
+recv
+
+Now: 2994000
+recv
+
+Now: 2995000
+recv
+
+Now: 2996000
+recv
+
+Now: 2997000
+Buffer shuffling new schedule:  [BlockId: 98
+SourceId: 2
+TargetId: 3
+]
+send
+recv
+
+Now: 2998000
+recv
+
+Now: 2999000
+recv
+
+Now: 3000000
+recv
+
+Now: 3001000
+recv
+
+Now: 3002000
+recv
+
+Now: 3003000
+Easy handover new schedule:  [BlockId: 84
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 3004000
+recv
+
+Now: 3005000
+recv
+
+Now: 3006000
+recv
+
+Now: 3007000
+recv
+
+Now: 3008000
+recv
+
+Now: 3009000
+recv
+
+Now: 3010000
+recv
+
+Now: 3011000
+recv
+
+Now: 3012000
+recv
+
+Now: 3013000
+recv
+
+Now: 3014000
+Buffer shuffling new schedule:  [BlockId: 96
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 3015000
+recv
+
+Now: 3016000
+recv
+
+Now: 3017000
+recv
+
+Now: 3018000
+recv
+
+Now: 3019000
+recv
+
+Now: 3020000
+recv
+
+Now: 3021000
+recv
+
+Now: 3022000
+Buffer shuffling new schedule:  [BlockId: 91
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+
+Now: 3023000
+recv
+
+Now: 3024000
+recv
+
+Now: 3025000
+recv
+
+Now: 3026000
+recv
+
+Now: 3027000
+recv
+
+Now: 3028000
+recv
+
+Now: 3029000
+recv
+
+Now: 3030000
+recv
+
+Now: 3031000
+Easy handover new schedule:  [BlockId: 82
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 3032000
+recv
+
+Now: 3033000
+recv
+
+Now: 3034000
+recv
+
+Now: 3035000
+recv
+
+Now: 3036000
+recv
+
+Now: 3037000
+recv
+
+Now: 3038000
+recv
+
+Now: 3039000
+recv
+
+Now: 3040000
+recv
+
+Now: 3041000
+recv
+
+Now: 3042000
+Arrival clearing new schedule:  [BlockId: 118
+TargetId: 4
+]
+send
+recv
+
+Now: 3043000
+recv
+
+Now: 3044000
+recv
+
+Now: 3045000
+recv
+
+Now: 3046000
+recv
+
+Now: 3047000
+recv
+
+Now: 3048000
+recv
+
+Now: 3049000
+recv
+
+Now: 3050000
+recv
+
+Now: 3051000
+recv
+
+Now: 3052000
+recv
+
+Now: 3053000
+recv
+
+Now: 3054000
+recv
+
+Now: 3055000
+recv
+
+Now: 3056000
+recv
+
+Now: 3057000
+Easy handover new schedule:  [BlockId: 91
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 3058000
+recv
+
+Now: 3059000
+recv
+
+Now: 3060000
+recv
+
+Now: 3061000
+recv
+
+Now: 3062000
+recv
+
+Now: 3063000
+recv
+
+Now: 3064000
+recv
+
+Now: 3065000
+recv
+
+Now: 3066000
+recv
+
+Now: 3067000
+recv
+
+Now: 3068000
+Arrival clearing new schedule:  [BlockId: 119
+TargetId: 4
+]
+send
+recv
+
+Now: 3069000
+recv
+
+Now: 3070000
+recv
+
+Now: 3071000
+recv
+
+Now: 3072000
+recv
+
+Now: 3073000
+recv
+
+Now: 3074000
+recv
+
+Now: 3075000
+recv
+
+Now: 3076000
+recv
+
+Now: 3077000
+recv
+
+Now: 3078000
+recv
+
+Now: 3079000
+recv
+
+Now: 3080000
+Buffer shuffling new schedule:  [BlockId: 110
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 3081000
+recv
+
+Now: 3082000
+recv
+
+Now: 3083000
+recv
+
+Now: 3084000
+recv
+
+Now: 3085000
+recv
+
+Now: 3086000
+recv
+
+Now: 3087000
+Buffer shuffling new schedule:  [BlockId: 94
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 3088000
+recv
+
+Now: 3089000
+recv
+
+Now: 3090000
+recv
+
+Now: 3091000
+recv
+
+Now: 3092000
+recv
+
+Now: 3093000
+recv
+
+Now: 3094000
+Buffer shuffling new schedule:  [BlockId: 108
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 3095000
+recv
+
+Now: 3096000
+recv
+
+Now: 3097000
+recv
+
+Now: 3098000
+recv
+
+Now: 3099000
+recv
+
+Now: 3100000
+recv
+
+Now: 3101000
+Arrival clearing new schedule:  [BlockId: 120
+TargetId: 2
+]
+send
+recv
+
+Now: 3102000
+recv
+
+Now: 3103000
+recv
+
+Now: 3104000
+recv
+
+Now: 3105000
+recv
+
+Now: 3106000
+recv
+
+Now: 3107000
+recv
+
+Now: 3108000
+recv
+
+Now: 3109000
+recv
+
+Now: 3110000
+recv
+
+Now: 3111000
+recv
+
+Now: 3112000
+Buffer shuffling new schedule:  [BlockId: 90
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+
+Now: 3113000
+recv
+
+Now: 3114000
+recv
+
+Now: 3115000
+recv
+
+Now: 3116000
+recv
+
+Now: 3117000
+recv
+
+Now: 3118000
+recv
+
+Now: 3119000
+recv
+
+Now: 3120000
+recv
+
+Now: 3121000
+recv
+
+Now: 3122000
+Buffer shuffling new schedule:  [BlockId: 107
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+
+Now: 3123000
+recv
+
+Now: 3124000
+recv
+
+Now: 3125000
+recv
+
+Now: 3126000
+recv
+
+Now: 3127000
+recv
+
+Now: 3128000
+recv
+
+Now: 3129000
+recv
+
+Now: 3130000
+Easy handover new schedule:  [BlockId: 81
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+
+Now: 3131000
+recv
+
+Now: 3132000
+recv
+
+Now: 3133000
+recv
+
+Now: 3134000
+recv
+
+Now: 3135000
+recv
+
+Now: 3136000
+recv
+
+Now: 3137000
+recv
+
+Now: 3138000
+recv
+
+Now: 3139000
+TODO buffer sorting ...
+recv
+
+Now: 3140000
+TODO buffer sorting ...
+recv
+
+Now: 3141000
+TODO buffer sorting ...
+recv
+
+Now: 3142000
+TODO buffer sorting ...
+recv
+
+Now: 3143000
+TODO buffer sorting ...
+recv
+
+Now: 3144000
+Arrival clearing new schedule:  [BlockId: 121
+TargetId: 6
+]
+send
+recv
+
+Now: 3145000
+recv
+
+Now: 3146000
+recv
+
+Now: 3147000
+recv
+
+Now: 3148000
+recv
+
+Now: 3149000
+recv
+
+Now: 3150000
+recv
+
+Now: 3151000
+recv
+
+Now: 3152000
+recv
+
+Now: 3153000
+recv
+
+Now: 3154000
+recv
+
+Now: 3155000
+recv
+
+Now: 3156000
+recv
+
+Now: 3157000
+recv
+
+Now: 3158000
+recv
+
+Now: 3159000
+TODO buffer sorting ...
+recv
+
+Now: 3160000
+TODO buffer sorting ...
+recv
+
+Now: 3161000
+TODO buffer sorting ...
+recv
+
+Now: 3162000
+TODO buffer sorting ...
+recv
+
+Now: 3163000
+TODO buffer sorting ...
+recv
+
+Now: 3164000
+TODO buffer sorting ...
+recv
+
+Now: 3165000
+TODO buffer sorting ...
+recv
+
+Now: 3166000
+TODO buffer sorting ...
+recv
+
+Now: 3167000
+TODO buffer sorting ...
+recv
+
+Now: 3168000
+TODO buffer sorting ...
+recv
+
+Now: 3169000
+TODO buffer sorting ...
+recv
+
+Now: 3170000
+TODO buffer sorting ...
+recv
+
+Now: 3171000
+TODO buffer sorting ...
+recv
+
+Now: 3172000
+TODO buffer sorting ...
+recv
+
+Now: 3173000
+TODO buffer sorting ...
+recv
+
+Now: 3174000
+TODO buffer sorting ...
+recv
+
+Now: 3175000
+Buffer shuffling new schedule:  [BlockId: 93
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+
+Now: 3176000
+recv
+
+Now: 3177000
+recv
+
+Now: 3178000
+recv
+
+Now: 3179000
+recv
+
+Now: 3180000
+recv
+
+Now: 3181000
+recv
+
+Now: 3182000
+recv
+
+Now: 3183000
+recv
+
+Now: 3184000
+recv
+
+Now: 3185000
+recv
+
+Now: 3186000
+Arrival clearing new schedule:  [BlockId: 122
+TargetId: 6
+]
+send
+recv
+
+Now: 3187000
+recv
+
+Now: 3188000
+recv
+
+Now: 3189000
+recv
+
+Now: 3190000
+recv
+
+Now: 3191000
+recv
+
+Now: 3192000
+recv
+
+Now: 3193000
+recv
+
+Now: 3194000
+recv
+
+Now: 3195000
+recv
+
+Now: 3196000
+recv
+
+Now: 3197000
+recv
+
+Now: 3198000
+recv
+
+Now: 3199000
+recv
+
+Now: 3200000
+Buffer shuffling new schedule:  [BlockId: 112
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+
+Now: 3201000
+recv
+
+Now: 3202000
+recv
+
+Now: 3203000
+recv
+
+Now: 3204000
+recv
+
+Now: 3205000
+recv
+
+Now: 3206000
+recv
+
+Now: 3207000
+recv
+
+Now: 3208000
+recv
+
+Now: 3209000
+recv
+
+Now: 3210000
+Buffer shuffling new schedule:  [BlockId: 105
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+
+Now: 3211000
+recv
+
+Now: 3212000
+recv
+
+Now: 3213000
+recv
+
+Now: 3214000
+recv
+
+Now: 3215000
+recv
+
+Now: 3216000
+recv
+
+Now: 3217000
+recv
+
+Now: 3218000
+recv
+
+Now: 3219000
+recv
+
+Now: 3220000
+Easy handover new schedule:  [BlockId: 99
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 3221000
+recv
+
+Now: 3222000
+recv
+
+Now: 3223000
+recv
+
+Now: 3224000
+recv
+
+Now: 3225000
+recv
+
+Now: 3226000
+recv
+
+Now: 3227000
+recv
+
+Now: 3228000
+recv
+
+Now: 3229000
+recv
+
+Now: 3230000
+recv
+
+Now: 3231000
+recv
+
+Now: 3232000
+recv
+
+Now: 3233000
+recv
+
+Now: 3234000
+Arrival clearing new schedule:  [BlockId: 123
+TargetId: 1
+]
+send
+recv
+
+Now: 3235000
+recv
+
+Now: 3236000
+recv
+
+Now: 3237000
+recv
+
+Now: 3238000
+recv
+
+Now: 3239000
+recv
+
+Now: 3240000
+recv
+
+Now: 3241000
+recv
+
+Now: 3242000
+recv
+
+Now: 3243000
+recv
+
+Now: 3244000
+recv
+
+Now: 3245000
+TODO buffer sorting ...
+recv
+
+Now: 3246000
+TODO buffer sorting ...
+recv
+
+Now: 3247000
+TODO buffer sorting ...
+recv
+
+Now: 3248000
+TODO buffer sorting ...
+recv
+
+Now: 3249000
+TODO buffer sorting ...
+recv
+
+Now: 3250000
+Arrival clearing new schedule:  [BlockId: 124
+TargetId: 1
+]
+send
+recv
+
+Now: 3251000
+recv
+
+Now: 3252000
+recv
+
+Now: 3253000
+recv
+
+Now: 3254000
+recv
+
+Now: 3255000
+recv
+
+Now: 3256000
+recv
+
+Now: 3257000
+recv
+
+Now: 3258000
+TODO buffer sorting ...
+recv
+
+Now: 3259000
+TODO buffer sorting ...
+recv
+
+Now: 3260000
+TODO buffer sorting ...
+recv
+
+Now: 3261000
+TODO buffer sorting ...
+recv
+
+Now: 3262000
+TODO buffer sorting ...
+recv
+
+Now: 3263000
+TODO buffer sorting ...
+recv
+
+Now: 3264000
+TODO buffer sorting ...
+recv
+
+Now: 3265000
+TODO buffer sorting ...
+recv
+
+Now: 3266000
+TODO buffer sorting ...
+recv
+
+Now: 3267000
+TODO buffer sorting ...
+recv
+
+Now: 3268000
+TODO buffer sorting ...
+recv
+
+Now: 3269000
+TODO buffer sorting ...
+recv
+
+Now: 3270000
+TODO buffer sorting ...
+recv
+
+Now: 3271000
+TODO buffer sorting ...
+recv
+
+Now: 3272000
+TODO buffer sorting ...
+recv
+
+Now: 3273000
+TODO buffer sorting ...
+recv
+
+Now: 3274000
+TODO buffer sorting ...
+recv
+
+Now: 3275000
+TODO buffer sorting ...
+recv
+
+Now: 3276000
+TODO buffer sorting ...
+recv
+
+Now: 3277000
+TODO buffer sorting ...
+recv
+
+Now: 3278000
+TODO buffer sorting ...
+recv
+
+Now: 3279000
+TODO buffer sorting ...
+recv
+
+Now: 3280000
+TODO buffer sorting ...
+recv
+
+Now: 3281000
+TODO buffer sorting ...
+recv
+
+Now: 3282000
+TODO buffer sorting ...
+recv
+
+Now: 3283000
+TODO buffer sorting ...
+recv
+
+Now: 3284000
+TODO buffer sorting ...
+recv
+
+Now: 3285000
+TODO buffer sorting ...
+recv
+
+Now: 3286000
+TODO buffer sorting ...
+recv
+
+Now: 3287000
+TODO buffer sorting ...
+recv
+
+Now: 3288000
+TODO buffer sorting ...
+recv
+
+Now: 3289000
+TODO buffer sorting ...
+recv
+
+Now: 3290000
+TODO buffer sorting ...
+recv
+
+Now: 3291000
+TODO buffer sorting ...
+recv
+
+Now: 3292000
+Arrival clearing new schedule:  [BlockId: 125
+TargetId: 1
+]
+send
+recv
+
+Now: 3293000
+recv
+
+Now: 3294000
+recv
+
+Now: 3295000
+recv
+
+Now: 3296000
+recv
+
+Now: 3297000
+recv
+
+Now: 3298000
+recv
+
+Now: 3299000
+TODO buffer sorting ...
+recv
+
+Now: 3300000
+TODO buffer sorting ...
+recv
+
+Now: 3301000
+TODO buffer sorting ...
+recv
+
+Now: 3302000
+TODO buffer sorting ...
+recv
+
+Now: 3303000
+TODO buffer sorting ...
+recv
+
+Now: 3304000
+TODO buffer sorting ...
+recv
+
+Now: 3305000
+TODO buffer sorting ...
+recv
+
+Now: 3306000
+TODO buffer sorting ...
+recv
+
+Now: 3307000
+TODO buffer sorting ...
+recv
+
+Now: 3308000
+TODO buffer sorting ...
+recv
+
+Now: 3309000
+TODO buffer sorting ...
+recv
+
+Now: 3310000
+TODO buffer sorting ...
+recv
+
+Now: 3311000
+TODO buffer sorting ...
+recv
+
+Now: 3312000
+TODO buffer sorting ...
+recv
+
+Now: 3313000
+TODO buffer sorting ...
+recv
+
+Now: 3314000
+TODO buffer sorting ...
+recv
+
+Now: 3315000
+TODO buffer sorting ...
+recv
+
+Now: 3316000
+TODO buffer sorting ...
+recv
+
+Now: 3317000
+TODO buffer sorting ...
+recv
+
+Now: 3318000
+TODO buffer sorting ...
+recv
+
+Now: 3319000
+TODO buffer sorting ...
+recv
+
+Now: 3320000
+TODO buffer sorting ...
+recv
+
+Now: 3321000
+TODO buffer sorting ...
+recv
+
+Now: 3322000
+TODO buffer sorting ...
+recv
+
+Now: 3323000
+TODO buffer sorting ...
+recv
+
+Now: 3324000
+TODO buffer sorting ...
+recv
+
+Now: 3325000
+TODO buffer sorting ...
+recv
+
+Now: 3326000
+TODO buffer sorting ...
+recv
+
+Now: 3327000
+TODO buffer sorting ...
+recv
+
+Now: 3328000
+TODO buffer sorting ...
+recv
+
+Now: 3329000
+TODO buffer sorting ...
+recv
+
+Now: 3330000
+TODO buffer sorting ...
+recv
+
+Now: 3331000
+Arrival clearing new schedule:  [BlockId: 126
+TargetId: 1
+]
+send
+recv
+
+Now: 3332000
+recv
+
+Now: 3333000
+recv
+
+Now: 3334000
+recv
+
+Now: 3335000
+recv
+
+Now: 3336000
+recv
+
+Now: 3337000
+TODO buffer sorting ...
+recv
+
+Now: 3338000
+TODO buffer sorting ...
+recv
+
+Now: 3339000
+TODO buffer sorting ...
+recv
+
+Now: 3340000
+TODO buffer sorting ...
+recv
+
+Now: 3341000
+TODO buffer sorting ...
+recv
+
+Now: 3342000
+TODO buffer sorting ...
+recv
+
+Now: 3343000
+TODO buffer sorting ...
+recv
+
+Now: 3344000
+TODO buffer sorting ...
+recv
+
+Now: 3345000
+TODO buffer sorting ...
+recv
+
+Now: 3346000
+TODO buffer sorting ...
+recv
+
+Now: 3347000
+TODO buffer sorting ...
+recv
+
+Now: 3348000
+TODO buffer sorting ...
+recv
+
+Now: 3349000
+TODO buffer sorting ...
+recv
+
+Now: 3350000
+TODO buffer sorting ...
+recv
+
+Now: 3351000
+TODO buffer sorting ...
+recv
+
+Now: 3352000
+TODO buffer sorting ...
+recv
+
+Now: 3353000
+TODO buffer sorting ...
+recv
+
+Now: 3354000
+TODO buffer sorting ...
+recv
+
+Now: 3355000
+TODO buffer sorting ...
+recv
+
+Now: 3356000
+TODO buffer sorting ...
+recv
+
+Now: 3357000
+TODO buffer sorting ...
+recv
+
+Now: 3358000
+TODO buffer sorting ...
+recv
+
+Now: 3359000
+Buffer shuffling new schedule:  [BlockId: 90
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+
+Now: 3360000
+recv
+
+Now: 3361000
+recv
+
+Now: 3362000
+recv
+
+Now: 3363000
+recv
+
+Now: 3364000
+recv
+
+Now: 3365000
+Arrival clearing new schedule:  [BlockId: 127
+TargetId: 6
+]
+send
+recv
+
+Now: 3366000
+recv
+
+Now: 3367000
+recv
+
+Now: 3368000
+recv
+
+Now: 3369000
+recv
+
+Now: 3370000
+recv
+
+Now: 3371000
+recv
+
+Now: 3372000
+recv
+
+Now: 3373000
+recv
+
+Now: 3374000
+recv
+
+Now: 3375000
+recv
+
+Now: 3376000
+Buffer shuffling new schedule:  [BlockId: 120
+SourceId: 2
+TargetId: 1
+]
+send
+recv
+
+Now: 3377000
+recv
+
+Now: 3378000
+recv
+
+Now: 3379000
+recv
+
+Now: 3380000
+recv
+
+Now: 3381000
+recv
+
+Now: 3382000
+recv
+
+Now: 3383000
+Buffer shuffling new schedule:  [BlockId: 96
+SourceId: 2
+TargetId: 3
+]
+send
+recv
+
+Now: 3384000
+recv
+
+Now: 3385000
+recv
+
+Now: 3386000
+recv
+
+Now: 3387000
+recv
+
+Now: 3388000
+recv
+
+Now: 3389000
+Easy handover new schedule:  [BlockId: 89
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+
+Now: 3390000
+recv
+
+Now: 3391000
+recv
+
+Now: 3392000
+recv
+
+Now: 3393000
+recv
+
+Now: 3394000
+recv
+
+Now: 3395000
+recv
+
+Now: 3396000
+recv
+
+Now: 3397000
+recv
+
+Now: 3398000
+recv
+
+Now: 3399000
+recv
+
+Now: 3400000
+Buffer shuffling new schedule:  [BlockId: 97
+SourceId: 2
+TargetId: 4
+]
+send
+recv
+
+Now: 3401000
+recv
+
+Now: 3402000
+recv
+
+Now: 3403000
+recv
+
+Now: 3404000
+recv
+
+Now: 3405000
+Edge case has schedule new schedule:  [BlockId: 97
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 3406000
+Edge case has schedule new schedule:  [BlockId: 97
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 3407000
+Edge case has schedule new schedule:  [BlockId: 97
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 3408000
+Edge case has schedule new schedule:  [BlockId: 97
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+
+Now: 3409000
+recv
+
+Now: 3410000
+recv
+
+Now: 3411000
+recv
+
+Now: 3412000
+recv
+
+Now: 3413000
+recv
+
+Now: 3414000
+recv
+
+Now: 3415000
+recv
+
+Now: 3416000
+INVALID MOVE
+ [BlockId: 97
+SourceId: 4
+TargetId: 7
+, BlockId: 97
+SourceId: 4
+TargetId: 7
+, BlockId: 97
+SourceId: 4
+TargetId: 7
+] 
+
+Arrival clearing new schedule:  [BlockId: 128
+TargetId: 2
+]
+send
+recv
+
+Now: 3417000
+recv
+
+Now: 3418000
+recv
+
+Now: 3419000
+recv
+
+Now: 3420000
+recv
+
+Now: 3421000
+recv
+
+Now: 3422000
+recv
+
+Now: 3423000
+recv
+
+Now: 3424000
+recv
+
+Now: 3425000
+recv
+
+Now: 3426000
+recv
+
+Now: 3427000
+recv
+
+Now: 3428000
+recv
+
+Now: 3429000
+recv
+
+Now: 3430000
+TODO buffer sorting ...
+recv
+
+Now: 3431000
+TODO buffer sorting ...
+recv
+
+Now: 3432000
+TODO buffer sorting ...
+recv
+
+Now: 3433000
+TODO buffer sorting ...
+recv
+
+Now: 3434000
+TODO buffer sorting ...
+recv
+
+Now: 3435000
+TODO buffer sorting ...
+recv
+
+Now: 3436000
+TODO buffer sorting ...
+recv
+
+Now: 3437000
+TODO buffer sorting ...
+recv
+
+Now: 3438000
+TODO buffer sorting ...
+recv
+
+Now: 3439000
+TODO buffer sorting ...
+recv
+
+Now: 3440000
+TODO buffer sorting ...
+recv
+
+Now: 3441000
+TODO buffer sorting ...
+recv
+
+Now: 3442000
+Buffer shuffling new schedule:  [BlockId: 96
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 3443000
+recv
+
+Now: 3444000
+recv
+
+Now: 3445000
+recv
+
+Now: 3446000
+recv
+
+Now: 3447000
+recv
+
+Now: 3448000
+recv
+
+Now: 3449000
+Arrival clearing new schedule:  [BlockId: 129
+TargetId: 2
+]
+send
+recv
+
+Now: 3450000
+recv
+
+Now: 3451000
+recv
+
+Now: 3452000
+recv
+
+Now: 3453000
+recv
+
+Now: 3454000
+recv
+
+Now: 3455000
+recv
+
+Now: 3456000
+recv
+
+Now: 3457000
+recv
+
+Now: 3458000
+recv
+
+Now: 3459000
+Buffer shuffling new schedule:  [BlockId: 98
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 3460000
+recv
+
+Now: 3461000
+recv
+
+Now: 3462000
+recv
+
+Now: 3463000
+recv
+
+Now: 3464000
+recv
+
+Now: 3465000
+Buffer shuffling new schedule:  [BlockId: 117
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 3466000
+recv
+
+Now: 3467000
+recv
+
+Now: 3468000
+recv
+
+Now: 3469000
+recv
+
+Now: 3470000
+recv
+
+Now: 3471000
+Buffer shuffling new schedule:  [BlockId: 109
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 3472000
+recv
+
+Now: 3473000
+recv
+
+Now: 3474000
+recv
+
+Now: 3475000
+recv
+
+Now: 3476000
+recv
+
+Now: 3477000
+Buffer shuffling new schedule:  [BlockId: 111
+SourceId: 3
+TargetId: 2
+]
+send
+recv
+
+Now: 3478000
+recv
+
+Now: 3479000
+recv
+
+Now: 3480000
+recv
+
+Now: 3481000
+recv
+
+Now: 3482000
+recv
+
+Now: 3483000
+Easy handover new schedule:  [BlockId: 101
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+
+Now: 3484000
+recv
+
+Now: 3485000
+recv
+
+Now: 3486000
+recv
+
+Now: 3487000
+recv
+
+Now: 3488000
+recv
+
+Now: 3489000
+recv
+
+Now: 3490000
+recv
+
+Now: 3491000
+recv
+
+Now: 3492000
+recv
+
+Now: 3493000
+recv
+
+Now: 3494000
+Arrival clearing new schedule:  [BlockId: 130
+TargetId: 3
+]
+send
+recv
+
+Now: 3495000
+recv
+
+Now: 3496000
+recv
+
+Now: 3497000
+recv
+
+Now: 3498000
+recv
+
+Now: 3499000
+recv
+
+Now: 3500000
+recv
+
+Now: 3501000
+recv
+
+Now: 3502000
+recv
+
+Now: 3503000
+recv
+
+Now: 3504000
+recv
+
+Now: 3505000
+recv
+
+Now: 3506000
+recv
+
+Now: 3507000
+recv
+
+Now: 3508000
+Buffer shuffling new schedule:  [BlockId: 120
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 3509000
+recv
+
+Now: 3510000
+recv
+
+Now: 3511000
+recv
+
+Now: 3512000
+recv
+
+Now: 3513000
+recv
+
+Now: 3514000
+recv
+
+Now: 3515000
+Buffer shuffling new schedule:  [BlockId: 126
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 3516000
+recv
+
+Now: 3517000
+recv
+
+Now: 3518000
+recv
+
+Now: 3519000
+recv
+
+Now: 3520000
+recv
+
+Now: 3521000
+recv
+
+Now: 3522000
+Buffer shuffling new schedule:  [BlockId: 125
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 3523000
+recv
+
+Now: 3524000
+recv
+
+Now: 3525000
+recv
+
+Now: 3526000
+recv
+
+Now: 3527000
+recv
+
+Now: 3528000
+recv
+
+Now: 3529000
+Arrival clearing new schedule:  [BlockId: 131
+TargetId: 3
+]
+send
+recv
+
+Now: 3530000
+recv
+
+Now: 3531000
+recv
+
+Now: 3532000
+recv
+
+Now: 3533000
+recv
+
+Now: 3534000
+recv
+
+Now: 3535000
+recv
+
+Now: 3536000
+recv
+
+Now: 3537000
+recv
+
+Now: 3538000
+recv
+
+Now: 3539000
+Buffer shuffling new schedule:  [BlockId: 124
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 3540000
+recv
+
+Now: 3541000
+recv
+
+Now: 3542000
+recv
+
+Now: 3543000
+recv
+
+Now: 3544000
+recv
+
+Now: 3545000
+recv
+
+Now: 3546000
+Buffer shuffling new schedule:  [BlockId: 123
+SourceId: 1
+TargetId: 3
+]
+send
+recv
+
+Now: 3547000
+recv
+
+Now: 3548000
+recv
+
+Now: 3549000
+recv
+
+Now: 3550000
+recv
+
+Now: 3551000
+recv
+
+Now: 3552000
+recv
+
+Now: 3553000
+Easy handover new schedule:  [BlockId: 100
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 3554000
+recv
+
+Now: 3555000
+recv
+
+Now: 3556000
+recv
+
+Now: 3557000
+recv
+
+Now: 3558000
+recv
+
+Now: 3559000
+recv
+
+Now: 3560000
+recv
+
+Now: 3561000
+recv
+
+Now: 3562000
+recv
+
+Now: 3563000
+recv
+
+Now: 3564000
+recv
+
+Now: 3565000
+Arrival clearing new schedule:  [BlockId: 132
+TargetId: 1
+]
+send
+recv
+
+Now: 3566000
+recv
+
+Now: 3567000
+recv
+
+Now: 3568000
+recv
+
+Now: 3569000
+recv
+
+Now: 3570000
+recv
+
+Now: 3571000
+recv
+
+Now: 3572000
+recv
+
+Now: 3573000
+recv
+
+Now: 3574000
+recv
+
+Now: 3575000
+recv
+
+Now: 3576000
+recv
+
+Now: 3577000
+Buffer shuffling case source == destination
+New destination id: 5
+Buffer shuffling new schedule:  [BlockId: 132
+SourceId: 1
+TargetId: 5
+]
+send
+recv
+
+Now: 3578000
+recv
+
+Now: 3579000
+recv
+
+Now: 3580000
+recv
+
+Now: 3581000
+recv
+
+Now: 3582000
+recv
+
+Now: 3583000
+recv
+
+Now: 3584000
+Easy handover new schedule:  [BlockId: 104
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+
+Now: 3585000
+recv
+
+Now: 3586000
+recv
+
+Now: 3587000
+recv
+
+Now: 3588000
+recv
+
+Now: 3589000
+recv
+
+Now: 3590000
+recv
+
+Now: 3591000
+recv
+
+Now: 3592000
+recv
+
+Now: 3593000
+recv
+
+Now: 3594000
+recv
+
+Now: 3595000
+recv
+
+Now: 3596000
+recv
+
+Now: 3597000
+recv
+
+Now: 3598000
+Buffer shuffling new schedule:  [BlockId: 107
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+
+Now: 3599000
