@@ -24,11 +24,12 @@ class Move:
         self.block = block
 
 class Block:
-    def __init__(self, id, is_ready, due):
+    def __init__(self, id, is_ready, due, now):
         self.id = id
         self.due = due
         self.is_ready = is_ready
-        self.is_overdue = True if self.due <= 0 else False
+        # TODO: test overdue & implement the rest
+        self.is_overdue = True if (self.due - now) <= 0 else False
 
 class Stack:
     def __init__(self, id, max_height, blocks):
@@ -37,6 +38,10 @@ class Stack:
         self.blocks = blocks
 
     def calculate_deposition_score(self, max_due, min_due) -> float:
+        # TODO:
+        # kleine stacks mit hohem ready anteil (sehr schnell erreicht) nochmal deutlich schlechteren deposition score
+        # kriegen als aktuell
+
         height = len(self.blocks)
 
         if height == self.max_height:
@@ -82,9 +87,6 @@ class Stack:
 
     def top(self):
         return self.blocks[-1]
-    
-    def set_deposition_score(self, val):
-        self.deposition_score =  val
 
 
 """class Handover:
@@ -109,16 +111,17 @@ def create_schedule(world):
     # initialize schedule
     schedule = CraneSchedule()
 
-    # return if still has schedule
+    # check if still has schedule
     if len(world.Crane.Schedule.Moves) > 0:
         # case: handover wasn't ready when current relocation of ready block was scheduled
         if world.Crane.Load.Ready and world.Handover.Ready and not world.Crane.Schedule.Moves[0].TargetId == world.Handover.Id:
-            print("Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.")
+            # creates invalid moves (seems like block has already been handed over but this request is created again)
             move = CraneMove()
             move.BlockId = world.Crane.Load.Id
             move.SourceId = world.Crane.Schedule.Moves[0].TargetId
             move.TargetId = world.Handover.Id
             schedule.Moves.append(move)
+            print("Edge case has schedule new schedule: ", schedule.Moves)
             return schedule
         return None
     
@@ -130,34 +133,29 @@ def create_schedule(world):
     for buffer in world.Buffers:
         buffers.append(Stack(buffer.Id, 
                     buffer.MaxHeight, 
-                    [Block(id=block.Id, is_ready=block.Ready, due=block.Due.MilliSeconds) for block in buffer.BottomToTop]))
+                    [Block(id=block.Id, is_ready=block.Ready, due=block.Due.MilliSeconds, now=world.Now.MilliSeconds) for block in buffer.BottomToTop]))
+
+    
+
+    # print_if_invalid(world, buffers)
 
     for buffer in buffers:
         if len(buffer.blocks) > 0 and buffer.top().is_ready and world.Handover.Ready:
-            # print("Block", buffer.top().id, "and Handover are ready.")
             move = CraneMove()
             move.BlockId = buffer.top().id
             move.SourceId = buffer.id
             move.TargetId = world.Handover.Id
             schedule.Moves.append(move)
-            # print("New schedule: ", schedule.Moves)
+            print("Easy handover new schedule: ", schedule.Moves)
             return schedule
-
-
-    # debug
-    if world.InvalidMoves:
-        print("++++++++ INVALID MOVE ++++++++++\ninvalid:", world.InvalidMoves)
-        print("STATE:")
-        for stack in buffers:
-            for block in stack.blocks:
-                print("[",block.id, "/" ,end="] ")
-            print("stack", stack.id)
-        print("\n")
 
 
 
     # STEP 2:
     # arrival clearing
+
+    # TODO: delay arrival clearing if: handover-estimation nur kurze Zeit bis ready
+    #       and production interval relativ groß
 
     max_due = 0
     min_due = 999999999
@@ -174,7 +172,7 @@ def create_schedule(world):
 
     arrival = Stack(world.Production.Id, 
                     world.Production.MaxHeight, 
-                    [Block(block.Id, block.Ready, block.Due.MilliSeconds) for block in world.Production.BottomToTop])
+                    [Block(block.Id, block.Ready, block.Due.MilliSeconds, now=world.Now.MilliSeconds) for block in world.Production.BottomToTop])
 
     # check capacity of arrival stack
     free_arrival_size = arrival.max_height - len(arrival.blocks)
@@ -190,7 +188,7 @@ def create_schedule(world):
         move.SourceId = arrival.id
         move.TargetId = destination_stack.id
         schedule.Moves.append(move)
-        # print("New schedule: ", schedule.Moves)
+        print("Arrival clearing new schedule: ", schedule.Moves)
         return schedule
     
 
@@ -218,51 +216,49 @@ def create_schedule(world):
 
         # case: source & destination are same stack
         if source_stack.id == destination_stack.id:
-            print("Source = destination")
+            print("Buffer shuffling case source == destination")
             # ready score more important than deposition score
             # => choose "second best" destination
             buffers_sorted = sorted(buffers, key=lambda buffer: buffer.deposition_score, reverse=True)
             destination_stack = buffers_sorted[1]
             print("New destination id:", destination_stack.id)
-        
-        
-        # debug
-        print("\nSCORES:")
-        for stack in buffers:
-            print("Stack", stack.id, "D:", stack.deposition_score, "R:", stack.ready_score)
-        print("\nSTATE:")
-        for stack in buffers:
-            for block in stack.blocks:
-                print("[",block.id, "/" ,end="] ")
-            print("stack", stack.id)
-        print("\n")
 
 
         if destination_stack.deposition_score != 0:
-            print("Buffer shuffling: creating new move ...")
+            # print("Buffer shuffling: creating new move ...")
             move = CraneMove()
             move.BlockId = source_stack.top().id
             move.SourceId = source_stack.id
             move.TargetId = destination_stack.id
             schedule.Moves.append(move)
-            print("Buffer shuffling: new schedule: ", schedule.Moves)
+            print("Buffer shuffling new schedule: ", schedule.Moves)
             return schedule
     
     
 
     # STEP 4:
     # buffer sorting
+    print("TODO buffer sorting ...")
 
     return None
 
 
+# for debugging
+def print_if_invalid(world, buffers):
+    if world.InvalidMoves:
+        print("INVALID MOVE\ninvalid:", world.InvalidMoves, "\n")
+        print("STATE NOW:")
+        for stack in buffers:
+            for block in stack.blocks:
+                print("[",block.id, "/" ,end="] ")
+            print("stack", stack.id)
+        print("\n\n")
 
 
 
 
 
 
-######
 
 
 def create_schedule2(world):
@@ -306,7 +302,6 @@ def create_schedule2(world):
     print("Schedule: ", schedule.Moves)
 
     return schedule if len(schedule.Moves) > 0 else None
-
 
 def prioritize_by_due_date(world):
     # changed code to keep the original world.Production
@@ -387,7 +382,6 @@ class BrpState:
                 moves.append(Move(src.id, tgt.id, top.id))
         return moves
 
-# old block class
 """
 class Block:
     def __init__(self, id, prio, isReady, due):
@@ -396,10 +390,6 @@ class Block:
         self.isReady = isReady
         self.due
 """
-
-
-
-
 
 def crane_schedule(world):
     if len(world.Crane.Schedule.Moves) > 0:

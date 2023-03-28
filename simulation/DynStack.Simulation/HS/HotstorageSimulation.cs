@@ -113,7 +113,7 @@ namespace DynStack.Simulation.HS {
       settings = set;
       sim = new PseudoRealtimeSimulation(DateTime.UtcNow, settings.Seed);
       // here I can setRealtime for the simulation!
-      sim.SetRealtime(10);
+      sim.SetRealtime(60);
 
       ServiceLevel = new SampleMonitor("SerivceLevel");
       LeadTimes = new SampleMonitor("LeadTimes");

@@ -1,0 +1,932 @@
+My constum stacking will be started.
+Connected socket
+recv
+Creating csv ...
+Buffer shuffling new schedule:  [BlockId: 4
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 11
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 19
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 21
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 25
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 35
+TargetId: 1
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 26
+SourceId: 4
+TargetId: 1
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 29
+SourceId: 4
+TargetId: 3
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 33
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 36
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 6
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 15
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 37
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 20
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 24
+SourceId: 5
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 34
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 38
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 2
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 39
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 9
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 14
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 17
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 18
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 40
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 28
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 30
+SourceId: 2
+TargetId: 5
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 30
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 30
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 30
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 30
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+INVALID MOVE
+invalid: [BlockId: 30
+SourceId: 5
+TargetId: 7
+, BlockId: 30
+SourceId: 5
+TargetId: 7
+, BlockId: 30
+SourceId: 5
+TargetId: 7
+] 
+
+STATE NOW:
+[ 12 /] [ 8 /] [ 5 /] [ 19 /] [ 35 /] [ 26 /] stack 1
+stack 2
+[ 23 /] [ 16 /] [ 1 /] [ 4 /] [ 11 /] [ 21 /] [ 29 /] stack 3
+[ 36 /] [ 6 /] [ 15 /] [ 37 /] [ 20 /] [ 24 /] stack 4
+[ 38 /] [ 2 /] [ 39 /] [ 9 /] [ 14 /] [ 17 /] [ 40 /] stack 5
+[ 32 /] [ 31 /] [ 27 /] [ 22 /] [ 13 /] [ 10 /] [ 7 /] [ 3 /] stack 6
+
+
+
+Buffer shuffling new schedule:  [BlockId: 24
+SourceId: 4
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+Edge case: crane has ready block but handover wasn't ready yet when the ready block was first picked up.
+Edge case has schedule new schedule:  [BlockId: 24
+SourceId: 2
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+INVALID MOVE
+invalid: [BlockId: 24
+SourceId: 2
+TargetId: 7
+, BlockId: 24
+SourceId: 2
+TargetId: 7
+, BlockId: 24
+SourceId: 2
+TargetId: 7
+] 
+
+STATE NOW:
+[ 12 /] [ 8 /] [ 5 /] [ 19 /] [ 35 /] [ 26 /] stack 1
+stack 2
+[ 23 /] [ 16 /] [ 1 /] [ 4 /] [ 11 /] [ 21 /] [ 29 /] stack 3
+[ 36 /] [ 6 /] [ 15 /] [ 37 /] [ 20 /] stack 4
+[ 38 /] [ 2 /] [ 39 /] [ 9 /] [ 14 /] [ 17 /] [ 40 /] stack 5
+[ 32 /] [ 31 /] [ 27 /] [ 22 /] [ 13 /] [ 10 /] [ 7 /] [ 3 /] stack 6
+
+
+
+Arrival clearing new schedule:  [BlockId: 41
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 26
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 42
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 20
+SourceId: 4
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 3
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 43
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 7
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 10
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 44
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 13
+SourceId: 6
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 22
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 45
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 27
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 31
+SourceId: 6
+TargetId: 4
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 32
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 46
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 29
+SourceId: 3
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 21
+SourceId: 3
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 11
+SourceId: 3
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 47
+TargetId: 2
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 21
+SourceId: 6
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 35
+SourceId: 1
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 19
+SourceId: 1
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 48
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Buffer shuffling new schedule:  [BlockId: 40
+SourceId: 5
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+Easy handover new schedule:  [BlockId: 17
+SourceId: 5
+TargetId: 7
+]
+send
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+recv
+Arrival clearing new schedule:  [BlockId: 49
+TargetId: 6
+]
+send
+recv
+recv
+recv
+recv

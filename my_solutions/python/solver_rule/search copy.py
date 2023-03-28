@@ -48,7 +48,7 @@ class Stack:
             return self.deposition_score
         
         num_ready = sum(block.is_ready and not block.is_overdue for block in self.blocks)
-        # overdue blocks currently should not be added to the average due value
+        # overdue blocks should not be added to the average due value
         average_due = sum(block.due for block in self.blocks if block.due > 0) / height
 
         ready_score = 1 / (num_ready + 1)
@@ -134,7 +134,6 @@ def create_schedule(world):
 
     for buffer in buffers:
         if len(buffer.blocks) > 0 and buffer.top().is_ready and world.Handover.Ready:
-            # print("Block", buffer.top().id, "and Handover are ready.")
             move = CraneMove()
             move.BlockId = buffer.top().id
             move.SourceId = buffer.id
@@ -169,9 +168,7 @@ def create_schedule(world):
                 max_due = max_temp
             if min_temp < min_due:
                 min_due = min_temp
-    # print("Max due:", max_due, "\nMin due:", min_due)
-            
-
+    
     arrival = Stack(world.Production.Id, 
                     world.Production.MaxHeight, 
                     [Block(block.Id, block.Ready, block.Due.MilliSeconds) for block in world.Production.BottomToTop])
@@ -181,17 +178,27 @@ def create_schedule(world):
 
     if free_arrival_size < arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
 
+        """
+        # old code to choose destination
         for buffer in buffers:
             buffer.calculate_deposition_score(max_due, min_due)
-        destination_stack = max(buffers, key=attrgetter('deposition_score'))
+        destination_stack = max(buffers, key=attrgetter('deposition_score'))"""
 
-        move = CraneMove()
-        move.BlockId = arrival.top().id
-        move.SourceId = arrival.id
-        move.TargetId = destination_stack.id
-        schedule.Moves.append(move)
-        # print("New schedule: ", schedule.Moves)
-        return schedule
+        # choose destination that doesn't have a ready on top
+        buffers_sorted = sorted(buffers, key=lambda buffer: buffer.deposition_score, reverse=True)
+        destination_stack = False
+        for buffer in buffers_sorted:
+            if not buffer.top().is_ready:
+                destination_stack = buffer
+        
+        if destination_stack:
+            move = CraneMove()
+            move.BlockId = arrival.top().id
+            move.SourceId = arrival.id
+            move.TargetId = destination_stack.id
+            schedule.Moves.append(move)
+            # print("New schedule: ", schedule.Moves)
+            return schedule
     
 
     # STEP 3:
