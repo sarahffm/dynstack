@@ -15,6 +15,7 @@ READY_INFINITY = 999999
 # to check if arrival should be cleared
 ARRIVAL_UTILIZATION_LIMIT = 0.5
 K = 1
+MAX_BUFFER_USE = 0.9
 
 
 class Move:
@@ -104,14 +105,22 @@ class Stack:
 
 ############ Class definition end ############
 
+def clear_arrival(arrival, buffers, min_due, max_due, schedule):
+    for buffer in buffers:
+        buffer.calculate_deposition_score(max_due, min_due)
+    destination_stack = max(buffers, key=attrgetter('deposition_score'))
+
+    move = CraneMove()
+    move.BlockId = arrival.top().id
+    move.SourceId = arrival.id
+    move.TargetId = destination_stack.id
+    schedule.Moves.append(move)
 
 def create_schedule(world):
     # TODO
     # - use a State object instead to store relevant information
     # - prioritize available ready block with small due date over arrival clearing
     # - buffer shuffling: reimplement overdue blocks to handover
-
-    print("\nNow:", world.Now.MilliSeconds)
 
     # initialize schedule
     schedule = CraneSchedule()
@@ -158,21 +167,28 @@ def create_schedule(world):
     # STEP 2:
     # arrival clearing
 
-    # TODO: delay arrival clearing if: handover-estimation nur kurze Zeit bis ready
+    # IDEA: delay arrival clearing if: handover-estimation nur kurze Zeit bis ready
     #       and production interval relativ groß
+
+    used_buffer_capacity = 0
+    total_buffer_capacity = len(buffers) * buffers[0].max_height
 
     max_due = 0
     min_due = 999999999
+
     for buffer in buffers:
-        if len(buffer.blocks) > 0:
+        size = len(buffer.blocks)
+        used_buffer_capacity += size
+        if size > 0:
             max_temp = max(block.due for block in buffer.blocks)
             min_temp = min(block.due for block in buffer.blocks)
             if max_temp > max_due:
                 max_due = max_temp
             if min_temp < min_due:
                 min_due = min_temp
-    # print("Max due:", max_due, "\nMin due:", min_due)
-            
+    
+    buffer_use = used_buffer_capacity / total_buffer_capacity
+    print("Buffer capacity", buffer_use,"%. Total:", total_buffer_capacity, "Used:", used_buffer_capacity)
 
     arrival = Stack(world.Production.Id, 
                     world.Production.MaxHeight, 
@@ -181,18 +197,15 @@ def create_schedule(world):
     # check capacity of arrival stack
     free_arrival_size = arrival.max_height - len(arrival.blocks)
 
-    if free_arrival_size < arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
-
-        for buffer in buffers:
-            buffer.calculate_deposition_score(max_due, min_due)
-        destination_stack = max(buffers, key=attrgetter('deposition_score'))
-
-        move = CraneMove()
-        move.BlockId = arrival.top().id
-        move.SourceId = arrival.id
-        move.TargetId = destination_stack.id
-        schedule.Moves.append(move)
-        print("Arrival clearing new schedule: ", schedule.Moves)
+    if buffer_use > MAX_BUFFER_USE:
+        print("Reached max buffer use. Only clear arrival if full.")
+        if free_arrival_size == 0:
+            clear_arrival(arrival, buffers, min_due, max_due, schedule)
+            print("Full arrival clearing new schedule: ", schedule.Moves)
+            return schedule
+    elif free_arrival_size < arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
+        clear_arrival(arrival, buffers, min_due, max_due, schedule)
+        print("Normal arrival clearing new schedule: ", schedule.Moves)
         return schedule
     
 
