@@ -91,36 +91,50 @@ class Stack:
 
     def top(self):
         return self.blocks[-1]
+    
+    def find_topmost_ready_block(self):
+        # blocks are sorted bottom-to-top with topmost block at [-1]
+        # want to find the topmost ready block => reversed
+        # stack_index is the original index, not reversed
+        for stack_index, block in reversed(list(enumerate(self.blocks))):
+            if block.is_ready and not block.is_overdue:
+                ready_block = ReadyBlock(block.id, self, stack_index)
+                return ready_block
+        return False
 
-
-"""class Handover:
-
-    def __init__(self, id, is_ready) -> None:
+class ReadyBlock:
+    def __init__(self, id, stack, index) -> None:
         self.id = id
-        self.max_height = 1
-        self.is_ready = is_ready
-        self.deposition_score = 1"""
+        self.stack = stack
+        self.index = index
+        self.covered = len(stack.blocks) - (index + 1)
 
 
 
 ############ Class definition end ############
 
+
+
 def clear_arrival(arrival, buffers, min_due, max_due, schedule):
     for buffer in buffers:
         buffer.calculate_deposition_score(max_due, min_due)
     destination_stack = max(buffers, key=attrgetter('deposition_score'))
-
-    move = CraneMove()
-    move.BlockId = arrival.top().id
-    move.SourceId = arrival.id
-    move.TargetId = destination_stack.id
+    move = create_move(block_id=arrival.top().id, source_id=arrival.id, target_id=destination_stack.id)
     schedule.Moves.append(move)
 
+def create_move(block_id, source_id, target_id):
+    move = CraneMove()
+    move.BlockId = block_id
+    move.SourceId = source_id
+    move.TargetId = target_id
+    return move
+
+
 def create_schedule(world):
-    # TODO
+    # TODO:
     # - use a State object instead to store relevant information
     # - prioritize available ready block with small due date over arrival clearing
-    # - buffer shuffling: reimplement overdue blocks to handover
+    # - emergency mode
 
     # initialize schedule
     schedule = CraneSchedule()
@@ -130,10 +144,7 @@ def create_schedule(world):
         # case: handover wasn't ready when current relocation of ready block was scheduled
         if world.Crane.Load.Ready and world.Handover.Ready and not world.Crane.Schedule.Moves[0].TargetId == world.Handover.Id:
             # creates invalid moves (seems like block has already been handed over but this request is created again)
-            move = CraneMove()
-            move.BlockId = world.Crane.Load.Id
-            move.SourceId = world.Crane.Schedule.Moves[0].TargetId
-            move.TargetId = world.Handover.Id
+            move = create_move(block_id=world.Crane.Load.Id, source_id=world.Crane.Schedule.Moves[0].TargetId, target_id=world.Handover.Id)
             schedule.Moves.append(move)
             print("Edge case has schedule new schedule: ", schedule.Moves)
             return schedule
@@ -149,15 +160,11 @@ def create_schedule(world):
                     buffer.MaxHeight, 
                     [Block(id=block.Id, is_ready=block.Ready, due=block.Due.MilliSeconds, now=world.Now.MilliSeconds) for block in buffer.BottomToTop]))
 
-    
     print_if_invalid(world, buffers)
 
     for buffer in buffers:
         if len(buffer.blocks) > 0 and buffer.top().is_ready and not buffer.top().is_overdue and world.Handover.Ready:
-            move = CraneMove()
-            move.BlockId = buffer.top().id
-            move.SourceId = buffer.id
-            move.TargetId = world.Handover.Id
+            move = create_move(block_id=buffer.top().id, source_id=buffer.id, target_id=world.Handover.Id)
             schedule.Moves.append(move)
             print("Easy handover new schedule: ", schedule.Moves)
             return schedule
@@ -189,6 +196,7 @@ def create_schedule(world):
     
     buffer_use = used_buffer_capacity / total_buffer_capacity
     print("Buffer capacity", buffer_use,"%. Total:", total_buffer_capacity, "Used:", used_buffer_capacity)
+    EMERGENCY_MODE = True if buffer_use > MAX_BUFFER_USE else False
 
     arrival = Stack(world.Production.Id, 
                     world.Production.MaxHeight, 
@@ -197,24 +205,88 @@ def create_schedule(world):
     # check capacity of arrival stack
     free_arrival_size = arrival.max_height - len(arrival.blocks)
 
-    if buffer_use > MAX_BUFFER_USE:
-        print("Reached max buffer use. Only clear arrival if full.")
+    if EMERGENCY_MODE:
+        print("EMERGENCY MODE:", EMERGENCY_MODE)
+        # buffer shuffling
+        # TODO: 
+        # - if locked, move overdue to (ready) handover
+        # - find reachable ready block
+        #   - reachable if equal or less blocks on top than are free in total
+
+        # find topmost ready blocks
+        ready_blocks = []
+        for buffer in buffers:
+            ready_block = buffer.find_topmost_ready_block()
+            if ready_block:
+                ready_blocks.append(ready_block)
+        
+        #print("Ready blocks:", ready_blocks)
+        
+        # if ready block found
+        if ready_blocks:
+            print("Ready block exists")
+            # choose best ready block
+            ready_blocks_sorted = sorted(ready_blocks, key=lambda ready_block: ready_block.covered)
+            topmost_ready = ready_blocks_sorted[0]
+            print("Best ready block found:", topmost_ready.id, topmost_ready.covered)
+
+            # check if ready block reachable
+            free_capacity = total_buffer_capacity - used_buffer_capacity
+            chosen_stack_capacity = topmost_ready.stack.max_height - len(topmost_ready.stack.blocks)
+
+            if topmost_ready.covered <= (free_capacity - chosen_stack_capacity):
+                print("Ready block is reachable!")
+                # source is stack withe the best ready block
+                source_stack = topmost_ready.stack
+
+                # determine destination stack
+
+                if source_stack.top().is_overdue and world.Handover.Ready:
+                    # move covering block to handover if possible
+                    move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=world.Handover.Id)
+                    schedule.Moves.append(move)
+                    print("Emergency shuffling to handover new schedule: ", schedule.Moves)
+                    return schedule
+                
+                for buffer in buffers:
+                    # move covering block to any non-full stack
+                    buffer.calculate_deposition_score(max_due, min_due)
+                    if buffer.id != source_stack.id and buffer.deposition_score != 0:
+                        # destination has been found. Create a new move
+                        destination_stack = buffer
+                        move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=destination_stack.id)
+                        schedule.Moves.append(move)
+                        print("Emergency shuffling to other stack new schedule: ", schedule.Moves)
+                        return schedule
+        
+        # clear over_dues if there is nothing else to clear or shuffle
+        if world.Handover.Ready:
+            for buffer in buffers:
+                if buffer.top().is_overdue:
+                    move = create_move(block_id=buffer.top().id, source_id=buffer.id, target_id=world.Handover.Id)
+                    schedule.Moves.append(move)
+                    print("Clear overdue new schedule: ", schedule.Moves)
+                    return schedule
+
+        print("Wait...")
+        return None
+        """# emergency low priority arrival clearing
         if free_arrival_size == 0:
             clear_arrival(arrival, buffers, min_due, max_due, schedule)
             print("Full arrival clearing new schedule: ", schedule.Moves)
-            return schedule
-    elif free_arrival_size < arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
+            return schedule"""
+
+
+    # normal arrival clearing
+    if free_arrival_size <= arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
         clear_arrival(arrival, buffers, min_due, max_due, schedule)
         print("Normal arrival clearing new schedule: ", schedule.Moves)
         return schedule
     
 
     # STEP 3:
-    # buffer shuffling
+    # normal buffer shuffling
 
-    # IDEA: maybe for harder settings, incorporate overdue 
-    #      - if locked, move overdue
-    #      - or if overdue on top, move to handover (if there are no more important moves)
     exists_ready_block = False
     for buffer in buffers:
         for block in buffer.blocks:
@@ -230,12 +302,11 @@ def create_schedule(world):
 
         source_stack = max(buffers, key=attrgetter('ready_score'))
 
-        if source_stack.top().is_overdue:
-            # destination: handover if block is overdue and handover is ready
-            if world.Handover.Ready:
-                print("Overdue block to handover ...")
-                destination_stack = Stack(world.Handover.Id, 1, [])
-                destination_stack.set_deposition_score(1)
+        # destination: handover if block is overdue and handover is ready
+        if source_stack.top().is_overdue and world.Handover.Ready:
+            print("Overdue block to handover ...")
+            destination_stack = Stack(world.Handover.Id, 1, [])
+            destination_stack.set_deposition_score(1)
         else:
             # destination: stack with best deposition score if block is not overdue
             destination_stack = max(buffers, key=attrgetter('deposition_score'))
@@ -250,10 +321,7 @@ def create_schedule(world):
 
         # create move if chosen destination is not full
         if destination_stack.deposition_score != 0:
-            move = CraneMove()
-            move.BlockId = source_stack.top().id
-            move.SourceId = source_stack.id
-            move.TargetId = destination_stack.id
+            move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=destination_stack.id)
             schedule.Moves.append(move)
             print("Buffer shuffling new schedule: ", schedule.Moves)
             return schedule
@@ -271,12 +339,12 @@ def create_schedule(world):
 def print_if_invalid(world, buffers):
     if world.InvalidMoves:
         print("INVALID MOVE\n", world.InvalidMoves, "\n")
-        """print("STATE NOW:")
+        print("STATE NOW:")
         for stack in buffers:
             for block in stack.blocks:
                 print("[",block.id, "/" ,end="] ")
             print("stack", stack.id)
-        print("\n\n")"""
+        print("\n\n")
 
 
 
