@@ -14,7 +14,7 @@ READY_INFINITY = 999999
 
 # to check if arrival should be cleared
 ARRIVAL_UTILIZATION_LIMIT = 0.5
-K = 1
+K = 0
 MAX_BUFFER_USE = 0.9
 
 
@@ -98,11 +98,16 @@ class Stack:
         # stack_index is the original index, not reversed
         for stack_index, block in reversed(list(enumerate(self.blocks))):
             if block.is_ready and not block.is_overdue:
-                ready_block = ReadyBlock(block.id, self, stack_index)
-                return ready_block
+                return PositionedBlock(block.id, self, stack_index)
+        return False
+    
+    def find_topmost_overdue_block(self):
+        for stack_index, block in reversed(list(enumerate(self.blocks))):
+            if block.is_overdue:
+                return PositionedBlock(block.id, self, stack_index)
         return False
 
-class ReadyBlock:
+class PositionedBlock:
     def __init__(self, id, stack, index) -> None:
         self.id = id
         self.stack = stack
@@ -113,6 +118,41 @@ class ReadyBlock:
 
 ############ Class definition end ############
 
+
+def get_reachable_block(world, buffers, ready_blocks, total_buffer_capacity, used_buffer_capacity, max_due, min_due):
+    print("Ready/Overdue block exists")
+    # choose best ready block
+    ready_blocks_sorted = sorted(ready_blocks, key=lambda ready_block: ready_block.covered)
+    topmost_ready = ready_blocks_sorted[0]
+    print("Best ready/overdue block found:", topmost_ready.id, topmost_ready.covered)
+
+    # check if ready block reachable
+    free_capacity = total_buffer_capacity - used_buffer_capacity
+    chosen_stack_capacity = topmost_ready.stack.max_height - len(topmost_ready.stack.blocks)
+
+    if topmost_ready.covered <= (free_capacity - chosen_stack_capacity):
+        print("Ready/overdue block is reachable!")
+        # source is stack withe the best ready block
+        source_stack = topmost_ready.stack
+
+        # determine destination stack
+
+        if source_stack.top().is_overdue and world.Handover.Ready:
+            # move covering block to handover if possible
+            move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=world.Handover.Id)
+            print("Emergency shuffling to handover new schedule: ", move)
+            return move
+        
+        for buffer in buffers:
+            # move covering block to any non-full stack
+            buffer.calculate_deposition_score(max_due, min_due)
+            if buffer.id != source_stack.id and buffer.deposition_score != 0:
+                # destination has been found. Create a new move
+                destination_stack = buffer
+                move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=destination_stack.id)
+                print("Emergency shuffling to other stack new schedule: ", move)
+                return move
+    return False
 
 
 def clear_arrival(arrival, buffers, min_due, max_due, schedule):
@@ -224,7 +264,12 @@ def create_schedule(world):
         
         # if ready block found
         if ready_blocks:
-            print("Ready block exists")
+            move = get_reachable_block(world, buffers, ready_blocks, total_buffer_capacity, used_buffer_capacity, max_due, min_due)
+            if move:
+                schedule.Moves.append(move)
+                return schedule
+            
+            """print("Ready block exists")
             # choose best ready block
             ready_blocks_sorted = sorted(ready_blocks, key=lambda ready_block: ready_block.covered)
             topmost_ready = ready_blocks_sorted[0]
@@ -257,9 +302,9 @@ def create_schedule(world):
                         move = create_move(block_id=source_stack.top().id, source_id=source_stack.id, target_id=destination_stack.id)
                         schedule.Moves.append(move)
                         print("Emergency shuffling to other stack new schedule: ", schedule.Moves)
-                        return schedule
+                        return schedule"""
         
-        # clear over_dues if there is nothing else to clear or shuffle
+        # clear overdues
         if world.Handover.Ready:
             for buffer in buffers:
                 if buffer.top().is_overdue:
@@ -267,18 +312,28 @@ def create_schedule(world):
                     schedule.Moves.append(move)
                     print("Clear overdue new schedule: ", schedule.Moves)
                     return schedule
+        
+        # test these change in the next run
+        """# search for reachable overdue
+        overdue_blocks = []
+        for buffer in buffers:
+            overdue_block = buffer.find_topmost_overdue_block()
+            if overdue_block:
+                overdue_blocks.append(overdue_block)
+        
+        # if overdue block found
+        if overdue_blocks:
+            move = get_reachable_block(world, buffers, overdue_blocks, total_buffer_capacity, used_buffer_capacity, max_due, min_due)
+            if move:
+                schedule.Moves.append(move)
+                return schedule"""
 
         print("Wait...")
         return None
-        """# emergency low priority arrival clearing
-        if free_arrival_size == 0:
-            clear_arrival(arrival, buffers, min_due, max_due, schedule)
-            print("Full arrival clearing new schedule: ", schedule.Moves)
-            return schedule"""
 
 
     # normal arrival clearing
-    if free_arrival_size <= arrival.max_height * ARRIVAL_UTILIZATION_LIMIT + K:
+    if free_arrival_size < arrival.max_height * ARRIVAL_UTILIZATION_LIMIT - K:
         clear_arrival(arrival, buffers, min_due, max_due, schedule)
         print("Normal arrival clearing new schedule: ", schedule.Moves)
         return schedule
