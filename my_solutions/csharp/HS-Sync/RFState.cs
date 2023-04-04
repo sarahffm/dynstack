@@ -233,8 +233,6 @@ namespace csharp.HS_Sync {
             return null;
         }
 
-        // width: how many best moves are picked to be expanded next
-        // depth: probably how many moves are in the final sequence of moves
         public Tuple<List<CraneMove>, double> GetBestMovesBeam(List<CraneMove> x, int depth, int width) {
             var bestMoves = new Stack<Tuple<CraneMove, double, int>>(ExpandMoveState(0));
             // reduce depth because this is the first move
