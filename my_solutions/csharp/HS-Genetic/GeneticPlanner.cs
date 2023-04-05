@@ -41,6 +41,9 @@ namespace csharp.HS_Genetic {
       var schedule = new CraneSchedule() { SequenceNr = seqNr++ };
       var initialState = new State(world);
 
+      // initialState.Test();
+      // return null;
+
       // find solution
       var solution = initialState.SearchSolution();
 

@@ -1,15 +1,24 @@
-﻿using DynStacking.HotStorage.DataModel;
-using Internal;
+﻿using System.Linq.Expressions;
+using DynStacking.HotStorage.DataModel;
+// using Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+// using System.Runtime.InteropServices.Marshalling;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace csharp.HS_Genetic
 {
-    public class Block
+    public interface IHasId
+    {
+        int Id { get; }
+    }
+    
+    public class Block : IHasId
     {
         public Block(int id, bool ready, TimeStamp due)
         {
@@ -22,7 +31,7 @@ namespace csharp.HS_Genetic
         public TimeStamp Due { get; }
     }
 
-    public class Stack
+    public class Stack : IHasId
     {
         public int Id { get; }
         public int MaxHeight { get; }
@@ -130,50 +139,21 @@ namespace csharp.HS_Genetic
         // Define a static random number generator
         static Random Random = new Random();
 
-        private List<string> InitializePopulation(List<CraneMove> possibleMoves)
+        // use function to test code
+        public void Test()
         {
-            // TODO: determine how to generate the first sequence
-            // - ID ranges of the stacks
-            // - valid and invalid moves
-            // --> test mit GetAllPossibleMoves von Beam Search
-
-            var population = List<CraneMove>();
-            var remainingMoves = possibleMoves;
-            for (int step = 0; i < ChromosomeLength; i++)
-            {
-                // pick a random move, add it to the population and remove it from the pool of options
-                var randomIndex = Random.Next(remainingMoves.Count);
-                population.Add(remainingMoves[randomIndex]);
-                remainingMoves.RemoveAt(randomIndex);
-            }
-
-            // turn list of moves into string
-            var populationString = ConvertMovesToString(population);
-
-            // var population = Enumerable.Range(0, PopulationSize)
-            //     .Select(_ => string.Join(",", Enumerable.Range(0, ChromosomeLength)
-            //         .Select(__ => $"s{Random.Next(1, 11)}-d{Random.Next(1, 11)}")))
-            //     .ToList();
-
-            return populationString;
+            // string input = "s1-d4,s2-d4,s3-d4,s0-d1,s3-d4,s3-d4,s3-d4,s2-d4,s1-d4,s1-d4";
+            string input = "s2-d1,s1-d3,s0-d1,s3-d1,s3-d4,s3-d4,s3-d4,s1-d2,s0-d1,s2-d3,";
+            List<CraneMove> res = StringToCraneMoves(input);
+            Console.WriteLine(res);
+            System.Threading.Thread.Sleep(10000);
         }
 
-        private String ConvertMovesToString(List<CraneMove> moves)
-        {
-            result = new StringBuilder();
-            foreach (CraneMove move in moves)
-            {
-                result.Append($"s{move.SourceId}-d{move.TargetId},");
-            }
-            Console.WriteLine("Moves to string result: "+ result);
-            return result;
-        }
-
-        public SearchSolution()
+        public List<CraneMove> SearchSolution()
         {
             // Generate an initial population of random chromosomes
             // TODO: test difference of optimized True vs False
-            List<string> population = InitializePopulation(GetAllPossibleMoves());
+            List<string> population = InitializePopulation();
 
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
@@ -189,18 +169,169 @@ namespace csharp.HS_Genetic
 
                 // Generate the next generation by performing crossover and mutation operations on the parents
                 List<string> children = Breed(parents);
-                children = children.Select(child => Random.NextDouble() < MUTATION_RATE ? Mutate(child) : child).ToList();
+                // children = children.Select(child => Random.NextDouble() < MUTATION_RATE ? Mutate(child) : child).ToList();
 
                 // Combine the parents and children to form the next generation
                 population = parents.Concat(children).ToList();
 
                 // Print the fitness of the fittest chromosome in each generation
-                Console.WriteLine($"Generation {generation}: {fitnessScores.Max()}");
+                Console.WriteLine($"\nGeneration {generation}: {fitnessScores.Max()}\n\n\n");
             }
+
+            // Determine and print the final solution
+            string bestChromosome = population.OrderBy(c => Fitness(c)).First();
+            Console.WriteLine("Final solution: " + bestChromosome);
+
+            // convert string to list of crane moves
+            List<CraneMove> solution = StringToCraneMoves(bestChromosome);
+            return solution;
+        }
+
+        private List<string> InitializePopulation()
+        {
+            // TODO: determine how to generate the first sequence
+            // - ID ranges of the stacks
+            // - valid and invalid moves
+            // --> test mit GetAllPossibleMoves von Beam Search
+
+            List<CraneMove> possibleMoves = GetAllPossibleMoves();
+
+            var population = new List<string>();
+
+            // generate PopulationSize-many individuals
+            for (int k = 0; k < PopulationSize; k++)
+            {
+                var individual = new List<CraneMove>();
+                
+                for (int i = 0; i < ChromosomeLength; i++)
+                {   
+                    var remainingMoves = CopyCraneMoves(possibleMoves);
+
+                    // pick a random move, add it to the individual
+                    // Console.WriteLine(remainingMoves.Count);
+                    var randomIndex = Random.Next(remainingMoves.Count);
+                    individual.Add(remainingMoves[randomIndex]);
+
+                    // apply move & get possible moves for new state
+                    var oldState = new State(this);
+                    var newState = oldState.Apply(individual.Last());
+                    possibleMoves = newState.GetAllPossibleMoves();
+                }
+
+                // turn list of moves into string
+                var individualString = ConvertMovesToString(individual);
+                // add individual to population
+                population.Add(individualString);
+            }
+
+            // // generate PopulationSize-many individuals
+            // for (int k = 0; k < PopulationSize; k++)
+            // {
+            //     var individual = new List<CraneMove>();
+            //     var remainingMoves = CopyCraneMoves(possibleMoves);
+                
+            //     for (int i = 0; i < ChromosomeLength; i++)
+            //     {
+            //         // pick a random move, add it to the individual and remove it from the pool of options
+            //         Console.WriteLine(remainingMoves.Count);
+            //         var randomIndex = Random.Next(remainingMoves.Count);
+            //         individual.Add(remainingMoves[randomIndex]);
+            //         remainingMoves.RemoveAt(randomIndex);
+            //     }
+
+            //     // turn list of moves into string
+            //     var individualString = ConvertMovesToString(individual);
+            //     // add individual to population
+            //     population.Add(individualString);
+            // }
+
+            // var population = Enumerable.Range(0, PopulationSize)
+            //     .Select(_ => string.Join(",", Enumerable.Range(0, ChromosomeLength)
+            //         .Select(__ => $"s{Random.Next(1, 11)}-d{Random.Next(1, 11)}")))
+            //     .ToList();
+
+            return population;
+        }
+
+        private List<CraneMove> CopyCraneMoves(List<CraneMove> list)
+        {
+            //Console.WriteLine("Called CopyCraneMoves");
+            var newList = new List<CraneMove>();
+            foreach (CraneMove move in list)
+            {
+                newList.Add(new CraneMove() {
+                    BlockId = move.BlockId,
+                    SourceId = move.SourceId,
+                    TargetId = move.TargetId,
+                    Sequence = move.Sequence,
+                    EmptyMove = move.EmptyMove
+                });
+            }
+            return newList;
+        }
+
+        private string ConvertMovesToString(List<CraneMove> moves)
+        {
+            var result = new StringBuilder();
+            foreach (CraneMove move in moves)
+            {
+                result.Append($"s{move.SourceId}-d{move.TargetId},");
+            }
+            var resultTrimmed = result.ToString().TrimEnd(',');
+            return resultTrimmed;
+        }
+
+        private List<CraneMove> StringToCraneMoves(string str)
+        {
+            // example string:
+            // s1-d4,s2-d4,s3-d4,s0-d1,s3-d4,s3-d4,s3-d4,s2-d4,s1-d4,s1-d4
+
+            var result = new List<CraneMove>();
+            // str = str.TrimEnd(',');
+            Console.WriteLine(str);
+            var moves = str.Split(',');
+
+            foreach(string move in moves)
+            {
+                // determine source & target stack
+                var sourceId = ExtractId(move, "s");
+                var targetId = ExtractId(move, "d");
+
+                // determine blockId
+                // IDEA: could maybe be optimized by creating one dictionary beforehand?
+                var arrivalAsList = new List<Stack>();
+                arrivalAsList.Add(Production);
+                var source = FindById<Stack>(sourceId, Buffers, arrivalAsList);
+                var blockId = source.Top().Id; // error here
+
+                // create new move
+                var craneMove = new CraneMove() {
+                    BlockId = blockId,
+                    SourceId = sourceId,
+                    TargetId = targetId,
+                };
+                result.Add(craneMove);
+            }
+
+            return result;
+        }
+
+        private int ExtractId(string str, string mode)
+        {
+            string pattern = @"^s(\d+)-d(\d+)$";
+            Match match = Regex.Match(str, pattern);
+            int id = -1;
+
+            if (match.Success) 
+            {
+                id = mode == "s" ? int.Parse(match.Groups[1].Value) : int.Parse(match.Groups[2].Value);
+            }
+
+            return id;
         }
 
         // Define the fitness function
-        static double Fitness(string chromosome)
+        double Fitness(string chromosome)
         {
             // Evaluate the fitness of the chromosome based on the dynamic stacking problem
             // This could involve simulating the robot's behavior and measuring how well it follows the rules
@@ -208,13 +339,14 @@ namespace csharp.HS_Genetic
             return 0;
         }
 
-        private List<string> Breed(List<String> parents)
+        private List<string> Breed(List<string> parents)
         {
-            var children = List<string>;
+            var children = new List<string>();
 
             for (int i = 0; i < PopulationSize - parents.Count; i++)
             {
-                int random1, random2;
+                int random1 = -1;
+                int random2 = -1;
                 while (random1 == random2) 
                 {
                     random1 = Random.Next(parents.Count);
@@ -226,29 +358,117 @@ namespace csharp.HS_Genetic
             // children = Enumerable.Range(0, PopulationSize - parents.Count)
             //         .Select(_ => Crossover(parents[Random.Next(parents.Count)], parents[Random.Next(parents.Count)]))
             //         .ToList();
-
+            //Console.WriteLine("Children after crossover & mutate: " + children);
             return children;
         }
 
         // Define the crossover function
-        static string Crossover(string parent1, string parent2)
+        string Crossover(string parent1, string parent2)
         {
             // Perform a crossover operation between the two parents to generate a new child
             // This could involve selecting a random point in the chromosome and swapping the sequences before and after that point
             // Return the new child chromosome
-            return "";
+
+            var childBuilder = new StringBuilder();
+            var parent1Moves = parent1.Split(',');
+            var parent2Moves = parent2.Split(',');
+
+            for (int i = 0; i < ChromosomeLength; i++)
+            {
+                if (Random.NextDouble() < 0.5) 
+                {
+                    childBuilder.Append(parent1Moves[i]);
+                } 
+                else 
+                {
+                    childBuilder.Append(parent2Moves[i]);
+                }
+                childBuilder.Append(",");
+            }
+
+            string child = childBuilder.ToString();
+
+            // mutate
+            if (Random.NextDouble() < MutationRate)
+            {
+                child = Mutate(childBuilder.ToString());
+            }
+
+            //Console.WriteLine("crossover child:" + child);
+            return child;
         }
 
         // Define the mutation function
-        static string Mutate(string chromosome)
+        string Mutate(string child, int n = 1)
         {
             // Mutate the chromosome by randomly changing some symbols
             // This could involve iterating through the symbols in the chromosome and flipping each one with a probability defined by the mutation rate
             // Return the mutated chromosome
-            return "";
+
+            var childMoves = child.Split(',');
+            var mutated = new StringBuilder();
+            //Console.WriteLine("childMoves: ");
+            //Console.WriteLine("[{0}]", string.Join(", ", childMoves));
+
+            for (int k = 0; k < n; k++)
+            {
+                // choose a random move to mutate
+                var moveIndex = Random.Next(ChromosomeLength);
+                // create a new move
+                //Console.WriteLine("moveIndex: " + moveIndex);
+                childMoves[moveIndex] = CreateRandomMove(); // Exception here: IndexOutOfRangeException
+            }
+
+            foreach (string move in childMoves)
+            {
+                mutated.Append(move);
+                mutated.Append(',');
+            }
+            //Console.WriteLine(mutated.ToString());
+            return mutated.ToString();
         }
 
-        
+        private string CreateRandomMove()
+        {
+            // determine buffer range
+            // incorporate arrival and handover too
+            // - just randomly?
+
+            int maxBufferId = Buffers.Last().Id;
+            int arrivalId = 0;
+            int handoverId = maxBufferId + 1;
+
+            int sourceId = -1;
+            int targetId = -1;
+            while (sourceId == targetId)
+            {
+                // maxValue is exclusive
+                sourceId = Random.Next(arrivalId, maxBufferId + 1);
+                targetId = Random.Next(1, handoverId + 1);
+            }
+            
+            var newMove = $"s{sourceId}d{targetId}";
+            return newMove;
+        }
+
+        public static T FindById<T>(int id, params IList<T>[] lists) where T : IHasId
+        {
+            foreach (var list in lists)
+            {
+                if (list is null) continue;
+                foreach (var obj in list)
+                {
+                    if (obj.Id == id)
+                    {
+                        return obj;
+                    }
+                }
+            }
+            return default;
+        }
+
+
+
 
 
 
