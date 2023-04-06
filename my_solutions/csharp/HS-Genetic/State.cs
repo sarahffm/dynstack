@@ -152,7 +152,6 @@ namespace csharp.HS_Genetic
         public List<CraneMove> SearchSolution()
         {
             // Generate an initial population of random chromosomes
-            // TODO: test difference of optimized True vs False
             List<string> population = InitializePopulation();
 
             // Evolve the population through multiple generations
@@ -194,6 +193,7 @@ namespace csharp.HS_Genetic
             // - valid and invalid moves
             // --> test mit GetAllPossibleMoves von Beam Search
 
+            // TODO: test difference of optimized True vs False
             List<CraneMove> possibleMoves = GetAllPossibleMoves();
 
             var population = new List<string>();
@@ -208,13 +208,13 @@ namespace csharp.HS_Genetic
                     var remainingMoves = CopyCraneMoves(possibleMoves);
 
                     // pick a random move, add it to the individual
-                    // Console.WriteLine(remainingMoves.Count);
                     var randomIndex = Random.Next(remainingMoves.Count);
                     individual.Add(remainingMoves[randomIndex]);
 
                     // apply move & get possible moves for new state
                     var oldState = new State(this);
                     var newState = oldState.Apply(individual.Last());
+                    // TODO: test difference of optimized True vs False
                     possibleMoves = newState.GetAllPossibleMoves();
                 }
 
@@ -224,38 +224,34 @@ namespace csharp.HS_Genetic
                 population.Add(individualString);
             }
 
-            // // generate PopulationSize-many individuals
-            // for (int k = 0; k < PopulationSize; k++)
-            // {
-            //     var individual = new List<CraneMove>();
-            //     var remainingMoves = CopyCraneMoves(possibleMoves);
-                
-            //     for (int i = 0; i < ChromosomeLength; i++)
-            //     {
-            //         // pick a random move, add it to the individual and remove it from the pool of options
-            //         Console.WriteLine(remainingMoves.Count);
-            //         var randomIndex = Random.Next(remainingMoves.Count);
-            //         individual.Add(remainingMoves[randomIndex]);
-            //         remainingMoves.RemoveAt(randomIndex);
-            //     }
-
-            //     // turn list of moves into string
-            //     var individualString = ConvertMovesToString(individual);
-            //     // add individual to population
-            //     population.Add(individualString);
-            // }
-
-            // var population = Enumerable.Range(0, PopulationSize)
-            //     .Select(_ => string.Join(",", Enumerable.Range(0, ChromosomeLength)
-            //         .Select(__ => $"s{Random.Next(1, 11)}-d{Random.Next(1, 11)}")))
-            //     .ToList();
-
             return population;
+        }
+
+        // Define the fitness function
+        double Fitness(string chromosome)
+        {
+            // Evaluate the fitness of the chromosome based on the dynamic stacking problem
+            // This could involve simulating the robot's behavior and measuring how well it follows the rules
+            // Return a fitness score based on the quality of the solution
+
+            double fitness = 0;
+            
+            // save the old/initial state
+            var oldState = new State(this);
+
+            // carry out the schedule
+            var moves = StringToCraneMoves(chromosome);
+            var newState = oldState.Apply(moves);
+
+            // TODO
+
+
+
+            return 0;
         }
 
         private List<CraneMove> CopyCraneMoves(List<CraneMove> list)
         {
-            //Console.WriteLine("Called CopyCraneMoves");
             var newList = new List<CraneMove>();
             foreach (CraneMove move in list)
             {
@@ -273,22 +269,29 @@ namespace csharp.HS_Genetic
         private string ConvertMovesToString(List<CraneMove> moves)
         {
             var result = new StringBuilder();
+
+            Console.WriteLine("Moves Length in Convert to string: " + moves.Count);
+
             foreach (CraneMove move in moves)
             {
                 result.Append($"s{move.SourceId}-d{move.TargetId},");
             }
-            var resultTrimmed = result.ToString().TrimEnd(',');
+
+            var resultTrimmed = TrimCommas(result.ToString());
+            
             return resultTrimmed;
         }
 
         private List<CraneMove> StringToCraneMoves(string str)
         {
             // example string:
-            // s1-d4,s2-d4,s3-d4,s0-d1,s3-d4,s3-d4,s3-d4,s2-d4,s1-d4,s1-d4
+            // s1-d4,s2-d4,s3-d4,s0-d1,s3-d4,s3-d4,s3-d4,s2-d4,s1-d4,s1-d4(,)
 
+            str = TrimCommas(str);
+            // Console.WriteLine("String to convert to moves: " + str);
+            
             var result = new List<CraneMove>();
-            // str = str.TrimEnd(',');
-            Console.WriteLine(str);
+
             var moves = str.Split(',');
 
             foreach(string move in moves)
@@ -302,6 +305,7 @@ namespace csharp.HS_Genetic
                 var arrivalAsList = new List<Stack>();
                 arrivalAsList.Add(Production);
                 var source = FindById<Stack>(sourceId, Buffers, arrivalAsList);
+
                 var blockId = source.Top().Id; // error here
 
                 // create new move
@@ -311,9 +315,18 @@ namespace csharp.HS_Genetic
                     TargetId = targetId,
                 };
                 result.Add(craneMove);
-            }
 
+            }
             return result;
+        }
+
+        private string TrimCommas(string str)
+        {
+            while (str.EndsWith(','))
+            {
+                str = str.TrimEnd(',');
+            }
+            return str;
         }
 
         private int ExtractId(string str, string mode)
@@ -328,15 +341,6 @@ namespace csharp.HS_Genetic
             }
 
             return id;
-        }
-
-        // Define the fitness function
-        double Fitness(string chromosome)
-        {
-            // Evaluate the fitness of the chromosome based on the dynamic stacking problem
-            // This could involve simulating the robot's behavior and measuring how well it follows the rules
-            // Return a fitness score based on the quality of the solution
-            return 0;
         }
 
         private List<string> Breed(List<string> parents)
@@ -362,7 +366,6 @@ namespace csharp.HS_Genetic
             return children;
         }
 
-        // Define the crossover function
         string Crossover(string parent1, string parent2)
         {
             // Perform a crossover operation between the two parents to generate a new child
@@ -394,11 +397,10 @@ namespace csharp.HS_Genetic
                 child = Mutate(childBuilder.ToString());
             }
 
-            //Console.WriteLine("crossover child:" + child);
             return child;
         }
 
-        // Define the mutation function
+        // TODO: maybe less random: make sure it's valid move
         string Mutate(string child, int n = 1)
         {
             // Mutate the chromosome by randomly changing some symbols
@@ -407,16 +409,13 @@ namespace csharp.HS_Genetic
 
             var childMoves = child.Split(',');
             var mutated = new StringBuilder();
-            //Console.WriteLine("childMoves: ");
-            //Console.WriteLine("[{0}]", string.Join(", ", childMoves));
 
             for (int k = 0; k < n; k++)
             {
                 // choose a random move to mutate
                 var moveIndex = Random.Next(ChromosomeLength);
                 // create a new move
-                //Console.WriteLine("moveIndex: " + moveIndex);
-                childMoves[moveIndex] = CreateRandomMove(); // Exception here: IndexOutOfRangeException
+                childMoves[moveIndex] = CreateRandomMove();
             }
 
             foreach (string move in childMoves)
@@ -424,7 +423,7 @@ namespace csharp.HS_Genetic
                 mutated.Append(move);
                 mutated.Append(',');
             }
-            //Console.WriteLine(mutated.ToString());
+
             return mutated.ToString();
         }
 
@@ -447,7 +446,7 @@ namespace csharp.HS_Genetic
                 targetId = Random.Next(1, handoverId + 1);
             }
             
-            var newMove = $"s{sourceId}d{targetId}";
+            var newMove = $"s{sourceId}-d{targetId}";
             return newMove;
         }
 
@@ -467,8 +466,139 @@ namespace csharp.HS_Genetic
             return default;
         }
 
+        // TODO: make sure the moves are valid? (mutate might have messed that up)
+        public State Apply(List<CraneMove> moves)
+        {   
+            var newState = new State(this);
+
+            // manually remove and then add each block according to the schedule
+            foreach (CraneMove move in moves)
+            {
+                try
+                {
+                    var block = newState.RemoveBlock(move.SourceId);
+                    newState.AddBlock(move.TargetId, block);
+                    newState.Moves.Add(move);
+                    // Console.WriteLine("Applied move successfully.");
+                }
+                catch (Exception e)
+                {
+                    // Console.WriteLine("Exception caught. Could not apply move." + e.Message);
+                    continue;
+                }
+            }
+            return newState;
+        }
 
 
+
+
+
+
+
+        public Block RemoveBlock(int stackId)
+        {
+            if (stackId == Production.Id)
+                return Production.Blocks.Pop();
+            else
+                return Buffers.First(b => b.Id == stackId).Blocks.Pop();
+        }
+
+        public void AddBlock(int stackId, Block block)
+        {
+            if (stackId != Handover.Id && stackId != Production.Id)
+            {
+                Buffers.First(b => b.Id == stackId).Blocks.Push(block);
+            }
+            else
+            {
+                // Production should never be a target
+                // If handover is the target, pretend the Block disappears immediately
+            }
+        }
+
+        public State Apply(CraneMove move)
+        {
+            var result = new State(this);
+            var block = result.RemoveBlock(move.SourceId);
+            result.AddBlock(move.TargetId, block);
+            result.Moves.Add(move);
+            return result;
+        }
+
+        public List<CraneMove> GetAllPossibleMoves(bool optimized = true)
+        {
+            var possible = new List<CraneMove>();
+            if (IsSolved) return possible;
+
+            if (Production.Blocks.Count > 0 && NotFullStacks.Any())
+            {
+                if (optimized)
+                {
+                    var target = NotFullStacks.First();
+                    possible.Add(new CraneMove
+                    {
+                        SourceId = Production.Id,
+                        TargetId = target.Id,
+                        Sequence = 0,
+                        BlockId = Production.Top().Id
+                    });
+                }
+                else
+                {
+                    foreach (var stack in NotFullStacks)
+                    {
+                        possible.Add(new CraneMove
+                        {
+                            SourceId = Production.Id,
+                            TargetId = stack.Id,
+                            Sequence = 0,
+                            BlockId = Production.Top().Id
+                        });
+                    }
+                }
+            }
+
+            foreach (var srcStack in StacksWithReady)
+            {
+                if (srcStack.Top().Ready)
+                {
+                    possible.Add(new CraneMove
+                    {
+                        SourceId = srcStack.Id,
+                        TargetId = Handover.Id,
+                        Sequence = 0,
+                        BlockId = srcStack.Top().Id
+                    });
+                    continue;
+                }
+
+                IEnumerable<Stack> targetStacks = null;
+                if (optimized)
+                {
+                    targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id && !StacksWithReady.Contains(stack) && (stack.Top() != null ? !stack.Top().Ready : false));
+                    if (targetStacks.Count() == 0)
+                        targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id && (stack.Top() != null ? !stack.Top().Ready : false));
+                }
+                else
+                {
+                    targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id);
+                }
+
+                foreach (var tgtStack in targetStacks)
+                {
+                    possible.Add(new CraneMove
+                    {
+                        SourceId = srcStack.Id,
+                        TargetId = tgtStack.Id,
+                        Sequence = 0,
+                        BlockId = srcStack.Top().Id
+                    });
+                }
+            }
+
+            return possible;
+        }
 
 
 
@@ -726,109 +856,8 @@ namespace csharp.HS_Genetic
         IEnumerable<Stack> StacksWithReady => NotEmptyStacks.Where(b => b.Blocks.Any(block => block.Ready));
         bool HandoverReady => !Handover.Blocks.Any();
 
-        public List<CraneMove> GetAllPossibleMoves(bool optimized = true)
-        {
-            var possible = new List<CraneMove>();
-            if (IsSolved) return possible;
+        
 
-            if (Production.Blocks.Count > 0 && NotFullStacks.Any())
-            {
-                if (optimized)
-                {
-                    var target = NotFullStacks.First();
-                    possible.Add(new CraneMove
-                    {
-                        SourceId = Production.Id,
-                        TargetId = target.Id,
-                        Sequence = 0,
-                        BlockId = Production.Top().Id
-                    });
-                }
-                else
-                {
-                    foreach (var stack in NotFullStacks)
-                    {
-                        possible.Add(new CraneMove
-                        {
-                            SourceId = Production.Id,
-                            TargetId = stack.Id,
-                            Sequence = 0,
-                            BlockId = Production.Top().Id
-                        });
-                    }
-                }
-            }
-
-            foreach (var srcStack in StacksWithReady)
-            {
-                if (srcStack.Top().Ready)
-                {
-                    possible.Add(new CraneMove
-                    {
-                        SourceId = srcStack.Id,
-                        TargetId = Handover.Id,
-                        Sequence = 0,
-                        BlockId = srcStack.Top().Id
-                    });
-                    continue;
-                }
-
-                IEnumerable<Stack> targetStacks = null;
-                if (optimized)
-                {
-                    targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id && !StacksWithReady.Contains(stack) && (stack.Top() != null ? !stack.Top().Ready : false));
-                    if (targetStacks.Count() == 0)
-                        targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id && (stack.Top() != null ? !stack.Top().Ready : false));
-                }
-                else
-                {
-                    targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id);
-                }
-
-                foreach (var tgtStack in targetStacks)
-                {
-                    possible.Add(new CraneMove
-                    {
-                        SourceId = srcStack.Id,
-                        TargetId = tgtStack.Id,
-                        Sequence = 0,
-                        BlockId = srcStack.Top().Id
-                    });
-                }
-            }
-
-            return possible;
-        }
-
-        public Block RemoveBlock(int stackId)
-        {
-            if (stackId == Production.Id)
-                return Production.Blocks.Pop();
-            else
-                return Buffers.First(b => b.Id == stackId).Blocks.Pop();
-        }
-
-        public void AddBlock(int stackId, Block block)
-        {
-            if (stackId != Handover.Id && stackId != Production.Id)
-            {
-                Buffers.First(b => b.Id == stackId).Blocks.Push(block);
-            }
-            else
-            {
-                // Production should never be a target
-                // If handover is the target, pretend the Block dissappears immediatly
-            }
-        }
-
-        public State Apply(CraneMove move)
-        {
-            var result = new State(this);
-            var block = result.RemoveBlock(move.SourceId);
-            result.AddBlock(move.TargetId, block);
-            result.Moves.Add(move);
-            return result;
-        }
     }
 
     public static class Extensions
