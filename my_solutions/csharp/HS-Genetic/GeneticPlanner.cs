@@ -66,6 +66,7 @@ namespace csharp.HS_Genetic {
       
       if (schedule.Moves.Count > 0) {
         Console.WriteLine($"Delivering answer for Worldtime {world.Now}");
+        Console.WriteLine("Schedule:" + schedule.Moves);
         return schedule;
       } else {
         Console.WriteLine($"No answer for Worldtime {world.Now}");

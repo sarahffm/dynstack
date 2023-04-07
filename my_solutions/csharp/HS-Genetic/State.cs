@@ -1,13 +1,11 @@
 ﻿using System.Linq.Expressions;
 using DynStacking.HotStorage.DataModel;
-// using Internal;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
-// using System.Runtime.InteropServices.Marshalling;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -96,6 +94,14 @@ namespace csharp.HS_Genetic
         }
     }
 
+    public class ScheduleResult
+    {
+        public int NumInvalidMoves { get; set; }
+        public int NumHandovers { get; set; }
+        public int NumCoveredReadies { get; set; }
+        public int NumUncoveredReadies { get; set; }
+    }
+
     public class State
     {
         public List<CraneMove> Moves { get; }
@@ -106,15 +112,19 @@ namespace csharp.HS_Genetic
 
 
         // Define the length of the chromosome (i.e., the number of moves in the sequence)
-        private const int ChromosomeLength = 10;
+        private const int ChromosomeLength = 6;
 
-        // Define the size of the population
-        private const int PopulationSize = 100;
+        private const int PopulationSize = 80;
 
         // Define the mutation rate (i.e., the probability of a symbol being mutated)
         private const double MutationRate = 0.1;
 
         private const int NumGenerations = 100;
+
+        // constants for the fitness function:
+        private const double ArrivalWeight = 0.4;
+        private const double HandoverWeight = 0.4;
+        private const double OverReadyWeight = 0.2;
 
 
         public State(World world)
@@ -157,6 +167,7 @@ namespace csharp.HS_Genetic
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
             {
+                Console.WriteLine("population: " + population);
                 // Evaluate the fitness of each chromosome in the population
                 List<double> fitnessScores = population.Select(
                     chromosome => Fitness(chromosome)).ToList();
@@ -174,12 +185,12 @@ namespace csharp.HS_Genetic
                 population = parents.Concat(children).ToList();
 
                 // Print the fitness of the fittest chromosome in each generation
-                Console.WriteLine($"\nGeneration {generation}: {fitnessScores.Max()}\n\n\n");
+                Console.WriteLine($"Generation {generation}: {fitnessScores.Max()}");
             }
 
             // Determine and print the final solution
             string bestChromosome = population.OrderBy(c => Fitness(c)).First();
-            Console.WriteLine("Final solution: " + bestChromosome);
+            Console.WriteLine("Final solution: " + bestChromosome + "\n");
 
             // convert string to list of crane moves
             List<CraneMove> solution = StringToCraneMoves(bestChromosome);
@@ -233,21 +244,63 @@ namespace csharp.HS_Genetic
             // Evaluate the fitness of the chromosome based on the dynamic stacking problem
             // This could involve simulating the robot's behavior and measuring how well it follows the rules
             // Return a fitness score based on the quality of the solution
-
-            double fitness = 0;
             
             // save the old/initial state
             var oldState = new State(this);
 
-            // carry out the schedule
+            // carry out schedule
             var moves = StringToCraneMoves(chromosome);
-            var newState = oldState.Apply(moves);
+            var (newState, scheduleResult) = oldState.Apply(moves);
 
-            // TODO
+            // goal x% filled:
+            // var oldProductionFill = oldState.Production.Count / (double) oldState.Production.MaxHeight;
+            var newProductionFill = newState.Production.Count / (double) newState.Production.MaxHeight;
+            // goal minimize:
+            // (- numInvalidMoves)
+            // (- numReadyCovered)
+            // var oldBufferFill = 0;
+            var newBufferFill = 0;
+            // var oldNumOverReady = 0;
+            var newNumOverReady = 0;
+            // goal maximize:
+            // - numHandovers
 
+            for (int i = 0; i < newState.Buffers.Count; i++)
+            {
+                // oldBufferFill += oldState.Buffers[i].Blocks.Count;
+                newBufferFill += newState.Buffers[i].Blocks.Count;
+                // oldNumOverReady += oldState.Buffers[i].BlocksAboveReady();
+                newNumOverReady += newState.Buffers[i].BlocksAboveReady();
+            }
 
+            Console.WriteLine("numHandovers: " + scheduleResult.NumHandovers);
+            Console.WriteLine("bufferfill: " + newBufferFill);
+            Console.WriteLine("num over ready: " + newNumOverReady);
+            Console.WriteLine("arrival max: " + newState.Production.MaxHeight);
 
-            return 0;
+            // 1: rate arrival
+            double arrivalScore = 0;
+            var arrivalUsed = newProductionFill / (double) newState.Production.MaxHeight;
+            if (arrivalUsed > 0.8) { arrivalScore = 0.8; }
+            else if (arrivalUsed > 0.7) { arrivalScore = 1; }
+            else if (arrivalUsed > 0.3) {arrivalScore = 0.2; }
+
+            // 2: rate number of handovers
+            double handoverScore = scheduleResult.NumHandovers / (double) ChromosomeLength;
+
+            // 3: rate number of blocks over readies
+            double overReadyScore = 1 - (newNumOverReady / (double) newBufferFill);
+            
+            double fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore;
+
+            Console.WriteLine("Scores:");
+            Console.WriteLine("arrival: " + arrivalScore);
+            Console.WriteLine("handover: " + handoverScore);
+            Console.WriteLine("overReady: " + overReadyScore);
+            Console.WriteLine("fitness: " + fitness);
+            Console.WriteLine("\n");
+
+            return fitness;
         }
 
         private List<CraneMove> CopyCraneMoves(List<CraneMove> list)
@@ -269,8 +322,6 @@ namespace csharp.HS_Genetic
         private string ConvertMovesToString(List<CraneMove> moves)
         {
             var result = new StringBuilder();
-
-            Console.WriteLine("Moves Length in Convert to string: " + moves.Count);
 
             foreach (CraneMove move in moves)
             {
@@ -467,9 +518,13 @@ namespace csharp.HS_Genetic
         }
 
         // TODO: make sure the moves are valid? (mutate might have messed that up)
-        public State Apply(List<CraneMove> moves)
+        public Tuple<State, ScheduleResult> Apply(List<CraneMove> moves)
         {   
             var newState = new State(this);
+            // var numInvalidMoves = 0;
+            var numHandovers = 0;
+            // var numCoveredReadies = 0;
+            // var numUncoveredReadies = 0;
 
             // manually remove and then add each block according to the schedule
             foreach (CraneMove move in moves)
@@ -479,19 +534,29 @@ namespace csharp.HS_Genetic
                     var block = newState.RemoveBlock(move.SourceId);
                     newState.AddBlock(move.TargetId, block);
                     newState.Moves.Add(move);
+
+                    if (move.TargetId == Handover.Id) { numHandovers++; }
+                    // if (FindById<Stack>(move.TargetId).Top().Ready) { numCoveredReadies++; }
+                    // if (FindById<Stack>(move.SourceId).Top().Ready) { numUncoveredReadies++; }
                     // Console.WriteLine("Applied move successfully.");
                 }
                 catch (Exception e)
                 {
                     // Console.WriteLine("Exception caught. Could not apply move." + e.Message);
+                    // numInvalidMoves++;
                     continue;
                 }
             }
-            return newState;
+
+            // var result = new ScheduleResult(){
+            //     NumInvalidMoves = numInvalidMoves,
+            //     NumHandovers = numHandovers,
+            //     NumCoveredReadies = numCoveredReadies,
+            //     NumUncoveredReadies = numUncoveredReadies
+            // };
+            var result = new ScheduleResult(){ NumHandovers = numHandovers };
+            return new Tuple<State, ScheduleResult> (newState, result);
         }
-
-
-
 
 
 

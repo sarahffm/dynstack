@@ -35,7 +35,6 @@ class Stack:
     def calculate_deposition_score(self, max_due, min_due) -> float:
         # TODO:
         # kleine stacks mit hohem ready anteil (sehr schnell erreicht) nochmal deutlich schlechteren deposition score
-        # kriegen als aktuell
 
         height = len(self.blocks)
 
