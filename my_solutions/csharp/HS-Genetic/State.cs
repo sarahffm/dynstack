@@ -10,8 +10,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 // TODO:
-// - num over ready is wrong -> always 1
-// - block id is often wrong
+// - doesn't track state correctly
+// - keeps taking the same block from the same stack although has already scheduled this move ...
+// - check what to do when simulation still has moves in schedule
 
 
 namespace csharp.HS_Genetic
@@ -75,23 +76,37 @@ namespace csharp.HS_Genetic
         public int Count => Blocks.Count;
         public int BlocksAboveReady()
         {
-            if (Blocks.Any(block => block.Ready))
-            {
-                int blocksOverReady = 0;
-                foreach (var block in Blocks.Reverse())
-                {
-                    if (block.Ready)
-                        blocksOverReady = 0;
-                    else
-                        blocksOverReady++;
-                }
+            int blocksOverReady = 0;
 
-                return blocksOverReady;
-            }
-            else
+            foreach (Block block in Blocks)
             {
-                return 0;
+                // Console.WriteLine("blocksaboveready block.Ready: " + block.Ready);
+                if (!block.Ready) { 
+                    // Console.WriteLine("blocksOverReady: " + blocksOverReady);
+                    blocksOverReady++; }
+                else { 
+                    // Console.WriteLine("blocksOverReady: " + blocksOverReady);
+                    return blocksOverReady; }
             }
+
+            return 0;
+            
+            // if (Blocks.Any(block => block.Ready))
+            // {
+            //     // int blocksOverReady = 0;
+            //     // foreach (var block in Blocks.Reverse())
+            //     // {
+            //     //     if (block.Ready)
+            //     //         blocksOverReady = 0;
+            //     //     else
+            //     //         blocksOverReady++;
+            //     // }
+            //     return blocksOverReady;
+            // }
+            // else
+            // {
+            //     return 0;
+            // }
         }
         public bool ContainsDueBelow(TimeStamp due)
         {
@@ -172,7 +187,6 @@ namespace csharp.HS_Genetic
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
             {
-                Console.WriteLine("population: " + population);
                 // Evaluate the fitness of each chromosome in the population
                 List<double> fitnessScores = population.Select(
                     chromosome => Fitness(chromosome)).ToList();
@@ -202,17 +216,20 @@ namespace csharp.HS_Genetic
             return solution;
         }
 
+        // TODO: catch error if really no possible moves
         private List<string> InitializePopulation()
         {
-            // TODO: determine how to generate the first sequence
-            // - ID ranges of the stacks
-            // - valid and invalid moves
-            // --> test mit GetAllPossibleMoves von Beam Search
-
-            // TODO: test difference of optimized True vs False
-            List<CraneMove> possibleMoves = GetAllPossibleMoves(false);
-
             var population = new List<string>();
+
+            State currentState = new State(this);
+            List<CraneMove> possibleMoves = currentState.GetAllPossibleMoves(false);
+
+            // Console.WriteLine("Possible Moves count: " + possibleMoves.Count);
+            // Console.WriteLine("Possible Moves initial:");
+            // foreach(var move in possibleMoves)
+            // {
+            //     Console.WriteLine(move.FormatOutput());
+            // }
 
             // generate PopulationSize-many individuals
             for (int k = 0; k < PopulationSize; k++)
@@ -221,17 +238,13 @@ namespace csharp.HS_Genetic
                 
                 for (int i = 0; i < ChromosomeLength; i++)
                 {   
-                    var remainingMoves = CopyCraneMoves(possibleMoves);
-
                     // pick a random move, add it to the individual
-                    var randomIndex = Random.Next(remainingMoves.Count);
-                    individual.Add(remainingMoves[randomIndex]);
+                    var randomIndex = Random.Next(possibleMoves.Count);
+                    individual.Add(possibleMoves[randomIndex]);
 
-                    // apply move & get possible moves for new state
-                    var oldState = new State(this);
-                    var newState = oldState.Apply(individual.Last());
-                    // TODO: test difference of optimized True vs False
-                    possibleMoves = newState.GetAllPossibleMoves(false);
+                    // apply move to update state
+                    currentState = currentState.Apply(individual.Last());
+                    possibleMoves = currentState.GetAllPossibleMoves(false);
                 }
 
                 // turn list of moves into string
@@ -258,32 +271,37 @@ namespace csharp.HS_Genetic
             // goal minimize:
             // (- numInvalidMoves)
             // (- numReadyCovered)
-            // var oldBufferFill = 0;
             var newBufferFill = 0;
-            // var oldNumOverReady = 0;
             var newNumOverReady = 0;
             // goal maximize:
             // - numHandovers
 
+
+            // foreach(var move in moves)
+            // {
+            //     Console.WriteLine(move.FormatOutput());
+            // }
+            // Console.WriteLine("initial state:");
+            // PrintBufferState(this);
+
+
             for (int i = 0; i < newState.Buffers.Count; i++)
             {
-                // oldBufferFill += oldState.Buffers[i].Blocks.Count;
                 newBufferFill += newState.Buffers[i].Blocks.Count;
-                // oldNumOverReady += oldState.Buffers[i].BlocksAboveReady();
                 newNumOverReady += newState.Buffers[i].BlocksAboveReady();
             }
 
-            Console.WriteLine("numHandovers: " + scheduleResult.NumHandovers);
-            Console.WriteLine("bufferfill: " + newBufferFill);
-            Console.WriteLine("num over ready: " + newNumOverReady);
-            Console.WriteLine("arrival max: " + newState.Production.MaxHeight);
+            // Console.WriteLine("numHandovers: " + scheduleResult.NumHandovers);
+            // Console.WriteLine("bufferfill: " + newBufferFill);
+            // Console.WriteLine("num over ready: " + newNumOverReady);
+            // Console.WriteLine("arrival max: " + newState.Production.MaxHeight);
 
             // 1: rate arrival
             double arrivalScore = 0;
             var arrivalUsed = newProductionFill / (double) newState.Production.MaxHeight;
             if (arrivalUsed > 0.8) { arrivalScore = 0.8; }
             else if (arrivalUsed > 0.7) { arrivalScore = 1; }
-            else if (arrivalUsed > 0.3) {arrivalScore = 0.2; }
+            else if (arrivalUsed > 0.3) { arrivalScore = 0.2; }
 
             // 2: rate number of handovers
             double handoverScore = scheduleResult.NumHandovers / (double) ChromosomeLength;
@@ -293,14 +311,28 @@ namespace csharp.HS_Genetic
             
             double fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore;
 
-            Console.WriteLine("Scores:");
-            Console.WriteLine("arrival: " + arrivalScore);
-            Console.WriteLine("handover: " + handoverScore);
-            Console.WriteLine("overReady: " + overReadyScore);
-            Console.WriteLine("fitness: " + fitness);
-            Console.WriteLine("\n");
+            // Console.WriteLine("Scores:");
+            // Console.WriteLine("arrival: " + arrivalScore);
+            // Console.WriteLine("handover: " + handoverScore);
+            // Console.WriteLine("overReady: " + overReadyScore);
+            // Console.WriteLine("fitness: " + fitness);
+            // Console.WriteLine("\n");
 
             return fitness;
+        }
+
+        private void PrintBufferState(State state)
+        {
+            Console.WriteLine("PrintBufferState:");
+            foreach (var buffer in state.Buffers)
+            {
+                Console.WriteLine("buffer id: " + buffer.Id);
+                foreach (Block block in buffer.Blocks.Reverse())
+                {
+                    Console.Write(block.Id + " R " + block.Ready + " | ");
+                }
+                Console.WriteLine("\n");
+            }
         }
 
         private List<CraneMove> CopyCraneMoves(List<CraneMove> list)
@@ -573,7 +605,6 @@ namespace csharp.HS_Genetic
             return newState;
         }
 
-        // TODO: make sure the moves are valid?
         public Tuple<State, ScheduleResult> ApplyAndRate(List<CraneMove> moves)
         {   
             var newState = new State(this);
@@ -598,7 +629,7 @@ namespace csharp.HS_Genetic
                 }
                 catch (Exception e)
                 {
-                    // Console.WriteLine("Exception caught. Could not apply move." + e.Message);
+                    Console.WriteLine("Exception caught in Apply&Rate. Could not apply move." + e.Message);
                     // numInvalidMoves++;
                     continue;
                 }
@@ -616,6 +647,14 @@ namespace csharp.HS_Genetic
 
 
 
+        public State Apply(CraneMove move)
+        {
+            var result = new State(this);
+            var block = result.RemoveBlock(move.SourceId);
+            result.AddBlock(move.TargetId, block);
+            result.Moves.Add(move);
+            return result;
+        }
 
         public Block RemoveBlock(int stackId)
         {
@@ -631,27 +670,24 @@ namespace csharp.HS_Genetic
             {
                 Buffers.First(b => b.Id == stackId).Blocks.Push(block);
             }
-            else
+            else if (stackId == Production.Id)
             {
+                Console.WriteLine("AddBlock target arrival is invalid!");
                 // Production should never be a target
                 // If handover is the target, pretend the Block disappears immediately
             }
         }
 
-        public State Apply(CraneMove move)
-        {
-            var result = new State(this);
-            var block = result.RemoveBlock(move.SourceId);
-            result.AddBlock(move.TargetId, block);
-            result.Moves.Add(move);
-            return result;
-        }
-
         public List<CraneMove> GetAllPossibleMoves(bool optimized = true)
         {
             var possible = new List<CraneMove>();
-            if (IsSolved) return possible;
+            if (IsSolved) 
+            {
+                Console.WriteLine("GetAllPossibleMoves - IsSolved True");
+                return possible;
+            }
 
+            // add each possible arrival clearing move
             if (Production.Blocks.Count > 0 && NotFullStacks.Any())
             {
                 if (optimized)
@@ -682,6 +718,7 @@ namespace csharp.HS_Genetic
 
             foreach (var srcStack in StacksWithReady)
             {
+                // easy handover
                 if (srcStack.Top().Ready)
                 {
                     possible.Add(new CraneMove
@@ -694,6 +731,7 @@ namespace csharp.HS_Genetic
                     continue;
                 }
 
+                // buried handover
                 IEnumerable<Stack> targetStacks = null;
                 if (optimized)
                 {
@@ -718,6 +756,30 @@ namespace csharp.HS_Genetic
                 }
             }
 
+            // buffer shuffling moves
+            if (possible.Count == 0)
+            {
+                foreach (var srcStack in StacksWithoutReady)
+                {
+                    IEnumerable<Stack> targetStacks = null;
+                    if (!optimized)
+                    {
+                        targetStacks = NotFullStacks.Where(stack => stack.Id != srcStack.Id);
+                    }
+
+                    foreach (var tgtStack in targetStacks)
+                    {
+                        possible.Add(new CraneMove
+                        {
+                            SourceId = srcStack.Id,
+                            TargetId = tgtStack.Id,
+                            Sequence = 0,
+                            BlockId = srcStack.Top().Id
+                        });
+                    }
+                }
+            }
+            Console.WriteLine("GetAllPossibleMoves done. Count: " + possible.Count);
             return possible;
         }
 
@@ -975,10 +1037,8 @@ namespace csharp.HS_Genetic
         IEnumerable<Stack> NotFullStacks => Buffers.Where(b => b.Blocks.Count < b.MaxHeight);
         IEnumerable<Stack> NotEmptyStacks => Buffers.Where(b => b.Blocks.Count > 0);
         IEnumerable<Stack> StacksWithReady => NotEmptyStacks.Where(b => b.Blocks.Any(block => block.Ready));
+        IEnumerable<Stack> StacksWithoutReady => NotEmptyStacks.Where(b => !b.Blocks.Any(block => block.Ready));
         bool HandoverReady => !Handover.Blocks.Any();
-
-        
-
     }
 
     public static class Extensions
