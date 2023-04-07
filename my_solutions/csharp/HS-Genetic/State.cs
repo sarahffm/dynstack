@@ -9,6 +9,11 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
+// TODO:
+// - num over ready is wrong -> always 1
+// - block id is often wrong
+
+
 namespace csharp.HS_Genetic
 {
     public interface IHasId
@@ -205,7 +210,7 @@ namespace csharp.HS_Genetic
             // --> test mit GetAllPossibleMoves von Beam Search
 
             // TODO: test difference of optimized True vs False
-            List<CraneMove> possibleMoves = GetAllPossibleMoves();
+            List<CraneMove> possibleMoves = GetAllPossibleMoves(false);
 
             var population = new List<string>();
 
@@ -226,7 +231,7 @@ namespace csharp.HS_Genetic
                     var oldState = new State(this);
                     var newState = oldState.Apply(individual.Last());
                     // TODO: test difference of optimized True vs False
-                    possibleMoves = newState.GetAllPossibleMoves();
+                    possibleMoves = newState.GetAllPossibleMoves(false);
                 }
 
                 // turn list of moves into string
@@ -238,19 +243,14 @@ namespace csharp.HS_Genetic
             return population;
         }
 
-        // Define the fitness function
         double Fitness(string chromosome)
         {
-            // Evaluate the fitness of the chromosome based on the dynamic stacking problem
-            // This could involve simulating the robot's behavior and measuring how well it follows the rules
-            // Return a fitness score based on the quality of the solution
-            
             // save the old/initial state
             var oldState = new State(this);
 
             // carry out schedule
             var moves = StringToCraneMoves(chromosome);
-            var (newState, scheduleResult) = oldState.Apply(moves);
+            var (newState, scheduleResult) = oldState.ApplyAndRate(moves);
 
             // goal x% filled:
             // var oldProductionFill = oldState.Production.Count / (double) oldState.Production.MaxHeight;
@@ -451,8 +451,42 @@ namespace csharp.HS_Genetic
             return child;
         }
 
-        // TODO: maybe less random: make sure it's valid move
         string Mutate(string child, int n = 1)
+        {
+            var moves = StringToCraneMoves(child);
+
+            for (int k = 0; k < n; k++)
+            {
+                // choose a random move to mutate
+                var moveIndex = Random.Next(ChromosomeLength);
+                // create a new move
+                moves = CreateNewMoves(moves, moveIndex);
+            }
+
+            // turn to string and return
+            var result = ConvertMovesToString(moves);
+            return result;
+        }
+
+        private List<CraneMove> CreateNewMoves(List<CraneMove> moves, int index)
+        {
+            // apply moves until index
+            var newMoves = moves.Take(index).ToList();
+            State newState = Apply(newMoves);
+
+            // get all possible moves, pick one, apply & repeat
+            while (newMoves.Count != ChromosomeLength)
+            {
+                var possibleMoves = GetAllPossibleMoves();
+                var random = Random.Next(possibleMoves.Count - 1);
+                var newMove = possibleMoves[random];
+                newMoves.Add(newMove);
+                newState = Apply(newMove);
+            }
+            return newMoves;
+        }
+
+        string Mutate2(string child, int n = 1)
         {
             // Mutate the chromosome by randomly changing some symbols
             // This could involve iterating through the symbols in the chromosome and flipping each one with a probability defined by the mutation rate
@@ -517,8 +551,30 @@ namespace csharp.HS_Genetic
             return default;
         }
 
-        // TODO: make sure the moves are valid? (mutate might have messed that up)
-        public Tuple<State, ScheduleResult> Apply(List<CraneMove> moves)
+        public State Apply(List<CraneMove> moves)
+        {
+            var newState = new State(this);
+
+            foreach (CraneMove move in moves)
+            {
+                try
+                {
+                    var block = newState.RemoveBlock(move.SourceId);
+                    newState.AddBlock(move.TargetId, block);
+                    newState.Moves.Add(move);
+                    // Console.WriteLine("Applied move successfully.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception caught in State Apply. Could not apply move." + e.Message);
+                    continue;
+                }
+            }
+            return newState;
+        }
+
+        // TODO: make sure the moves are valid?
+        public Tuple<State, ScheduleResult> ApplyAndRate(List<CraneMove> moves)
         {   
             var newState = new State(this);
             // var numInvalidMoves = 0;
