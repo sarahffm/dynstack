@@ -45,7 +45,11 @@ namespace csharp.HS_Genetic {
       // return null;
 
       // find solution
-      var solution = initialState.SearchSolution();
+      // var solution = initialState.SearchSolution();
+
+      // find solution (refactor)
+      var geneticSolver = new GeneticAlgorithm();
+      var solution = geneticSolver.SearchSolution(initialState);
 
       if (solution != null) {
         schedule.Moves.AddRange(solution.Take(MovesPerSequence));

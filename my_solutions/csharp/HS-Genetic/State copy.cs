@@ -1,5 +1,4 @@
-﻿using System.IO.IsolatedStorage;
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using DynStacking.HotStorage.DataModel;
 using System;
 using System.Collections.Generic;
@@ -15,8 +14,8 @@ using System.Text.RegularExpressions;
 // - keeps taking the same block from the same stack although has already scheduled this move ...
 // - check what to do when simulation still has moves in schedule
 
-
-namespace csharp.HS_Genetic
+// namespace COPY !!!!!!!!!!!!!!!!!
+namespace csharp.HS_GeneticCOPY
 {
     public interface IHasId
     {
@@ -126,9 +125,9 @@ namespace csharp.HS_Genetic
     public class State
     {
         public List<CraneMove> Moves { get; }
-        public Stack Production { get; }
-        public List<Stack> Buffers { get; }
-        public Stack Handover { get; }
+        private Stack Production { get; }
+        private List<Stack> Buffers { get; }
+        private Stack Handover { get; }
         private long WorldStep { get; set; }
 
 
@@ -143,9 +142,9 @@ namespace csharp.HS_Genetic
         private const int NumGenerations = 100;
 
         // constants for the fitness function:
-        private const double ArrivalWeight = 0.3;
-        private const double HandoverWeight = 0.55;
-        private const double OverReadyWeight = 0.15;
+        private const double ArrivalWeight = 0.4;
+        private const double HandoverWeight = 0.4;
+        private const double OverReadyWeight = 0.2;
 
 
         public State(World world)
@@ -352,7 +351,7 @@ namespace csharp.HS_Genetic
             return newList;
         }
 
-        public string ConvertMovesToString(List<CraneMove> moves)
+        private string ConvertMovesToString(List<CraneMove> moves)
         {
             var result = new StringBuilder();
 
@@ -516,6 +515,9 @@ namespace csharp.HS_Genetic
                 newMoves.Add(newMove);
                 newState = Apply(newMove);
             }
+
+            Console.WriteLine("Index where to start mutating: " + index);
+
             return newMoves;
         }
 
@@ -609,7 +611,10 @@ namespace csharp.HS_Genetic
         public Tuple<State, ScheduleResult> ApplyAndRate(List<CraneMove> moves)
         {   
             var newState = new State(this);
+            // var numInvalidMoves = 0;
             var numHandovers = 0;
+            // var numCoveredReadies = 0;
+            // var numUncoveredReadies = 0;
 
             // manually remove and then add each block according to the schedule
             foreach (CraneMove move in moves)
@@ -621,6 +626,9 @@ namespace csharp.HS_Genetic
                     newState.Moves.Add(move);
 
                     if (move.TargetId == Handover.Id) { numHandovers++; }
+                    // if (FindById<Stack>(move.TargetId).Top().Ready) { numCoveredReadies++; }
+                    // if (FindById<Stack>(move.SourceId).Top().Ready) { numUncoveredReadies++; }
+                    // Console.WriteLine("Applied move successfully.");
                 }
                 catch (Exception e)
                 {
@@ -640,104 +648,6 @@ namespace csharp.HS_Genetic
             return new Tuple<State, ScheduleResult> (newState, result);
         }
 
-        // return:
-        // 1: bool that indicates if move success
-        // 2: if success move is returned (with BlockId correction)
-        // 3: updated state
-        public Tuple<Boolean, CraneMove, State> TryApplyMove(CraneMove move)
-        {
-            Boolean isSuccess = false;
-            CraneMove modifiedMove = move;
-            var resultState = new State(this);
-
-            try
-            {
-                // check if target buffer is valid (exists & is not full)
-                var isValidTarget = IsValidTarget(move.TargetId);
-
-                // check if source is valid (exists & is not empty)
-                var isValidSource = IsValidSource(move.SourceId);
-
-                isSuccess = isValidSource && isValidTarget;
-
-                if (isSuccess)
-                {
-                    // apply move
-                    var block = resultState.RemoveBlock(move.SourceId);
-                    resultState.AddBlock(move.TargetId, block);
-
-                    // correct block ID if necessary
-                    if (block.Id == move.BlockId)
-                    {
-                        modifiedMove = move;
-                    }
-                    else
-                    {
-                        modifiedMove = new CraneMove() {
-                            SourceId = move.SourceId,
-                            BlockId = block.Id,
-                            TargetId = move.TargetId
-                        };
-                    }
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine("TryApplyMove Error. " + e.Message);
-                isSuccess = false;
-            }
-            
-            return new Tuple<Boolean, CraneMove, State>(isSuccess, modifiedMove, resultState);
-        }
-
-        public Boolean IsValidTarget(int targetId)
-        {
-            // target exists?
-            if (Buffers.Any(buffer => buffer.Id == targetId))
-            {
-                var targetBuffer = Buffers.Where(buffer => buffer.Id == targetId).First();
-
-                // target full?
-                if (targetBuffer.Count >= targetBuffer.MaxHeight)
-                {
-                    return false;
-                }
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public Boolean IsValidSource(int sourceId)
-        {
-            Stack source;
-            // source is production?
-            if (sourceId == Production.Id)
-            {
-                source = Production;
-                // production empty?
-                if (Production.Count == 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-            // source is valid buffer?
-            else if (Buffers.Any(buffer => buffer.Id == sourceId))
-            {
-                source = Buffers.Where(buffer => buffer.Id == sourceId).First();
-
-                // source empty?
-                if (source.Count == 0)
-                {
-                    return false;
-                }
-                return true;
-            }
-            return false;
-        }
 
 
         public State Apply(CraneMove move)
