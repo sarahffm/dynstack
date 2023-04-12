@@ -28,12 +28,12 @@ namespace csharp.HS_Genetic {
         public State State { get; set; }
         public int NumOfHandovers { get; set; }
 
-        public Individual(State state, String solutionString, List<CraneMove> solutionMove, int numHandovers)
+        public Individual(State state, String solutionString, List<CraneMove> solutionMove)
         {
             State = state;
             SolutionString = solutionString;
             SolutionAsMoves = solutionMove;
-            NumOfHandovers = numHandovers;
+            NumOfHandovers = CountNumOfHandovers();
 
             // initially set to 0
             Fitness = 0; 
@@ -61,7 +61,6 @@ namespace csharp.HS_Genetic {
         public int CountNumOfHandovers()
         {
             int count = 0;
-            // for (int i = 0; i < SolutionAsMoves.Count; i++)
             foreach (var move in SolutionAsMoves)
             {
                 if (move.TargetId == State.Handover.Id)
@@ -69,21 +68,36 @@ namespace csharp.HS_Genetic {
                     count++;
                 }
             }
+            NumOfHandovers = count;
             return count;
+        }
+
+        // return 1: count
+        // return 2: index
+        public Tuple<int, int> GetNumHandoversAndIndex()
+        {
+            int count = 0;
+            int index = -1;
+            for (int i = 0; i < SolutionAsMoves.Count; i++)
+            {
+                if (SolutionAsMoves[i].TargetId == State.Handover.Id)
+                {
+                    count++;
+                    if (index == -1)
+                    {
+                        index = i;
+                    }
+                }
+            }
+            NumOfHandovers = count;
+            return new Tuple<int, int>(count, index);
         }
 
         public double CalculateFitness(int chromosomeLength)
         {
-
-            // goal x% filled:
-            var productionFill = State.Production.Count / (double) State.Production.MaxHeight;
-
             // goal minimize:
             var bufferFill = 0;
             var numOverReady = 0;
-
-            // goal maximize:
-            // - numHandovers
 
             for (int i = 0; i < State.Buffers.Count; i++)
             {
@@ -93,20 +107,52 @@ namespace csharp.HS_Genetic {
 
             // 1: rate arrival
             double arrivalScore = 0;
-            var arrivalUsed = productionFill / (double) State.Production.MaxHeight;
-            if (arrivalUsed > 0.8) { arrivalScore = 0.8; }
-            else if (arrivalUsed > 0.7) { arrivalScore = 1; }
-            else if (arrivalUsed > 0.3) { arrivalScore = 0.2; }
+            var arrivalUsed = State.Production.Blocks.Count / (double) State.Production.MaxHeight;
+            if (arrivalUsed > 0.75) { arrivalScore = 0.8; }
+            else if (arrivalUsed > 0.5) { arrivalScore = 1; }
+            else if (arrivalUsed >= 0.25) { arrivalScore = 0.5; }
 
+            
             // 2: rate number of handovers
-            double handoverScore = NumOfHandovers / (double) chromosomeLength;
+            
+            double handoverScore = calculateHandoverScore(chromosomeLength);
 
             // 3: rate number of blocks over readies
             double overReadyScore = 1 - (numOverReady / (double) bufferFill);
-            
+
+            // 4: rate order of blocks based on their due dates
+            double dueOrderScore = calculateDueOrderScore();
+
+            // DEBUG
+            // Console.WriteLine($"ArrivalScore: {arrivalScore}, HandoverScore: {handoverScore}, OverReadyScore: {overReadyScore}");
+            // Console.WriteLine($"Count: {State.Production.Blocks.Count}, MaxHeight: {State.Production.MaxHeight}, arrivalUsed: {arrivalUsed}");
+
             Fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore;
 
+            // Console.WriteLine("Fitness (inside): " + Fitness);
+
             return Fitness;
+        }
+
+        public double calculateHandoverScore(int chromosomeLength)
+        {
+            // 0 handovers: 0
+            // moveIndex = 0 -> highest value
+            // moveIndex = chromosomeLength -> smallest value
+            var handoverInfo = GetNumHandoversAndIndex();
+            NumOfHandovers = handoverInfo.Item1;
+            var earliestIndex = handoverInfo.Item2;
+
+            // TODO
+
+            double handoverScore = 0; // TODO
+            return handoverScore;
+        }
+
+        public double calculateDueOrderScore()
+        {
+            // TODO
+            return 0;
         }
         
         public List<CraneMove> FillMoves(int n)
@@ -150,6 +196,23 @@ namespace csharp.HS_Genetic {
             return SolutionAsMoves;
         }
 
+        public void printSolutionLong()
+        {
+            Console.WriteLine("Solution:");
+            foreach (var move in SolutionAsMoves)
+            {
+                Console.WriteLine($"Block {move.BlockId}: {move.SourceId} -> {move.TargetId}");
+            }
+            Console.WriteLine();
+        }
+
+        public void printAll()
+        {
+            State.printState();
+            printSolutionLong();
+            Console.WriteLine("Fitness: " + Fitness);
+            Console.WriteLine();
+        }
     }
 
     class GeneticAlgorithm
@@ -157,60 +220,56 @@ namespace csharp.HS_Genetic {
         private const int ChromosomeLength = 6; // Define the length of the chromosome (i.e., the number of moves in the sequence)
         private const int PopulationSize = 80;
         private const double MutationRate = 0.1; // Define the mutation rate (i.e., the probability of a symbol being mutated)
-        private const int NumGenerations = 100;
-
-        // // constants for the fitness function:
-        // private const double ArrivalWeight = 0.4;
-        // private const double HandoverWeight = 0.4;
-        // private const double OverReadyWeight = 0.2;
+        private const int NumGenerations = 20; // DEBUG
 
         // Define a static random number generator
         static Random Random = new Random();
 
 
 
+
         public List<CraneMove> SearchSolution(State simulationState)
         {
+            // DEBUG
+            // Console.WriteLine("Simulation State:");
+            // simulationState.printState();
+
             // Generate an initial population of random chromosomes
-            // old code:
-            // List<string> population = InitializePopulation(simulationState);
-            // new:
             List<Individual> population = InitializePopulation(simulationState);
+
+            // DEBUG
+            // Console.WriteLine("Initial population:");
+            // foreach (var i in population)
+            // {
+            //     i.printSolutionLong();
+            //     i.State.printState();
+            // }
 
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
             {
-
                 // Evaluate the fitness of each chromosome in the population
-                // old code:
-                // List<double> fitnessScores = population.Select(
-                //     chromosome => Fitness(chromosome)).ToList();
-
-                //new:
                 var fitnessScores = new List<double>();
                 foreach (var individual in population)
                 {
                     individual.CalculateFitness(ChromosomeLength);
                     fitnessScores.Add(individual.Fitness);
+
+                    // DEBUG
+                    // Console.WriteLine("Fitness Scores list: " + string.Join(", ", fitnessScores));
+                    // individual.printSolutionLong();
+                    // individual.State.printState();
+                    // Console.WriteLine("\n");
                 }
 
 
                 // Select the fittest chromosomes to become parents of the next generation
-                // old code:
-                // List<string> parents = Enumerable.Range(0, (int)(PopulationSize * 0.2))
-                //     .Select(_ => population[fitnessScores.IndexOf(fitnessScores.Max())])
-                //     .ToList();
-                // new:
                 List<Individual> parents = Enumerable.Range(0, (int)(PopulationSize * 0.2))
                     .Select(_ => population[fitnessScores.IndexOf(fitnessScores.Max())])
                     .ToList();
 
 
-
                 // Generate the next generation by performing crossover and mutation operations on the parents
-                // old:
-                // List<string> children = Breed(parents);
-                // new:
                 List<Individual> children = Breed(parents, simulationState);
 
                 // Combine the parents and children to form the next generation
@@ -223,10 +282,10 @@ namespace csharp.HS_Genetic {
             // Determine and print the final solution
             Individual bestSolution = population.OrderBy(c => c.Fitness).First();
             Console.WriteLine("Final solution: " + bestSolution.SolutionString);
-            foreach(var move in bestSolution.SolutionAsMoves)
-            {
-                Console.WriteLine($"Move Block {move.BlockId} from {move.SourceId} to {move.TargetId}");
-            }
+            // foreach(var move in bestSolution.SolutionAsMoves)
+            // {
+            //     Console.WriteLine($"Move Block {move.BlockId} from {move.SourceId} to {move.TargetId}");
+            // }
 
             // // convert string to list of crane moves
             // List<CraneMove> solution = StringToCraneMoves(bestChromosome);
@@ -238,36 +297,44 @@ namespace csharp.HS_Genetic {
         {
             var population = new List<Individual>();
 
-            State currentState = new State(simulationState);
-            List<CraneMove> possibleMoves = currentState.GetAllPossibleMoves(false);
-            var numHandovers = 0;
+            // find possible moves for simulation state
+            List<CraneMove> initialPossibleMoves = simulationState.GetAllPossibleMoves(false);
 
             // generate PopulationSize-many individuals
             for (int k = 0; k < PopulationSize; k++)
             {
+                // initialize new state for the individual
+                State currentState = new State(simulationState);
                 var moves = new List<CraneMove>();
                 
                 for (int i = 0; i < ChromosomeLength; i++)
                 {   
+                    // get possible moves
+                    var possibleMoves = new List<CraneMove>();
+                    if (i == 0)
+                    {
+                        // to avoid recalculating the same initial moves, use the initialPossibleMoves
+                        possibleMoves = initialPossibleMoves;
+                    }
+                    else
+                    {
+                        // if not first move, get the new possible moves
+                        possibleMoves = currentState.GetAllPossibleMoves(false);
+                    }
+                    
                     // pick a random move, add it to the individual
                     var randomIndex = Random.Next(possibleMoves.Count);
                     moves.Add(possibleMoves[randomIndex]);
 
                     // apply move to update state
                     currentState = currentState.Apply(moves.Last());
-                    // track if handover
-                    if (moves.Last().TargetId == currentState.Handover.Id) { numHandovers++; }
-
-                    // get new moves
-                    possibleMoves = currentState.GetAllPossibleMoves(false);
                 }
 
                 // create Individual object to store state and solution
                 var individual = new Individual {
-                    State = currentState,
+                    State = new State(currentState),
                     SolutionString = currentState.ConvertMovesToString(moves),
-                    SolutionAsMoves = moves,
-                    NumOfHandovers = numHandovers
+                    SolutionAsMoves = moves
                 };
 
                 // add individual to population
@@ -345,15 +412,6 @@ namespace csharp.HS_Genetic {
             return child;
         }
 
-
-        // integrated in Individual, might not need this anymore
-        // static double Fitness(string chromosome)
-        // {
-        //     // Evaluate the fitness of the chromosome based on the dynamic stacking problem
-        //     // This could involve simulating the robot's behavior and measuring how well it follows the rules
-        //     // Return a fitness score based on the quality of the solution
-        //     return 0;
-        // }
 
     }
 }

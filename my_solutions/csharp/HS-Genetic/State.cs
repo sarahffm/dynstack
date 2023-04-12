@@ -1145,6 +1145,26 @@ namespace csharp.HS_Genetic
         IEnumerable<Stack> StacksWithReady => NotEmptyStacks.Where(b => b.Blocks.Any(block => block.Ready));
         IEnumerable<Stack> StacksWithoutReady => NotEmptyStacks.Where(b => !b.Blocks.Any(block => block.Ready));
         bool HandoverReady => !Handover.Blocks.Any();
+
+
+        public void printState()
+        {
+            Console.WriteLine("ARRIVAL:");
+            foreach (var block in Production.Blocks.Reverse())
+            {
+                Console.Write($"B{block.Id}: {(block.Ready ? "R" : "N")} | ");
+            }
+
+            foreach (var buffer in Buffers)
+            {
+                Console.WriteLine("\nBUFFER " + buffer.Id);
+                foreach (var block in buffer.Blocks.Reverse())
+                {
+                    Console.Write($"B{block.Id}: {(block.Ready ? "R" : "N")} | ");
+                }
+            }
+            Console.WriteLine("\n");
+        }
     }
 
     public static class Extensions
