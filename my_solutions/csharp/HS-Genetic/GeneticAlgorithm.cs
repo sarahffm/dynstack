@@ -13,11 +13,11 @@ namespace csharp.HS_Genetic {
 
     class Individual
     {
-
         // constants for the fitness function:
-        private const double ArrivalWeight = 0.4;
+        private const double ArrivalWeight = 0.3;
         private const double HandoverWeight = 0.4;
-        private const double OverReadyWeight = 0.2;
+        private const double OverReadyWeight = 0.3;
+        private const double DueOrderWeight = 0;
 
         // Define a static random number generator
         static Random Random = new Random();
@@ -127,7 +127,7 @@ namespace csharp.HS_Genetic {
             // Console.WriteLine($"ArrivalScore: {arrivalScore}, HandoverScore: {handoverScore}, OverReadyScore: {overReadyScore}");
             // Console.WriteLine($"Count: {State.Production.Blocks.Count}, MaxHeight: {State.Production.MaxHeight}, arrivalUsed: {arrivalUsed}");
 
-            Fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore;
+            Fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore + DueOrderWeight * dueOrderScore;
 
             // Console.WriteLine("Fitness (inside): " + Fitness);
 
@@ -139,19 +139,31 @@ namespace csharp.HS_Genetic {
             // 0 handovers: 0
             // moveIndex = 0 -> highest value
             // moveIndex = chromosomeLength -> smallest value
+
             var handoverInfo = GetNumHandoversAndIndex();
             NumOfHandovers = handoverInfo.Item1;
-            var earliestIndex = handoverInfo.Item2;
+            var index = handoverInfo.Item2;
 
-            // TODO
-
-            double handoverScore = 0; // TODO
+            double handoverScore = 0;
+            if (NumOfHandovers >= 1)
+            {
+                // -x + 1
+                handoverScore = 1 - (index / (double) chromosomeLength);
+            }
+            
+            // Console.WriteLine($"handoverScore: {handoverScore}, NumOfHandovers: {NumOfHandovers}, Index: {index}");
             return handoverScore;
         }
 
         public double calculateDueOrderScore()
         {
             // TODO
+            double sum = 0;
+            foreach (var buffer in State.Buffers)
+            {
+                sum += buffer.RateDueOrder();
+            }
+
             return 0;
         }
         
@@ -217,10 +229,10 @@ namespace csharp.HS_Genetic {
 
     class GeneticAlgorithm
     {
-        private const int ChromosomeLength = 6; // Define the length of the chromosome (i.e., the number of moves in the sequence)
-        private const int PopulationSize = 80;
+        private const int ChromosomeLength = 5; // Define the length of the chromosome (i.e., the number of moves in the sequence)
+        private const int PopulationSize = 100;
         private const double MutationRate = 0.1; // Define the mutation rate (i.e., the probability of a symbol being mutated)
-        private const int NumGenerations = 20; // DEBUG
+        private const int NumGenerations = 100; 
 
         // Define a static random number generator
         static Random Random = new Random();
@@ -238,12 +250,12 @@ namespace csharp.HS_Genetic {
             List<Individual> population = InitializePopulation(simulationState);
 
             // DEBUG
-            // Console.WriteLine("Initial population:");
-            // foreach (var i in population)
-            // {
-            //     i.printSolutionLong();
-            //     i.State.printState();
-            // }
+            Console.WriteLine("Initial population:");
+            foreach (var i in population)
+            {
+                i.printSolutionLong();
+                i.State.printState();
+            }
 
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
@@ -256,10 +268,10 @@ namespace csharp.HS_Genetic {
                     fitnessScores.Add(individual.Fitness);
 
                     // DEBUG
-                    // Console.WriteLine("Fitness Scores list: " + string.Join(", ", fitnessScores));
-                    // individual.printSolutionLong();
-                    // individual.State.printState();
-                    // Console.WriteLine("\n");
+                    Console.WriteLine("Fitness Scores list: " + string.Join(", ", fitnessScores));
+                    individual.printSolutionLong();
+                    individual.State.printState();
+                    Console.WriteLine("\n");
                 }
 
 
