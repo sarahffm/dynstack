@@ -16,8 +16,8 @@ namespace csharp.HS_Genetic {
         // constants for the fitness function:
         private const double ArrivalWeight = 0.3;
         private const double HandoverWeight = 0.4;
-        private const double OverReadyWeight = 0.3;
-        private const double DueOrderWeight = 0;
+        private const double OverReadyWeight = 0.15;
+        private const double DueOrderWeight = 0.15;
 
         // Define a static random number generator
         static Random Random = new Random();
@@ -164,7 +164,10 @@ namespace csharp.HS_Genetic {
                 sum += buffer.RateDueOrder();
             }
 
-            return 0;
+            double score = sum / State.Buffers.Count;
+            // Console.WriteLine("Final due score: " + score);
+
+            return score;
         }
         
         public List<CraneMove> FillMoves(int n)
@@ -180,7 +183,7 @@ namespace csharp.HS_Genetic {
 
                 SolutionAsMoves.Add(newMove);
                 var temp = new StringBuilder(SolutionString);
-                SolutionString = temp.Append($"s{newMove.SourceId}-d{newMove.TargetId}").ToString();
+                SolutionString = temp.Append($"s{newMove.SourceId}-d{newMove.TargetId},").ToString();
             }
             return SolutionAsMoves;
         }
@@ -230,8 +233,8 @@ namespace csharp.HS_Genetic {
     class GeneticAlgorithm
     {
         private const int ChromosomeLength = 5; // Define the length of the chromosome (i.e., the number of moves in the sequence)
-        private const int PopulationSize = 100;
-        private const double MutationRate = 0.1; // Define the mutation rate (i.e., the probability of a symbol being mutated)
+        private const int PopulationSize = 20;
+        private const double MutationRate = 0; // Define the mutation rate (i.e., the probability of a symbol being mutated)
         private const int NumGenerations = 100; 
 
         // Define a static random number generator
@@ -250,12 +253,12 @@ namespace csharp.HS_Genetic {
             List<Individual> population = InitializePopulation(simulationState);
 
             // DEBUG
-            Console.WriteLine("Initial population:");
-            foreach (var i in population)
-            {
-                i.printSolutionLong();
-                i.State.printState();
-            }
+            // Console.WriteLine("Initial population:");
+            // foreach (var i in population)
+            // {
+            //     i.printSolutionLong();
+            //     // i.State.printState();
+            // }
 
             // Evolve the population through multiple generations
             for (int generation = 0; generation < NumGenerations; generation++)
@@ -268,17 +271,34 @@ namespace csharp.HS_Genetic {
                     fitnessScores.Add(individual.Fitness);
 
                     // DEBUG
-                    Console.WriteLine("Fitness Scores list: " + string.Join(", ", fitnessScores));
-                    individual.printSolutionLong();
-                    individual.State.printState();
-                    Console.WriteLine("\n");
+                    // Console.WriteLine($"Individual solution: {individual.SolutionString}");
+                    // Console.WriteLine("Fitness Scores list: " + string.Join(", ", fitnessScores));
+                    // individual.printSolutionLong();
+                    // individual.State.printState();
+                    // Console.WriteLine("\n");
                 }
 
 
                 // Select the fittest chromosomes to become parents of the next generation
-                List<Individual> parents = Enumerable.Range(0, (int)(PopulationSize * 0.2))
-                    .Select(_ => population[fitnessScores.IndexOf(fitnessScores.Max())])
+                // List<Individual> parents = Enumerable.Range(0, (int)(PopulationSize * 0.2))
+                //     .Select(_ => population[fitnessScores.IndexOf(fitnessScores.Max())])
+                //     .ToList();
+
+                List<Individual> populationSorted = population.OrderByDescending(i => i.Fitness).ToList();
+                List<Individual> distinct = populationSorted
+                    .GroupBy(i => i.SolutionString)
+                    .SelectMany(g => g)
                     .ToList();
+
+                List<Individual> parents = distinct.Take((int) (PopulationSize * 0.4)).ToList();
+
+                // DEBUG
+                // Console.WriteLine("\nParents:");
+                // foreach (var e in parents)
+                // {
+                //     Console.WriteLine(e.SolutionString);
+                // }
+                // Console.WriteLine("\n");
 
 
                 // Generate the next generation by performing crossover and mutation operations on the parents
@@ -294,6 +314,7 @@ namespace csharp.HS_Genetic {
             // Determine and print the final solution
             Individual bestSolution = population.OrderBy(c => c.Fitness).First();
             Console.WriteLine("Final solution: " + bestSolution.SolutionString);
+
             // foreach(var move in bestSolution.SolutionAsMoves)
             // {
             //     Console.WriteLine($"Move Block {move.BlockId} from {move.SourceId} to {move.TargetId}");
@@ -383,6 +404,7 @@ namespace csharp.HS_Genetic {
 
             var child = new Individual(simulationState);
             var isSuccess = false;
+            var countSuccess = 0;
 
             for (int i = 0; i < ChromosomeLength; i++)
             {
@@ -404,7 +426,10 @@ namespace csharp.HS_Genetic {
                     child.SolutionAsMoves.Add(move);
 
                     var temp = new StringBuilder(child.SolutionString);
-                    child.SolutionString = temp.Append($"s{move.SourceId}-d{move.TargetId}").ToString();
+                    child.SolutionString = temp.Append($"s{move.SourceId}-d{move.TargetId},").ToString();
+
+                    // debug:
+                    countSuccess++;
                 }
             }
 
@@ -412,7 +437,8 @@ namespace csharp.HS_Genetic {
             var numRemaining = ChromosomeLength - child.SolutionAsMoves.Count;
             child.FillMoves(numRemaining);
             // Console.WriteLine("Count after FillMoves (expected ChromosomeLength): " + child.SolutionAsMoves.Count);
-
+            
+            // Console.WriteLine("Child: "+ child.SolutionString + "   from parents: " + countSuccess);
 
             // mutate
             if (Random.NextDouble() < MutationRate)

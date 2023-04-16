@@ -81,25 +81,34 @@ namespace csharp.HS_Genetic
 
             // reference list that contains the "perfect order"
             List<long> expected = blocks.OrderByDescending(block => block.DueMs).Select(block => block.DueMs).ToList();
-            Console.WriteLine("Expected order: {0}", string.Join(", ", expected));
-            var temp = new List<double>();
 
+            // DEBUG
+            // Console.WriteLine($"Stack: {Id}");
+            // Console.WriteLine("Expected order: {0}", string.Join(", ", expected));
+            // List<long> actual = blocks.Select(block => block.DueMs).ToList();
+            // Console.WriteLine("Actual order: {0}", string.Join(", ", actual));
+
+            var temp = new List<double>();
             for (int i = 0; i < n; i++)
             {
-                double deviation = (blocks[i].DueMs -  expected[i]) / 10000;
-                Console.WriteLine("deviation: " + deviation + " n: " + n);
+                double deviation = (blocks[i].DueMs -  expected[i]) / (double) 10000;
+                deviation = Math.Abs(deviation);
                 // gaussian function with x0 = 0, sigma = n ?
-                double x = Math.Exp(-deviation * deviation / (2.0 * n * n));
-                Console.WriteLine("x: " + x);
+                var sigma = 4;
+                double x = Math.Exp(-deviation * deviation / (2.0 * sigma));
+
+                // DEBUG
+                // Console.WriteLine("deviation: " + deviation + " n: " + n);
+                // Console.WriteLine("x: " + x);
+
                 temp.Add(x);
             }
-            Console.WriteLine("temp values: {0}", string.Join(", ", temp));
 
             score = temp.Sum();
 
             // Normalize by the number of blocks
             score = score / n;
-            Console.WriteLine("Stack's score: " + score);
+            // Console.WriteLine("Stack's score: " + score + "\n\n");
 
             return score;
         }
@@ -809,7 +818,7 @@ namespace csharp.HS_Genetic
             }
         }
 
-        public List<CraneMove> GetAllPossibleMoves(bool optimized = true, int handOverPriority = 30)
+        public List<CraneMove> GetAllPossibleMoves(bool optimized = true, int handOverPriority = 80)
         {
             var possible = new List<CraneMove>();
             if (IsSolved) 
