@@ -288,6 +288,12 @@ def create_move(block_id, source_id, target_id):
 def create_schedule(world):
     # TODO: prioritize available ready block with small due date over arrival clearing
 
+    performance = world.KPIs
+    for field in performance.DESCRIPTOR.fields:
+        name = field.name
+        value = getattr(performance, name)
+        print(f"{name}: {value}")
+
     # initialize world state object
     state = WorldState(world)
 
@@ -295,7 +301,7 @@ def create_schedule(world):
     schedule = CraneSchedule()
 
     # print for debugging:
-    print_if_invalid(world, state.buffers)
+    # print_if_invalid(world, state.buffers)
 
     # check if still has schedule
     if len(world.Crane.Schedule.Moves) > 0:

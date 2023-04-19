@@ -89,31 +89,30 @@ Any other input is treated as a filename.")]
     }
 
     private static async Task<int> Main(Options o) {
-      /*
-      Settings settings;
+      // Settings settings;
 
-      // print settings values
-      using (var fileStream = File.OpenRead(o.SettingsPath))
-      {
-        settings = Serializer.Deserialize<Settings>(fileStream);
+      // // print settings values
+      // Console.WriteLine("SETTINGS");
+      // using (var fileStream = File.OpenRead("./settings/HS/GECCO2021/HS-Training-9-Stacks-A.buf"))
+      // {
+      //   settings = Serializer.Deserialize<Settings>(fileStream);
         
-        foreach (PropertyInfo prop in settings.GetType().GetProperties())
-        {
-          var type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
-          Console.WriteLine(prop.GetValue(settings, null).ToString());
-        }
-      }
+      //   foreach (PropertyInfo prop in settings.GetType().GetProperties())
+      //   {
+      //     var type = Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType;
+      //     Console.WriteLine("{0}: {1}", prop.Name, prop.GetValue(settings, null).ToString());
+      //   }
+      // }
 
       
-      settings.CheckInterval = new TimeSpan(0, 0, 0, 0, 500);
-      Console.WriteLine("Modified checkinterval.");
+      // settings.CheckInterval = new TimeSpan(0, 0, 0, 0, 500);
+      // Console.WriteLine("Modified checkinterval.");
       
-      // print settings to file
-      using (var fileStream = File.Create("settings2-checkinterval.buf"))
-      {
-          Serializer.Serialize(fileStream, settings);
-      }
-      */
+      // // print settings to file
+      // using (var fileStream = File.Create("settings2-checkinterval.buf"))
+      // {
+      //     Serializer.Serialize(fileStream, settings);
+      // }
 
       if (o.SimulateAsync && !o.RunSync && !o.PolicyRun)
         throw new ArgumentException($"The option to simulate asynchronism is only valid in synchronous mode or in a policy run.");

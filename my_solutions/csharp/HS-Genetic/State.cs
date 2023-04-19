@@ -1,4 +1,5 @@
-﻿using System.IO.IsolatedStorage;
+﻿using System.Net.Sockets;
+using System.IO.IsolatedStorage;
 using System.Linq.Expressions;
 using DynStacking.HotStorage.DataModel;
 using System;
@@ -77,7 +78,7 @@ namespace csharp.HS_Genetic
             List<Block> blocks = Blocks.Reverse().ToList();
             var n = Blocks.Count;
             
-            if (n == 0) { score = 1; }
+            if (n == 0) { return 1; }
 
             // reference list that contains the "perfect order"
             List<long> expected = blocks.OrderByDescending(block => block.DueMs).Select(block => block.DueMs).ToList();
@@ -94,8 +95,8 @@ namespace csharp.HS_Genetic
                 double deviation = (blocks[i].DueMs -  expected[i]) / (double) 10000;
                 deviation = Math.Abs(deviation);
                 // gaussian function with x0 = 0, sigma = n ?
-                var sigma = 4;
-                double x = Math.Exp(-deviation * deviation / (2.0 * sigma));
+                var sigma = 2;
+                double x = Math.Exp(-deviation * deviation / (2.0 * sigma * sigma));
 
                 // DEBUG
                 // Console.WriteLine("deviation: " + deviation + " n: " + n);
@@ -108,7 +109,7 @@ namespace csharp.HS_Genetic
 
             // Normalize by the number of blocks
             score = score / n;
-            // Console.WriteLine("Stack's score: " + score + "\n\n");
+            // Console.WriteLine($"Stack {Id} score: {score}");
 
             return score;
         }

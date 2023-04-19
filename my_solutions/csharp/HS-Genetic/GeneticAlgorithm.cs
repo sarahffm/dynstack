@@ -108,13 +108,11 @@ namespace csharp.HS_Genetic {
             // 1: rate arrival
             double arrivalScore = 0;
             var arrivalUsed = State.Production.Blocks.Count / (double) State.Production.MaxHeight;
-            if (arrivalUsed > 0.75) { arrivalScore = 0.8; }
+            if (arrivalUsed > 0.75) { arrivalScore = 0.6; }
             else if (arrivalUsed > 0.5) { arrivalScore = 1; }
             else if (arrivalUsed >= 0.25) { arrivalScore = 0.5; }
 
-            
             // 2: rate number of handovers
-            
             double handoverScore = calculateHandoverScore(chromosomeLength);
 
             // 3: rate number of blocks over readies
@@ -124,7 +122,7 @@ namespace csharp.HS_Genetic {
             double dueOrderScore = calculateDueOrderScore();
 
             // DEBUG
-            // Console.WriteLine($"ArrivalScore: {arrivalScore}, HandoverScore: {handoverScore}, OverReadyScore: {overReadyScore}");
+            // Console.WriteLine($"ArrivalScore: {arrivalScore}, HandoverScore: {handoverScore}, OverReadyScore: {overReadyScore}, DueOrderScore: {dueOrderScore}");
             // Console.WriteLine($"Count: {State.Production.Blocks.Count}, MaxHeight: {State.Production.MaxHeight}, arrivalUsed: {arrivalUsed}");
 
             Fitness = ArrivalWeight * arrivalScore + HandoverWeight * handoverScore + OverReadyWeight * overReadyScore + DueOrderWeight * dueOrderScore;
@@ -157,7 +155,6 @@ namespace csharp.HS_Genetic {
 
         public double calculateDueOrderScore()
         {
-            // TODO
             double sum = 0;
             foreach (var buffer in State.Buffers)
             {
@@ -165,6 +162,7 @@ namespace csharp.HS_Genetic {
             }
 
             double score = sum / State.Buffers.Count;
+            // Console.WriteLine($"Num of Buffers: {State.Buffers.Count}, Sum: {sum}");
             // Console.WriteLine("Final due score: " + score);
 
             return score;
@@ -330,7 +328,7 @@ namespace csharp.HS_Genetic {
         {
             var population = new List<Individual>();
 
-            // find possible moves for simulation state
+            // find possible moves for current simulation state
             List<CraneMove> initialPossibleMoves = simulationState.GetAllPossibleMoves(false);
 
             // generate PopulationSize-many individuals
@@ -437,7 +435,6 @@ namespace csharp.HS_Genetic {
             var numRemaining = ChromosomeLength - child.SolutionAsMoves.Count;
             child.FillMoves(numRemaining);
             // Console.WriteLine("Count after FillMoves (expected ChromosomeLength): " + child.SolutionAsMoves.Count);
-            
             // Console.WriteLine("Child: "+ child.SolutionString + "   from parents: " + countSuccess);
 
             // mutate
